@@ -51,7 +51,10 @@ public:
 	/// <param name="_pRenderer">renderer</param>
 	/// <param name="_pFileName">file path name (relative)</param>
 	CTexturedObjectSlide(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
-		const char* _pFileName);
+		const char* _pFileName) : CTexturedObject(_pos, _size, _pRenderer, _pFileName)
+	{
+		m_inWorld = false;
+	}
 
 	/// <summary>
 	/// destructor
@@ -72,38 +75,38 @@ public:
 	virtual void Render(CRenderer* _pRenderer) override;
 #pragma endregion
 
-#pragma region public inline function
-	/// <summary>
-	/// get rect
-	/// </summary>
-	/// <returns>rect of object</returns>
-	inline SRect GetRect() { return m_rect; }
-
-	/// <summary>
-	/// set rect
-	/// </summary>
-	/// <param name="_rect">rect to set</param>
-	inline void SetRect(SRect _rect) { m_rect = _rect; }
-
-	/// <summary>
-	/// get texture
-	/// </summary>
-	/// <returns>texture</returns>
-	inline CTexture* GetTexture() { return m_pTexture; }
-#pragma endregion
+//#pragma region public inline function
+//	/// <summary>
+//	/// get rect
+//	/// </summary>
+//	/// <returns>rect of object</returns>
+//	inline SRect GetRect() { return m_rect; }
+//
+//	/// <summary>
+//	/// set rect
+//	/// </summary>
+//	/// <param name="_rect">rect to set</param>
+//	inline void SetRect(SRect _rect) { m_rect = _rect; }
+//
+//	/// <summary>
+//	/// get texture
+//	/// </summary>
+//	/// <returns>texture</returns>
+//	inline CTexture* GetTexture() { return m_pTexture; }
+//#pragma endregion
 
 protected:
-#pragma region protected variable
-	/// <summary>
-	/// rect of texture
-	/// </summary>
-	SRect m_rect;
-
-	SRect m_srcRect;
-
-	/// <summary>
-	/// texture of object
-	/// </summary>
-	CTexture* m_pTexture = nullptr;
-#pragma endregion
+//#pragma region protected variable
+//	/// <summary>
+//	/// rect of texture
+//	/// </summary>
+//	SRect m_rect;
+//
+//	SRect m_srcRect;
+//
+//	/// <summary>
+//	/// texture of object
+//	/// </summary>
+//	CTexture* m_pTexture = nullptr;
+//#pragma endregion
 };
