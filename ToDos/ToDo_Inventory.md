@@ -48,7 +48,7 @@ Hat eine Liste InventarList;
 
 Inventar hat Position relativ zum Parent object;
 
-#### Überschreibt Update()
+### Überschreibt Update()
 
 Update() der Elternklasse
 
