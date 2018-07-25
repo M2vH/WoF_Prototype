@@ -44,6 +44,9 @@
     <ClCompile Include="Time.cpp">
       <Filter>Engine\Time</Filter>
     </ClCompile>
+    <ClCompile Include="TexturedObjectSlide.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -158,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedObjectSlide.h">
+      <Filter>Engine\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

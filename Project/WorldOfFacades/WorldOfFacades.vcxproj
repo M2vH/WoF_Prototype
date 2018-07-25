@@ -189,6 +189,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturedObject.cpp" />
+    <ClCompile Include="TexturedObjectSlide.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -210,6 +211,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturedObject.h" />
+    <ClInclude Include="TexturedObjectSlide.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />

@@ -150,12 +150,19 @@ void CEngine::Clean()
 	delete m_pRenderer;
 
 	// free sdl components
-	// ToDo (m2vh)
+
 	// check if exists
-	SDL_FreeSurface(m_pSurface);
-	// ToDo (m2vh)
+	if (m_pSurface != nullptr)
+	{
+		SDL_FreeSurface(m_pSurface);
+
+	}
 	// check if window exists
-	SDL_DestroyWindow(m_pWindow);
+	if (m_pWindow != nullptr)
+	{
+		SDL_DestroyWindow(m_pWindow);
+
+	}
 }
 
 // change active scene
