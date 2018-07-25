@@ -52,6 +52,6 @@ void CTexturedObjectSlide::Update(float _deltaTime)
 void CTexturedObjectSlide::Render(CRenderer * _pRenderer)
 {
 	// render texture
-	_pRenderer->RenderTexture(m_pTexture, m_rect, m_srcRect);
+	_pRenderer->RenderTexture(m_pTexture, m_rect, m_srcRect, SVector2(0,0), 0.0f, false);
 }
 #pragma endregion
