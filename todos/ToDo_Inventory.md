@@ -1,8 +1,17 @@
-# ToDo List
+# ToDo Inventory
 
-## Inventar
+Wir brauchen ein Inventar.  
 
-### In der Engine
+Wir erstellen im Game eine Inventarklasse, die die Funktionalität des Invenatrs abbildet, und fügen sie der UI-Liste hinzu.
+
+Frage: Werden Objecte in der UI-Liste im Screenspace angezeigt?
+
+Wenn nein, dann erstellen wir in der Engine ein eigene UI-Klasse, die die Position errechnet.
+Die Inventarklasse erbt dann von unserer UI-Klasse.
+
+Wenn ja, dann wird die Position relativ zur Kamera berechnet. Wir erben von MoveObject/TexturedObject.
+
+## In der Engine eine eigene UI-Klasse anlegen.
 
 Wir erstellen eine CUIObject Klasse;  
 Erbt von TexturedObject;
@@ -29,13 +38,13 @@ Berechnet Position relativ
 
 Wir erstellen eine GInventory Klasse
 
-GInventory erbt von CUIObject;
+GInventory erbt von MoveObject || CUIObject;
 
 TexturedObject ist Hintergrundgrafik
 
-Hat 3 Member vom Typ CUIObject;
+Hat 3 Member vom Typ TexturedObject || CUIObject;
 
-Hat eine Liste InventarList\<CUIObject>;
+Hat eine Liste InventarList;
 
 Inventar hat Position relativ zum Parent object;
 
