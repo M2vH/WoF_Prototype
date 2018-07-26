@@ -14,6 +14,19 @@ void GMainScene::Init()
 	//m_pWorld = new GWorld(CEngine::Get()->GetRenderer(), "Texture/World/T_WorldSide.png");
 	//m_pWorld->Init();
 
+	// create a screen background from TexturedObject
+	CTexturedObject* pBackground = new CTexturedObject(
+		SVector2(0,0),
+		SVector2(SCREEN_WIDTH+48, SCREEN_HEIGHT+48),
+		CEngine::Get()->GetRenderer(),
+		"Texture/World/T_backg_L2_1280x720.png"
+	);
+	// keep background in camera;
+	pBackground->SetInWorld(false);
+
+	// add background to SceneObject-List
+	CEngine::Get()->GetCM()->AddSceneObject(pBackground);
+
 	// create Paulchen Panther textured object
 	CTexturedObjectSlide* pObj = new CTexturedObjectSlide(SVector2(100, 45), SVector2(32, 32),
 		CEngine::Get()->GetRenderer(), "PP.png");
