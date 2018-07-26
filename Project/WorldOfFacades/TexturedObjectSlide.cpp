@@ -50,18 +50,18 @@ void CTexturedObjectSlide::Update(float _deltaTime)
 
 	m_position.X += 1;
 	m_position.X = (int)(m_position.X) % SCREEN_WIDTH;
-	m_position.Y = 100;
+	//m_position.Y = 100;
 
 	// set position of rect
-	m_rect.x = m_position.X;
-	m_rect.y = m_position.Y;
+	// m_rect.x = m_position.X;
+	// m_rect.y = m_position.Y;
 
 	// print player position
-	std::string s = "Position X: ";
-	s += std::to_string(m_position.X);
-	s += "Position Y: ";
-	s += std::to_string(m_position.Y);
-	LOG_ERROR(s.c_str(), "" );
+	//std::string s = "Position X: ";
+	//s += std::to_string(m_position.X);
+	//s += "Position Y: ";
+	//s += std::to_string(m_position.Y);
+	//LOG_ERROR(s.c_str(), "" );
 
 	CTexturedObject::Update(_deltaTime);
 

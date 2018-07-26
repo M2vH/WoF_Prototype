@@ -26,7 +26,7 @@ void GMainScene::Init()
 
 	// create a worldspace background
 	CTexturedObject* pBackgroundWorld = new CTexturedObject(
-		SVector2(0, 0),	// pos of object in World
+		SVector2(0, 100),	// pos of object in World
 		SVector2(3840, 720),	// size; if 0,0 will be set to texture size
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_world_tree_3840x720.png"
