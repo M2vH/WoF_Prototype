@@ -24,15 +24,9 @@ void GMainScene::Init()
 	// keep background in camera;
 	pBackground->SetInWorld(false);
 
-	// add background to SceneObject-List
-	CEngine::Get()->GetCM()->AddSceneObject(pBackground);
-
 	// create Paulchen Panther textured object
 	CTexturedObjectSlide* pObj = new CTexturedObjectSlide(SVector2(100, 45), SVector2(32, 32),
 		CEngine::Get()->GetRenderer(), "PP.png");
-
-	// add object to cm
-	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
 
 	// add a player
 	GPlayer * pPlayer = new GPlayer(
@@ -48,9 +42,21 @@ void GMainScene::Init()
 	
 	// pPlayer->ActivateGravity();
 
+#pragma region Adding objects to Lists
+					
+	// SceneObjects
+	// add background to SceneObject-List
+	CEngine::Get()->GetCM()->AddSceneObject(pBackground);
+
+	// PersistantObjects
+	// add object to cm
+	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
+
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
 
+
+#pragma endregion
 }
 
 // cleaning up scene
