@@ -47,7 +47,7 @@ void GMainScene::Init()
 	// create a foreground object
 	GForegroundSlide* pForeground = new GForegroundSlide(
 		SVector2(0,450),
-		SVector2(3840 * 1.2,400),
+		SVector2(3840 * 2,400),
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_world_tree_2_3840x720.png"
 	);
@@ -97,6 +97,18 @@ void GMainScene::Init()
 	pGround->DeactivateGravity();
 	pGround->SetInWorld(true);
 
+	// create Inventory background
+	GInventory* pInventoryBackground = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
+		SVector2(48*2,48*6),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Inventory/inventorybackground_496x756.png");
+
+	// create FuryItem
+	GFuryItem* pFuryItem = new GFuryItem(SVector2(900, 500 - WORLD_BLOCK_HEIGHT),
+		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Inventory/Fury_500x500.png");
+
 #pragma region Adding objects to Lists
 					
 
@@ -106,6 +118,9 @@ void GMainScene::Init()
 
 	// THE GROUND TO WALK ON
 	CEngine::Get()->GetCM()->AddPersistantObject(pGround);
+
+	//	The Items
+	CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
@@ -127,22 +142,9 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
 
 #pragma endregion
-	// create Inventory background
-	GInventory* pInventoryBackground = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
-		SVector2(48*2,48*6),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/inventorybackground_496x756.png");
-
-	// create FuryItem
-	GFuryItem* pFuryItem = new GFuryItem(SVector2(900, 580),
-		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/Fury_500x500.png");
-
 	// add object to cm
 	CEngine::Get()->GetCM()->AddUIObject(pInventoryBackground);
-	CEngine::Get()->GetCM()->AddSceneObject(pFuryItem);
-	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
+	// CEngine::Get()->GetCM()->AddPersistantObject(pObj);
 	
 	// create world
 	// m_pWorld = new GWorld(CEngine::Get()->GetRenderer(), "Texture/World/T_WorldSide.png");
