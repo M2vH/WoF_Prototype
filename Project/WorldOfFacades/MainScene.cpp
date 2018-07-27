@@ -46,7 +46,7 @@ void GMainScene::Init()
 
 	// create a foreground object
 	GForegroundSlide* pForeground = new GForegroundSlide(
-		SVector2(0,450),
+		SVector2(-3840 / 2,450),
 		SVector2(3840 * 2,400),
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_world_tree_2_3840x720.png"

@@ -47,7 +47,7 @@ void GBackgroundStatic::Update(float _deltaTime)
 
  
 
-	CMoveObject::Update(_deltaTime);
+	CTexturedObject::Update(_deltaTime);
 }
 
 void GBackgroundStatic::Render(CRenderer * _pRenderer)

@@ -43,8 +43,19 @@ void GForegroundSlide::Update(float _deltaTime)
 
 	// update 
 	m_position = m_position + (m_movement * m_speed * _deltaTime);
+	
+	if (m_position.X < -3000)
+	{
+		m_position.X = -3000;
+	}
+	if (m_position.X > 0)
+	{
+		m_position.X = 0;
+	}
+	
 	m_rect.x = m_position.X;
-	LOG_MESSAGE("Foreground: ", std::to_string(m_position.X));
+	// todo: (m2vh) delete
+	//	LOG_MESSAGE("Foreground: ", std::to_string(m_position.X));
 
 	m_position.X = m_rect.x;
 	

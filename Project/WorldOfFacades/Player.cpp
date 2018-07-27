@@ -35,13 +35,7 @@ void GPlayer::Update(float _deltaTime)
 	else
 		m_movement.X = 0.0f;
 
-	// To Do!
-	//// pick up item
-	//if (CInput::GetKey(SDL_SCANCODE_S))
-	//{
-	//	// add item to inventory list
-	//	
-	//}
+	
 
 	// if key space is pressed this frame and jump not active and grounded
 	if (CInput::GetKeyDown(SDL_SCANCODE_SPACE) && !m_jump && m_grounded)
@@ -54,6 +48,20 @@ void GPlayer::Update(float _deltaTime)
 
 	// update parent
 	CMoveObject::Update(_deltaTime);
+
+	// ToDo!
+	//// pick up item
+	if (CInput::GetKey(SDL_SCANCODE_S) && CMoveObject::m_foundItem == true)
+	{
+		LOG_MESSAGE("Grep Item ", std::to_string(m_foundItem));
+		// ToDo:
+		// Push Item into Inventory;
+		// Put item into RemoveObject-List;
+		// Put item into Inventory-List;
+		// reset value;
+		// m_foundItem = false;
+		
+	}
 
 	// if jump enabled
 	if(m_jump)
@@ -139,10 +147,7 @@ void GPlayer::Update(float _deltaTime)
 	/// <summary>
 	/// TODO: DELETE
 	/// </summary>
-	// print player position
-	//std::string s = "Position Y: ";
-	//s += std::to_string(m_position.Y);
-	//LOG_ERROR(s.c_str(), "" );
+	// LOG_MESSAGE("Found item", std::to_string(m_foundItem));
 }
 
 // render every frame

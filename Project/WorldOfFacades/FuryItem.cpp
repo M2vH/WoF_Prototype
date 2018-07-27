@@ -11,7 +11,7 @@ GFuryItem::GFuryItem(SVector2 _pos,
 	// set object in world
 	m_inWorld = true;
 
-	m_colType = WALL;
+	m_colType = ITEM;
 }
 
 
@@ -19,7 +19,7 @@ GFuryItem::GFuryItem(SVector2 _pos,
 // update every frame
 void GFuryItem::Update(float _deltaTime)
 {
-	CMoveObject::Update(_deltaTime);
+	CTexturedObject::Update(_deltaTime);
 }
 
 // render every frame

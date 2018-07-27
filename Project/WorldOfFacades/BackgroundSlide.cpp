@@ -89,10 +89,10 @@ void GBackgroundSlide::Update(float _deltaTime)
 
 #pragma region m2vh
 	// ToDo: Delete region
-	LOG_MESSAGE("Left: ", std::to_string(m_pLeftImage->GetPosition().X));
-	LOG_MESSAGE("Center: ", std::to_string(m_pCenterImage->GetPosition().X));
-	LOG_MESSAGE("Right: ", std::to_string(m_pRightImage->GetPosition().X));
-	LOG_MESSAGE("", "");
+	//LOG_MESSAGE("Left: ", std::to_string(m_pLeftImage->GetPosition().X));
+	//LOG_MESSAGE("Center: ", std::to_string(m_pCenterImage->GetPosition().X));
+	//LOG_MESSAGE("Right: ", std::to_string(m_pRightImage->GetPosition().X));
+	//LOG_MESSAGE("", "");
 
 #pragma endregion
 
