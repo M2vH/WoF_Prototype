@@ -115,5 +115,7 @@ protected:
 	/// direction
 	/// </summary>
 	SVector2 m_movement;
+
+	bool m_foundItem;
 #pragma endregion
 };

@@ -32,7 +32,9 @@ public:
 	/// <param name="_pRenderer">renderer</param>
 	/// <param name="_pFileName">file path name (relative)</param>
 	GPlayer(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
-		const char* _pFileName) : CMoveObject(_pos, _size, _pRenderer, _pFileName) {}
+		const char* _pFileName) : CMoveObject(_pos, _size, _pRenderer, _pFileName) {
+		m_foundItem = false;
+	}
 
 	/// <summary>
 	/// destructor
@@ -65,5 +67,7 @@ private:
 	/// time till jump ends
 	/// </summary>
 	float m_jumpTime;
+
+	bool m_foundItem;
 #pragma endregion
 };

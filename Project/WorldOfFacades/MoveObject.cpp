@@ -1,3 +1,8 @@
+#pragma region debug include
+#include <iostream>	///TODO: DELETE
+#include <string>	///TODO: DELETE
+#pragma endregion
+
 #pragma region project include
 #include "MoveObject.h"
 #include "Engine.h"
@@ -10,29 +15,61 @@
 void CMoveObject::Update(float _deltaTime)
 {
 	// moveable default true
+	//m_foundItem = false;
 	bool moveable = true;
+	bool itemFound = false;
 
 	// next position
 	SVector2 nextPos = m_position + m_movement * m_speed * _deltaTime;
 
 	// next rect
 	SRect nextRect = m_rect;
+	if (nextPos.X < 700)
+	{
+		nextPos.X = 700;
+	}
 	nextRect.x = nextPos.X;
+
+	if (nextPos.X > 3000)
+	{
+		nextPos.X = 3000;
+	}
+
 	nextRect.y = nextPos.Y;
 
 	// through all scene objects
+	// ToDo: Copy persistant check
 	for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
 	{
 		// if current object is self continue
 		if ((CMoveObject*)pObj && pObj == this)
 			continue;
 
+		// if found item
+		if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+		{
+			m_foundItem = CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+			//continue;
+		}
+		else
+		{
+			m_foundItem = false;
+			//continue;
+		}
+
+
 		// if collision type none
 		if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+		{
 			continue;
 
-		// set moveable by checking collision
-		moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+		}
+		else
+		{
+
+			// set moveable by checking collision
+			moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+		}
 
 		// if not moveable cancel collision check
 		if (!moveable)
@@ -45,21 +82,44 @@ void CMoveObject::Update(float _deltaTime)
 		// through all persistant objects
 		for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
 		{
+			
 			// if current object is self continue
 			if ((CMoveObject*)pObj && pObj == this)
 				continue;
 
-			// if collision type none
-			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
-				continue;
 
-			// set moveable by checking collision
-			moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+
+			// it is ITEM and in reach
+			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
+			{
+					LOG_MESSAGE("Item found.", "");
+					itemFound = true;
+					
+					continue;
+			} else
+
+			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+			{
+				continue;
+			} 
+			else if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+			{
+				continue;
+			}
+			else
+			{
+
+				// set moveable by checking collision
+				moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+				
+			}
 
 			// if not moveable cancel collision check
 			if (!moveable)
 				break;
 		}
+		// reset 
+		m_foundItem = itemFound;
 	}
 
 	// if moveable
@@ -72,7 +132,7 @@ void CMoveObject::Update(float _deltaTime)
 		m_rect.x = m_position.X;
 		m_rect.y = m_position.Y;
 	}
-	
+
 	// if no gravity return
 	if (!m_gravity)
 		return;

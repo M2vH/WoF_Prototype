@@ -1,0 +1,221 @@
+﻿  BackgroundSlide.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(69): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(121): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(121): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\backgroundslide.cpp(79): warning C4244: "=": Konvertierung von "int" in "float", möglicher Datenverlust
+  BackgroundStatic.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+  CContentManagement.cpp
+  ForegroundSlide.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.h(38): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.h(19): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\physic.h(4): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\physic.h(4): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.cpp(56): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.cpp(60): warning C4244: "=": Konvertierung von "int" in "float", möglicher Datenverlust
+  FuryItem.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  Input.cpp
+  Engine.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): note: Siehe Deklaration von "SDL_Renderer"
+  Game.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+  Helper.cpp
+  Inventory.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  InventoryItem.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  main.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+  MainScene.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(43): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.h(38): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\foregroundslide.h(19): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  MoveObject.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\physic.h(4): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(31): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(38): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(132): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(133): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(147): warning C4244: "+=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\moveobject.cpp(195): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  Physic.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+  Player.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\physic.h(4): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\physic.h(4): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\player.cpp(89): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\player.cpp(90): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\player.cpp(138): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  Renderer.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texture.h(4): warning C4099: "SDL_Texture": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(128): note: Siehe Deklaration von "SDL_Texture"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.cpp(95): warning C4244: "-=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.cpp(96): warning C4244: "-=": Konvertierung von "float" in "int", möglicher Datenverlust
+  Texture.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texture.h(4): warning C4099: "SDL_Texture": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(128): note: Siehe Deklaration von "SDL_Texture"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_video.h(90): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(11): warning C4099: "SDL_Renderer": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_render.h(122): note: Siehe Deklaration von "SDL_Renderer"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(8): warning C4099: "SDL_Window": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(10): note: Siehe Deklaration von "SDL_Window"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(9): warning C4099: "SDL_Surface": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\library\sdl2\include\sdl_surface.h(70): note: Siehe Deklaration von "SDL_Surface"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+  TexturedObject.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(14): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(15): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(16): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(17): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(37): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.cpp(38): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+  TexturedObjectSlide.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.h(43): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\renderer.h(8): warning C4099: "SRect": Geben Sie den zuerst unter Verwendung von "struct" und jetzt unter Verwendung von "class" gesehenen Namen ein
+  c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\rect.h(9): note: Siehe Deklaration von "SRect"
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobjectslide.cpp(52): warning C4244: "=": Konvertierung von "int" in "float", möglicher Datenverlust
+  Kompilieren...
+  Time.cpp
+  World.cpp
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(39): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(40): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(41): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\texturedobject.h(42): warning C4244: "=": Konvertierung von "float" in "int", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\engine.h(135): warning C4068: Unbekanntes Pragma
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\world.cpp(72): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+c:\users\m2vh\documents\sae\saestudyweek\wof_prototype\project\worldoffacades\world.cpp(118): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+  Code wird generiert.
+  All 313 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  WorldOfFacades.vcxproj -> C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Build\bin\x64\Release\WorldOfFacades.exe
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2\lib\x64\SDL2.dll
+  1 Datei(en) kopiert
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\libjpeg-9.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\libpng16-16.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\libtiff-5.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\libwebp-7.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\SDL2_image.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_image\lib\x64\zlib1.dll
+  6 Datei(en) kopiert
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libFLAC-8.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libmodplug-1.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libmpg123-0.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libogg-0.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libvorbis-0.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\libvorbisfile-3.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_mixer\lib\x64\SDL2_mixer.dll
+  7 Datei(en) kopiert
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_ttf\lib\x64\libfreetype-6.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_ttf\lib\x64\SDL2_ttf.dll
+  C:\Users\m2vh\Documents\SAE\SAEStudyWeek\WoF_Prototype\Project\Library\SDL2_ttf\lib\x64\zlib1.dll
+  3 Datei(en) kopiert

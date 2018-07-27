@@ -7,7 +7,8 @@ enum ECollisionType
 {
 	NONE,
 	MOVE,
-	WALL
+	WALL,
+	ITEM
 };
 
 /// <summary>
