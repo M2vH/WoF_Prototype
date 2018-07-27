@@ -84,7 +84,7 @@ void GBackgroundSlide::Update(float _deltaTime)
 
 void GBackgroundSlide::Render(CRenderer * _pRenderer)
 {	
-	m_pLeftImage->Render(_pRenderer);
+	// m_pLeftImage->Render(_pRenderer);
 	m_pCenterImage->Render(_pRenderer);
-	m_pRightImage->Render(_pRenderer);
+	// m_pRightImage->Render(_pRenderer);
 }
