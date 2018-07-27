@@ -19,6 +19,7 @@ GFuryItem::GFuryItem(SVector2 _pos,
 // update every frame
 void GFuryItem::Update(float _deltaTime)
 {
+	CMoveObject::Update(_deltaTime);
 }
 
 // render every frame
