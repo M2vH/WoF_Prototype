@@ -3,7 +3,10 @@
 #include "World.h"
 #include "ContentManagement.h"
 #include "TexturedObjectSlide.h"
+#include "BackgroundStatic.h"
 #include "Player.h"
+#include "Renderer.h"
+#include "BackgroundSlide.h"
 #pragma endregion
 
 #pragma region public override function
@@ -15,16 +18,35 @@ void GMainScene::Init()
 	//m_pWorld->Init();
 
 	// create a screen background from TexturedObject
+	// ToDo (m2vh) use this for displaying the moon
 	CTexturedObject* pBackground = new CTexturedObject(
 		SVector2(0,0),
-		SVector2(SCREEN_WIDTH+48, SCREEN_HEIGHT+48),
+		SVector2(1280, 720),
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_backg_L2_1280x720.png"
 	);
-	// keep background in camera;
 	pBackground->SetInWorld(false);
 
+	// create a moveobject as background
+	GBackgroundStatic* pBackgroundStatic = new GBackgroundStatic(
+		SVector2(-20,0),
+		SVector2(1280,720),
+		CEngine::Get()->GetRenderer(),
+		"Texture/World/T_backg_L2_1280x720.png"
+	);
+	// set values of object
+	pBackgroundStatic->DeactivateGravity();
+	//pBackgroundStatic->SetInWorld(false);
+	pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
+
+	// ToDo (m2vh) BackgroundSlide
+	// create a BackgroundSlide
+	GBackgroundSlide* pBackgroundSlide = new GBackgroundSlide(
+		"Texture/World/T_backg_L2_1280x720.png"
+	);
+
 	// create a worldspace background
+	// as TexturedObject
 	CTexturedObject* pBackgroundWorld = new CTexturedObject(
 		SVector2(0, 100),	// pos of object in World
 		SVector2(3840, 720),	// size; if 0,0 will be set to texture size
@@ -32,13 +54,9 @@ void GMainScene::Init()
 		"Texture/World/T_world_tree_3840x720.png"
 	);
 	
-	// create Paulchen Panther textured object
-	CTexturedObjectSlide* pObj = new CTexturedObjectSlide(SVector2(100, 45), SVector2(32, 32),
-		CEngine::Get()->GetRenderer(), "PP.png");
-
 	// add a player
 	GPlayer * pPlayer = new GPlayer(
-		SVector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
+		SVector2(WORLD_WIDTH / 2, WORLD_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
 		"Texture/Character/Player/T_Samus_Idle.png");
@@ -57,12 +75,10 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
 
 	// add background to SceneObject-List
-	CEngine::Get()->GetCM()->AddSceneObject(pBackground);
-
-
-	// PersistantObjects
-	// add object to cm
-	CEngine::Get()->GetCM()->AddPersistantObject(pObj);
+	// CEngine::Get()->GetCM()->AddSceneObject(pBackground);
+	
+	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
+	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);

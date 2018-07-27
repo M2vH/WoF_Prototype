@@ -14,6 +14,8 @@
 #define WORLD_BLOCK_WIDTH 48
 #define WORLD_BLOCK_HEIGHT 48
 #define GRAVITY_VALUE 9.81f
+#define WORLD_WIDTH 3840
+#define WORLD_HEIGHT 720
 #pragma endregion
 
 #pragma region function macro
@@ -22,4 +24,12 @@
 	std::cout << " Error: ";		\
 	std::cout << ERROR;				\
 	std::cout << std::endl;
+
+#define LOG_MESSAGE(TEXT, VALUE)	\
+	std::cout << ">> ";		\
+	std::cout << TEXT;		\
+	std::cout << ": ";		\
+	std::cout << VALUE;		\
+	std::cout << std::endl;
+
 #pragma endregion

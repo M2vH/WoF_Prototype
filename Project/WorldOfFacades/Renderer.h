@@ -42,6 +42,12 @@ public:
 	/// </summary>
 	/// <param name="_pos">position to set</param>
 	inline void SetCamera(SVector2 _pos) { m_camera = _pos; }
+
+	/// <summary>
+	/// get position of camera
+	/// </summary>
+	/// <param name="_pos">position to set</param>
+	inline SVector2 GetCamera() { return m_camera; }
 #pragma endregion
 
 #pragma region public function
