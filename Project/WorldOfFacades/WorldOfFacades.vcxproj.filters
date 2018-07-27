@@ -47,6 +47,15 @@
     <ClCompile Include="TexturedObjectSlide.cpp">
       <Filter>Engine\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryItem.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuryItem.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -99,6 +108,9 @@
     </Filter>
     <Filter Include="Engine\Time">
       <UniqueIdentifier>{867bee15-8b50-4c5d-a022-86394f6dce94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Inventory">
+      <UniqueIdentifier>{51faf33f-1305-455c-aaa8-f07e0cdc069e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +176,15 @@
     </ClInclude>
     <ClInclude Include="TexturedObjectSlide.h">
       <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Game\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryItem.h">
+      <Filter>Game\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="FuryItem.h">
+      <Filter>Game\Inventory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

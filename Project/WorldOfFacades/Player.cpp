@@ -35,6 +35,14 @@ void GPlayer::Update(float _deltaTime)
 	else
 		m_movement.X = 0.0f;
 
+	// To Do!
+	//// pick up item
+	//if (CInput::GetKey(SDL_SCANCODE_S))
+	//{
+	//	// add item to inventory list
+	//	
+	//}
+
 	// if key space is pressed this frame and jump not active and grounded
 	if (CInput::GetKeyDown(SDL_SCANCODE_SPACE) && !m_jump && m_grounded)
 	{
