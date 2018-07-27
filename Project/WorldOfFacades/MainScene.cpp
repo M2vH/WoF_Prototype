@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Renderer.h"
 #include "BackgroundSlide.h"
+#include "ForegroundSlide.h"
 #pragma endregion
 
 #pragma region public override function
@@ -40,6 +41,18 @@ void GMainScene::Init()
 	pBackgroundStatic->SetInWorld(false);
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 
+	// create a foreground object
+	GForegroundSlide* pForeground = new GForegroundSlide(
+		SVector2(0,450),
+		SVector2(3840 * 1.2,400),
+		CEngine::Get()->GetRenderer(),
+		"Texture/World/T_world_tree_2_3840x720.png"
+	);
+	pForeground->SetInWorld(true);
+	// todo: delete no fx
+	// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
+	
+	
 	// ToDo (m2vh) BackgroundSlide
 	// create a BackgroundSlide
 	// NOT WORKING
@@ -67,13 +80,37 @@ void GMainScene::Init()
 	pPlayer->SetSpeed(PLAYER_SPEED);
 	pPlayer->SetMirror(PLAYER_MIRROR);
 	pPlayer->SetColType(ECollisionType::MOVE);
-	
-	// pPlayer->ActivateGravity();
+
+	pPlayer->ActivateGravity();
+
+	// Add a ground to walk on;
+	GBackgroundStatic* pGround = new GBackgroundStatic(
+		SVector2(0,500),
+		SVector2(3840,220),
+		CEngine::Get()->GetRenderer(),
+		"Texture/World/T_backg_G1_1280x720.png"
+	);
+	pGround->SetColType(ECollisionType::WALL);
+	pGround->DeactivateGravity();
+	pGround->SetInWorld(true);
 
 #pragma region Adding objects to Lists
 					
-	// SceneObjects
-	// add worldbackground to SceneObject
+
+	//	//	PERSISTANT
+	//	THE FOREGROUND
+	CEngine::Get()->GetCM()->AddPersistantObject(pForeground);
+
+	// THE GROUND TO WALK ON
+	CEngine::Get()->GetCM()->AddPersistantObject(pGround);
+
+	// add player to persistant list
+	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
+
+	//	//	SceneObjects
+	//	// The Trees
+	//	add worldbackground to SceneObject
+	//  first in list, last to be rendered;
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
 
 	// add background to SceneObject-List
@@ -82,12 +119,9 @@ void GMainScene::Init()
 	// Sliding background NOT working
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
 	
+	//	//	The Stars
 	// adding a moveObject and dont move
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
-
-	// add player to persistant list
-	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
-
 
 #pragma endregion
 }

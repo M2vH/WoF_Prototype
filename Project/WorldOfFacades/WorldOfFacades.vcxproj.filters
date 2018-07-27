@@ -53,6 +53,7 @@
     <ClCompile Include="BackgroundSlide.cpp">
       <Filter>Game\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="ForegroundSlide.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -180,5 +181,6 @@
     <ClInclude Include="BackgroundSlide.h">
       <Filter>Game\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="ForegroundSlide.h" />
   </ItemGroup>
 </Project>

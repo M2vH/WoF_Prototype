@@ -18,6 +18,11 @@
 #define WORLD_HEIGHT 720
 #pragma endregion
 
+#pragma region m2vh
+#define FOREGROUND_DISTFACTOR 1.2
+#pragma endregion
+
+
 #pragma region function macro
 #define LOG_ERROR(TEXT, ERROR)		\
 	std::cout << TEXT;				\
