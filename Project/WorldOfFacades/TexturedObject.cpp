@@ -42,6 +42,6 @@ void CTexturedObject::Update(float _deltaTime)
 void CTexturedObject::Render(CRenderer * _pRenderer)
 {
 	// render texture
-	_pRenderer->RenderTexture(m_pTexture, m_rect, m_srcRect, m_mirror, m_angle);
+	_pRenderer->RenderTexture(m_pTexture, m_rect, m_srcRect, m_mirror, m_angle, m_inWorld);
 }
 #pragma endregion

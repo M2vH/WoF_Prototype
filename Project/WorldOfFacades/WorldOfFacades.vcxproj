@@ -177,10 +177,13 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CContentManagement.cpp" />
+    <ClCompile Include="FuryItem.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="InventoryItem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MoveObject.cpp" />
@@ -197,9 +200,12 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="ContentManagement.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Enum.h" />
+    <ClInclude Include="FuryItem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="InventoryItem.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
