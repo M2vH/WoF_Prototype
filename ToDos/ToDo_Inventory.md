@@ -48,7 +48,7 @@ Hat eine Liste InventarList;
 
 Inventar hat Position relativ zum Parent object;
 
-#### Überschreibt Update()
+### Überschreibt Update()
 
 Update() der Elternklasse
 
@@ -56,7 +56,7 @@ Abfragen der Zifferntasten:
 
     Löschen von Object an Position aus Liste
 
-#### Überschreiben der Render()
+### Überschreiben der Render()
 
 Rendert den Hintergrund;
 

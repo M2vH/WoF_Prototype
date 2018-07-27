@@ -47,6 +47,13 @@
     <ClCompile Include="TexturedObjectSlide.cpp">
       <Filter>Engine\Object</Filter>
     </ClCompile>
+    <ClCompile Include="BackgroundStatic.cpp">
+      <Filter>Game\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundSlide.cpp">
+      <Filter>Game\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ForegroundSlide.cpp" />
     <ClCompile Include="Inventory.cpp">
       <Filter>Game\Inventory</Filter>
     </ClCompile>
@@ -109,6 +116,8 @@
     <Filter Include="Engine\Time">
       <UniqueIdentifier>{867bee15-8b50-4c5d-a022-86394f6dce94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Objects">
+      <UniqueIdentifier>{a1c1375f-7697-48ce-b239-52f3db7bac87}</UniqueIdentifier>
     <Filter Include="Game\Inventory">
       <UniqueIdentifier>{51faf33f-1305-455c-aaa8-f07e0cdc069e}</UniqueIdentifier>
     </Filter>
@@ -177,6 +186,13 @@
     <ClInclude Include="TexturedObjectSlide.h">
       <Filter>Engine\Object</Filter>
     </ClInclude>
+    <ClInclude Include="BackgroundStatic.h">
+      <Filter>Game\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundSlide.h">
+      <Filter>Game\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ForegroundSlide.h" />
     <ClInclude Include="Inventory.h">
       <Filter>Game\Inventory</Filter>
     </ClInclude>

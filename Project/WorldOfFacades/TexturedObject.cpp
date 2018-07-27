@@ -36,6 +36,7 @@ void CTexturedObject::Update(float _deltaTime)
 	// set position of rect
 	m_rect.x = m_position.X;
 	m_rect.y = m_position.Y;
+
 }
 
 // render every frame

@@ -140,9 +140,9 @@ void GPlayer::Update(float _deltaTime)
 	/// TODO: DELETE
 	/// </summary>
 	// print player position
-	std::string s = "Position Y: ";
-	s += std::to_string(m_position.Y);
-	LOG_ERROR(s.c_str(), "" );
+	//std::string s = "Position Y: ";
+	//s += std::to_string(m_position.Y);
+	//LOG_ERROR(s.c_str(), "" );
 }
 
 // render every frame
