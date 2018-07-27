@@ -28,22 +28,24 @@ void GMainScene::Init()
 	pBackground->SetInWorld(false);
 
 	// create a moveobject as background
+	// but keep it static (dont move it)
 	GBackgroundStatic* pBackgroundStatic = new GBackgroundStatic(
-		SVector2(-20,0),
+		SVector2(0,0),
 		SVector2(1280,720),
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_backg_L2_1280x720.png"
 	);
 	// set values of object
 	pBackgroundStatic->DeactivateGravity();
-	//pBackgroundStatic->SetInWorld(false);
-	pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
+	pBackgroundStatic->SetInWorld(false);
+	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 
 	// ToDo (m2vh) BackgroundSlide
 	// create a BackgroundSlide
-	GBackgroundSlide* pBackgroundSlide = new GBackgroundSlide(
-		"Texture/World/T_backg_L2_1280x720.png"
-	);
+	// NOT WORKING
+	//GBackgroundSlide* pBackgroundSlide = new GBackgroundSlide(
+	//	"Texture/World/T_backg_L2_1280x720.png"
+	//);
 
 	// create a worldspace background
 	// as TexturedObject
@@ -77,8 +79,11 @@ void GMainScene::Init()
 	// add background to SceneObject-List
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackground);
 	
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
-	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
+	// Sliding background NOT working
+	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
+	
+	// adding a moveObject and dont move
+	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
