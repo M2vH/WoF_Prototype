@@ -54,6 +54,15 @@
       <Filter>Game\Objects</Filter>
     </ClCompile>
     <ClCompile Include="ForegroundSlide.cpp" />
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryItem.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="FuryItem.cpp">
+      <Filter>Game\Inventory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -109,6 +118,8 @@
     </Filter>
     <Filter Include="Game\Objects">
       <UniqueIdentifier>{a1c1375f-7697-48ce-b239-52f3db7bac87}</UniqueIdentifier>
+    <Filter Include="Game\Inventory">
+      <UniqueIdentifier>{51faf33f-1305-455c-aaa8-f07e0cdc069e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -182,5 +193,14 @@
       <Filter>Game\Objects</Filter>
     </ClInclude>
     <ClInclude Include="ForegroundSlide.h" />
+    <ClInclude Include="Inventory.h">
+      <Filter>Game\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryItem.h">
+      <Filter>Game\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="FuryItem.h">
+      <Filter>Game\Inventory</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,3 +9,13 @@ enum ECollisionType
 	MOVE,
 	WALL
 };
+
+/// <summary>
+/// emotion type enum
+/// </summary>
+enum EEmotionType 
+{
+	Fury,
+	Fear,
+	Sadness
+};
