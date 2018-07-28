@@ -1,6 +1,6 @@
-# World of Facades - Alles nur Fassade
+# Updating the project assets
 
-Updating the project assets
+Put some usefull links [here](./ReadMe.md)
 
 ## Description
 
