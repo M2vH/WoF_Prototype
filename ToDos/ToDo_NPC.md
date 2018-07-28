@@ -51,7 +51,7 @@ GNpcObject(_pos, _size, _pRenderer, _pFileName) : CMoveObject(_pos, _size, _pRen
 
 void GNpcObject::IncreaseState()
 {
-    if(! m_pState & DONE)
+    if( (m_pState & DONE) != DONE)  // State != DONE
         {
             m_pState << 1;
         }
