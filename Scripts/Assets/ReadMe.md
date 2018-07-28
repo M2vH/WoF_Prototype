@@ -9,10 +9,10 @@ We need a short script to copy new and changed files into the assets folder of t
 
 ## Workflow
 
-Run in folder of repository
-Take path/to/folder of Google Drive
-Copy newly created files and folder
-Copy modified files
+- Run in folder of repository
+- Take path/to/folder of Google Drive
+- Copy newly created files and folder
+- Copy modified files
 
 ## Requirements
 
