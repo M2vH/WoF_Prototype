@@ -14,6 +14,15 @@ We need a short script to copy new and changed files into the assets folder of t
 - Copy newly created files and folder
 - Copy modified files
 
+## Using PowerShell
+
+```
+$AssetDest = "$env:userprofile/path/to/project/assets"
+$AssetSrc = "$env:appdata/Google Drive/path/to/assets"
+
+xcopy $AssetSrc\*.png $AssetDest /E /D /Y
+```
+
 ## Requirements
 
 Google Drive installed on workstation
