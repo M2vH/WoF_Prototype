@@ -7,22 +7,43 @@ What happens when and the result
 Collision detection is player based, so if Player hits NPC the following will happen.
 
 ```txt
+// Collision Detection
+// Player meets NPC
 
-Collision Player/NPC == TRUE:
+Collision Player/NPC == TRUE
+    -> PlayerState = AT_NPC
+
+
+// Input Control
+Key "W" is pressed && PlayerState = AT_NPC
+    -> PlayerState = VISIT_NPC
+
+
+Collision Player/NPC == TRUE && PlayerState == VISIT_NPC:
     switch NPC.state
         case: NONE  
             -> display string hello;
-            -> setNPCState(VISITED)
+            -> setNPCState(VISITED);
+            -> break;
 
         case: VISITED  
             -> display string again;
             -> if (ITEM dropped)
                 -> setNPCState(DONE);
                 -> setWorldState(STATE << 1)
+            -> break;
 
         case: DONE
+            -> set state of corresponding Item to CONSUMED
             -> break;  
 
+// Collision Detection
+// Player verweigert Mission
+PlayerState == AT_NPC &&
+NPCState == VISITED && 
+// passendes Item wurde gefunden
+Inventory::List->contains(NPC.EmotionType)::ItemState == FOUND
+    -> WorldState << 1
 ```
 
 ## The NPC class
