@@ -5,7 +5,7 @@
 #pragma endregion
 
 #pragma region forward decleration
-class SRect;
+struct SRect;
 class CTexture;
 struct SDL_Window;
 struct SDL_Renderer;
