@@ -31,7 +31,7 @@ We use a Enum for the NPC states
 
 ```cpp
 // ENpcState Enumeration
-[flag]
+
 enum ENpcState {
     NONE        = 0,
     VISITED     = 1 << 0,
@@ -42,6 +42,7 @@ enum ENpcState {
 
 ```cpp
 // GNpcObject class
+
 class GNPCObject : public CMoveObject
 {
 
