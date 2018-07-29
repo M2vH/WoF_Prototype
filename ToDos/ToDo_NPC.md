@@ -10,18 +10,18 @@ Collision detection is player based, so if Player hits NPC the following will ha
 
 Collision Player/NPC == TRUE:
     switch NPC.state
-        case: NONE   
+        case: NONE  
             -> display string hello;
             -> setNPCState(VISITED)
 
-        case: VISITED 
+        case: VISITED  
             -> display string again;
             -> if (ITEM dropped)
                 -> setNPCState(DONE);
                 -> setWorldState(STATE << 1)
 
         case: DONE
-            -> break; 
+            -> break;  
 
 ```
 
