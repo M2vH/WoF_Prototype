@@ -148,7 +148,6 @@
     <ClInclude Include="InventoryItem.h">
       <Filter>Game\Items</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -214,8 +213,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="WorldOfFacades.rc" />
   </ItemGroup>
 </Project>
