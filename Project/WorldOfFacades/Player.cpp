@@ -86,8 +86,8 @@ void GPlayer::Update(float _deltaTime)
 
 		// next rect
 		SRect nextRect = m_rect;
-		nextRect.x = nextPos.X;
-		nextRect.y = nextPos.Y;
+		nextRect.x = (int)nextPos.X;
+		nextRect.y = (int)nextPos.Y;
 
 		// through all scene objects
 		for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
@@ -135,7 +135,7 @@ void GPlayer::Update(float _deltaTime)
 		if (moveable)
 		{
 			m_position.Y -= PLAYER_JUMP_FORCE * _deltaTime;
-			m_rect.y = m_position.Y;
+			m_rect.y = (int)m_position.Y;
 		}
 	}
 

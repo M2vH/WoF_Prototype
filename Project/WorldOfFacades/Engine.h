@@ -5,8 +5,8 @@
 #pragma endregion
 
 #pragma region forward decleration
-class SDL_Window;
-class SDL_Surface;
+struct SDL_Window;
+struct SDL_Surface;
 class CRenderer;
 class CScene;
 class CContentManagement;
@@ -132,7 +132,7 @@ private:
 	/// time
 	/// </summary>
 	CTime* m_pTime;
-#pragma enregion
+#pragma endregion
 
 #pragma region private function
 	/// <summary>

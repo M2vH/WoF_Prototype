@@ -1,6 +1,7 @@
 #pragma once
 #pragma region project include
 #include "MoveObject.h"  
+#include "EnumEmotionType.h"
 #pragma endregion
 
 /// <summary>

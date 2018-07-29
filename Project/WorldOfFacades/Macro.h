@@ -19,7 +19,7 @@
 #pragma endregion
 
 #pragma region m2vh
-#define FOREGROUND_DISTFACTOR 1.2
+#define FOREGROUND_DISTFACTOR 1.2f
 #pragma endregion
 
 

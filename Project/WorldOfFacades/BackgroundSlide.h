@@ -10,7 +10,7 @@ public:
 	/// <summary>
 	/// constructor
 	/// </summary>
-	/// <param name="_filePath">path/to/file<param>
+	/// <param name="_filePath">pathToFile<param>
 	GBackgroundSlide(const char* _filePath);
 
 

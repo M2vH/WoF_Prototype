@@ -205,9 +205,12 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="ContentManagement.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Enum.h" />
+    <ClInclude Include="EnumEmotionType.h" />
+    <ClInclude Include="EnumItemState.h" />
     <ClInclude Include="ForegroundSlide.h" />
     <ClInclude Include="FuryItem.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="EnumPlayerState.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
@@ -215,6 +218,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
+    <ClInclude Include="EnumNpcState.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Physic.h" />
     <ClInclude Include="Player.h" />

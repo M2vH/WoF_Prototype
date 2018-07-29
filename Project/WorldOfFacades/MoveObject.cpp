@@ -28,14 +28,14 @@ void CMoveObject::Update(float _deltaTime)
 	{
 		nextPos.X = 700;
 	}
-	nextRect.x = nextPos.X;
+	nextRect.x = (int)nextPos.X;
 
 	if (nextPos.X > 3000)
 	{
 		nextPos.X = 3000;
 	}
 
-	nextRect.y = nextPos.Y;
+	nextRect.y = (int)nextPos.Y;
 
 	// through all scene objects
 	// ToDo: Copy persistant check
@@ -129,8 +129,8 @@ void CMoveObject::Update(float _deltaTime)
 		m_position = nextPos;
 
 		// set position of rect
-		m_rect.x = m_position.X;
-		m_rect.y = m_position.Y;
+		m_rect.x = (int)m_position.X;
+		m_rect.y = (int)m_position.Y;
 	}
 
 	// if no gravity return
@@ -144,7 +144,7 @@ void CMoveObject::Update(float _deltaTime)
 	nextRect = m_rect;
 
 	// set y value
-	nextRect.y += GRAVITY_VALUE * m_fallTime * m_fallTime + 1;
+	nextRect.y += (int)(GRAVITY_VALUE * m_fallTime * m_fallTime + 1);
 
 	// through all scene objects
 	for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
@@ -192,7 +192,7 @@ void CMoveObject::Update(float _deltaTime)
 	if (moveable)
 	{
 		m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
-		m_rect.y = m_position.Y;
+		m_rect.y = (int)m_position.Y;
 		m_grounded = false;
 		m_fallTime += _deltaTime;
 	}

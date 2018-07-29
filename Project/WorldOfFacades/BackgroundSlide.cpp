@@ -76,7 +76,7 @@ void GBackgroundSlide::Update(float _deltaTime)
 	
 	// let rotate the move
 	m_ResetPosition.X += move.X;
-	m_ResetPosition.X = (int)(m_ResetPosition.X) % 1280;
+	m_ResetPosition.X = (float)((int)(m_ResetPosition.X) % 1280);
 
 	m_pLeftImage->SetPosition(SVector2(m_ResetPosition.X -m_Size.X, 0));
 	m_pCenterImage->SetPosition(SVector2(m_ResetPosition.X,0));
