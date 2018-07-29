@@ -16,7 +16,7 @@ enum ECollisionType
 /// </summary>
 enum EEmotionType 
 {
-	Fury,
-	Fear,
-	Sadness
+	FURY,
+	FEAR,
+	SAD
 };
