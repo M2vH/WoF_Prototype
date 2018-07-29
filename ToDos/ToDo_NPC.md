@@ -15,7 +15,7 @@ Collision Player/NPC == TRUE
 
 
 // Input Control
-Key "W" is pressed && PlayerState = AT_NPC
+Key "W" is pressed && PlayerState == AT_NPC
     -> PlayerState = VISIT_NPC
 
 
@@ -43,6 +43,9 @@ PlayerState == AT_NPC &&
 NPCState == VISITED && 
 // passendes Item wurde gefunden
 Inventory::List->contains(NPC.EmotionType)::ItemState == FOUND
+    // world is getting darker
+    // and barriers are spawned
+    -> SpawnBarriers(EmotionType)
     -> WorldState << 1
 ```
 
