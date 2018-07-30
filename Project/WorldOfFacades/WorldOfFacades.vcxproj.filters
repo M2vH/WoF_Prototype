@@ -65,7 +65,12 @@
     <ClCompile Include="InventoryItem.cpp">
       <Filter>Game\Items</Filter>
     </ClCompile>
-    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="Npc.cpp">
+      <Filter>Game\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimObject.cpp">
+      <Filter>Game\AnimatedObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -161,7 +166,12 @@
     <ClInclude Include="EnumEmotionType.h">
       <Filter>Game\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Npc.h" />
+    <ClInclude Include="Npc.h">
+      <Filter>Game\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimObject.h">
+      <Filter>Game\AnimatedObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -226,6 +236,9 @@
     </Filter>
     <Filter Include="Game\NPC">
       <UniqueIdentifier>{05723641-87a8-4fc1-a624-34f01dca273b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\AnimatedObjects">
+      <UniqueIdentifier>{ee1b214d-7f43-463e-aafd-3ac94b069359}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

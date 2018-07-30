@@ -132,6 +132,9 @@ public:
 	/// </summary>
 	/// <returns>texture</returns>
 	inline CTexture* GetTexture() { return m_pTexture; }
+
+	inline void SetTexture(CTexture* _newTexture) { m_pTexture = _newTexture; }
+
 #pragma endregion
 
 protected:

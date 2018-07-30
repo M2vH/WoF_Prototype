@@ -132,6 +132,8 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     </PostBuildEvent>
     <Xdcmake>
       <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+      <OutputFile>
+      </OutputFile>
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -179,6 +181,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimObject.cpp" />
     <ClCompile Include="BackgroundSlide.cpp" />
     <ClCompile Include="BackgroundStatic.cpp" />
     <ClCompile Include="CContentManagement.cpp" />
@@ -204,6 +207,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimObject.h" />
     <ClInclude Include="BackgroundSlide.h" />
     <ClInclude Include="BackgroundStatic.h" />
     <ClInclude Include="ContentManagement.h" />

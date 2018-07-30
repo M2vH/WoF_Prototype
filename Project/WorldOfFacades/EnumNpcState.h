@@ -5,8 +5,9 @@
 /// </summary>
 enum ENPCState
 {
-	NONE = 0,
-	VISITED = 1 << 0,
-	DONE = 1 << 1
+	// NONE = 0,
+	WAITING = 1 << 0,
+	VISITED = 1 << 1,
+	DONE = 1 << 2
 };
 

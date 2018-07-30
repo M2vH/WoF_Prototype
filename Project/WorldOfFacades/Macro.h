@@ -6,8 +6,8 @@
 #define PLAYER_SPEED 500.0f
 #define PLAYER_JUMP_FORCE 500.0f
 #define PLAYER_JUMP_TIME 0.25f
-#define PLAYER_WIDTH 68
-#define PLAYER_HEIGHT 92
+#define PLAYER_WIDTH 40
+#define PLAYER_HEIGHT 120
 #define PLAYER_MIRROR SVector2(1.0f, 0.0f)
 #define WORLD_BLOCK_ATLAS_WIDTH 26
 #define WORLD_BLOCK_ATLAS_HEIGHT 26
@@ -20,6 +20,9 @@
 
 #pragma region m2vh
 #define FOREGROUND_DISTFACTOR 1.2f
+#define GROUND_POSITION 500	// Y-Position of top border
+#define NPC_HEIGHT 128
+#define NPC_WIDTH 128
 #pragma endregion
 
 
