@@ -193,6 +193,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MoveObject.cpp" />
+    <ClCompile Include="Npc.cpp" />
     <ClCompile Include="Physic.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -222,6 +223,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
     <ClInclude Include="EnumNpcState.h" />
+    <ClInclude Include="Npc.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Physic.h" />
     <ClInclude Include="Player.h" />

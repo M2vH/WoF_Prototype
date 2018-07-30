@@ -9,6 +9,8 @@ enum ECollisionType
 	MOVE,	//
 	WALL,
 	ITEM,
-	NPC		
+	NPC,
+	DOOR,	// Collide with door object
+	CAVE	// Collide with cave object
 };
 
