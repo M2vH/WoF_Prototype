@@ -130,6 +130,9 @@ xcopy "$(SolutionDir)Library\SDL2_image\lib\$(PlatformShortName)\*.dll" "$(Solut
 xcopy "$(SolutionDir)Library\SDL2_mixer\lib\$(PlatformShortName)\*.dll" "$(SolutionDir)Build\bin\$(PlatformShortName)\$(Configuration)" /Y /I
 xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(SolutionDir)Build\bin\$(PlatformShortName)\$(Configuration)" /Y /I</Command>
     </PostBuildEvent>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
