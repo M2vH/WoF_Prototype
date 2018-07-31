@@ -1,15 +1,13 @@
 #pragma once
-#pragma region project include
+#pragma region project includes
 #include "MoveObject.h"  
-#include "EnumEmotionType.h"
+#include "EnumItemState.h"
 #pragma endregion
 
-/// <summary>
-/// inventoryItem class
-/// </summary>
-class GInventoryItem :	public CMoveObject
+class GInventoryItems :
+	public CMoveObject
 {
-public:
+public:	
 #pragma region constructor
 	/// <summary>
 	/// constructor
@@ -18,13 +16,25 @@ public:
 	/// <param name="_size">width and height of rect</param>
 	/// <param name="_pRenderer">renderer</param>
 	/// <param name="_pFileName">file path name (relative)</param>
-	GInventoryItem(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
-		const char* _pFileName);
+	GInventoryItems(
+		SVector2 _pos, 
+		SVector2 _size, 
+		CRenderer* _pRenderer,
+		const char* _pFileName
+		) : CMoveObject(
+				_pos, 
+				_size, 
+				_pRenderer, 
+				_pFileName) 
+	{
+		m_inWorld = true;
+		m_colType = ITEM;
+	}
 
 	/// <summary>
 	/// destructor
 	/// </summary>
-	~GInventoryItem();
+	~GInventoryItems() {};
 #pragma endregion
 
 #pragma region public override function
@@ -42,42 +52,27 @@ public:
 #pragma endregion
 
 #pragma region public inline function
+	// ToDo (m2vh) make Get and Set for private vars
+	// GetItemState
 	/// <summary>
-	/// get emotion type of object
+	/// Get the state the item is in.
 	/// </summary>
-	/// <returns>collision type</returns>
-	inline EEmotionType GetEmoType() { return m_emoType; }
+	/// <returns>the state the item is in</returns>
+	EItemState GetItemState() { return m_ItemState; }
 
+	// SetItemState
 	/// <summary>
-	/// set emotion type of object
+	/// Set the state
 	/// </summary>
-	/// <param name="_colType">emotion type</param>
-	void SetColType(EEmotionType _emoType) { m_emoType = _emoType; }
+	/// <param name="_state">the new state</param>
+	void SetItemState(EItemState _state) { m_ItemState = _state; }
+#pragma endregion
+#pragma region private primitive variables
+
+	EItemState m_ItemState = EItemState::ACTIVE;
+
 #pragma endregion
 
-
-protected:
-#pragma region protected primitive variables
-	/// <summary>
-	/// emotion type
-	/// </summary>
-	EEmotionType m_emoType;
-
-	/// <summary>
-	/// fury enum
-	/// </summary>
-	EEmotionType m_fury = FURY;
-
-	/// <summary>
-	/// fear enum
-	/// </summary>
-	EEmotionType m_fear = FEAR;
-
-	/// <summary>
-	/// sadness enum
-	/// </summary>
-	EEmotionType m_sadness = SAD;
-#pragma endregion
 
 };
 

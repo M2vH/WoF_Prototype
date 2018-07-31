@@ -10,7 +10,7 @@
 #include "ForegroundSlide.h"
 #include "Inventory.h"
 #include "TexturedObject.h"
-#include "FuryItem.h"
+#include "InventoryItems.h"
 #include "Npc.h"
 #pragma endregion
 
@@ -150,7 +150,7 @@ void GMainScene::Init()
 
 #pragma region FuryItem
 	// create FuryItem 
-	GFuryItem* pFuryItem = new GFuryItem(SVector2(900, 500 - WORLD_BLOCK_HEIGHT),
+	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(900, 500 - WORLD_BLOCK_HEIGHT),
 		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Inventory/Fury_500x500.png");
