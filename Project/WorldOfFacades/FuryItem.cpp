@@ -2,17 +2,14 @@
 #include "FuryItem.h"  
 #pragma endregion
 
-GFuryItem::GFuryItem(SVector2 _pos,
-	SVector2 _size,
-	CRenderer * _pRenderer,
-	const char * _pFileName)
-	: CMoveObject(_pos, _size, _pRenderer, _pFileName)
-{
-	// set object in world
-	m_inWorld = true;
-
-	m_colType = ITEM;
-}
+//GFuryItem::GFuryItem(SVector2 _pos,
+//	SVector2 _size,
+//	CRenderer * _pRenderer,
+//	const char * _pFileName)
+//	: CMoveObject(_pos, _size, _pRenderer, _pFileName)
+//{
+//	// set object in world
+//}
 
 
 #pragma region public override function

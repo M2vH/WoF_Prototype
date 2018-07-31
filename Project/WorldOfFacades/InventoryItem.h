@@ -1,6 +1,7 @@
 #pragma once
 #pragma region project include
 #include "MoveObject.h"  
+#include "EnumEmotionType.h"
 #pragma endregion
 
 /// <summary>
@@ -65,17 +66,17 @@ protected:
 	/// <summary>
 	/// fury enum
 	/// </summary>
-	EEmotionType m_fury = Fury;
+	EEmotionType m_fury = FURY;
 
 	/// <summary>
 	/// fear enum
 	/// </summary>
-	EEmotionType m_fear = Fear;
+	EEmotionType m_fear = FEAR;
 
 	/// <summary>
 	/// sadness enum
 	/// </summary>
-	EEmotionType m_sadness = Sadness;
+	EEmotionType m_sadness = SAD;
 #pragma endregion
 
 };

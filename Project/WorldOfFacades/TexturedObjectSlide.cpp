@@ -49,7 +49,7 @@ void CTexturedObjectSlide::Update(float _deltaTime)
 	//	must come back from the right;
 
 	m_position.X += 1;
-	m_position.X = (int)(m_position.X) % SCREEN_WIDTH;
+	m_position.X = (float)((int)(m_position.X) % SCREEN_WIDTH);
 	//m_position.Y = 100;
 
 	// set position of rect

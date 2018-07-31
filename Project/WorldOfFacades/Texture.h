@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma region forward decleration
-class SDL_Texture;
+struct SDL_Texture;
 class CRenderer;
 #pragma endregion
 

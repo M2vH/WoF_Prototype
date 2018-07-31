@@ -69,8 +69,12 @@ void GWorld::Init()
 
 		// create textured object
 		CTexturedObject* pObj = new CTexturedObject(
-			SVector2((width - 1) * WORLD_BLOCK_WIDTH, (height - 1) * WORLD_BLOCK_HEIGHT),
-			SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
+			SVector2(
+				(float)((width - 1) * WORLD_BLOCK_WIDTH), 
+				(float)((height - 1) * WORLD_BLOCK_HEIGHT)),
+			SVector2(
+				(float)WORLD_BLOCK_WIDTH, 
+				(float)WORLD_BLOCK_HEIGHT),
 			CEngine::Get()->GetRenderer(),
 			"Texture/World/T_WorldSide.png"
 		);
@@ -115,7 +119,9 @@ void GWorld::Init()
 		{
 			// create textured object
 			GPlayer * pPlayer = new GPlayer(
-				SVector2((width - 1) * WORLD_BLOCK_WIDTH, (height - 1) * WORLD_BLOCK_HEIGHT - PLAYER_HEIGHT), 
+				SVector2(
+					(float)((width - 1) * WORLD_BLOCK_WIDTH), 
+					(float)((height - 1) * WORLD_BLOCK_HEIGHT - PLAYER_HEIGHT)), 
 				SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),
 				CEngine::Get()->GetRenderer(), 
 				"Texture/Character/Player/T_Samus_Idle.png");

@@ -130,6 +130,11 @@ xcopy "$(SolutionDir)Library\SDL2_image\lib\$(PlatformShortName)\*.dll" "$(Solut
 xcopy "$(SolutionDir)Library\SDL2_mixer\lib\$(PlatformShortName)\*.dll" "$(SolutionDir)Build\bin\$(PlatformShortName)\$(Configuration)" /Y /I
 xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(SolutionDir)Build\bin\$(PlatformShortName)\$(Configuration)" /Y /I</Command>
     </PostBuildEvent>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+      <OutputFile>
+      </OutputFile>
+    </Xdcmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -176,6 +181,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimObject.cpp" />
     <ClCompile Include="BackgroundSlide.cpp" />
     <ClCompile Include="BackgroundStatic.cpp" />
     <ClCompile Include="CContentManagement.cpp" />
@@ -190,6 +196,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MoveObject.cpp" />
+    <ClCompile Include="Npc.cpp" />
     <ClCompile Include="Physic.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -200,14 +207,18 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimObject.h" />
     <ClInclude Include="BackgroundSlide.h" />
     <ClInclude Include="BackgroundStatic.h" />
     <ClInclude Include="ContentManagement.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Enum.h" />
+    <ClInclude Include="EnumEmotionType.h" />
+    <ClInclude Include="EnumItemState.h" />
     <ClInclude Include="ForegroundSlide.h" />
     <ClInclude Include="FuryItem.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="EnumPlayerState.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
@@ -215,6 +226,8 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
+    <ClInclude Include="EnumNpcState.h" />
+    <ClInclude Include="Npc.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Physic.h" />
     <ClInclude Include="Player.h" />
@@ -227,6 +240,9 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Time.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -36,10 +36,10 @@ public:
 	CTexturedObject(SVector2 _pos, SVector2 _size) : CObject(_pos)
 	{
 		m_position = _pos;
-		m_rect.x = _pos.X;
-		m_rect.y = _pos.Y;
-		m_rect.w = _size.X;
-		m_rect.h = _size.Y;
+		m_rect.x = (int)_pos.X;
+		m_rect.y = (int)_pos.Y;
+		m_rect.w = (int)_size.X;
+		m_rect.h = (int)_size.Y;
 	}
 
 	/// <summary>
@@ -132,6 +132,9 @@ public:
 	/// </summary>
 	/// <returns>texture</returns>
 	inline CTexture* GetTexture() { return m_pTexture; }
+
+	inline void SetTexture(CTexture* _newTexture) { m_pTexture = _newTexture; }
+
 #pragma endregion
 
 protected:

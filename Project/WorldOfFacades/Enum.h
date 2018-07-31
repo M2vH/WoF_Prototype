@@ -6,17 +6,11 @@
 enum ECollisionType
 {
 	NONE,
-	MOVE,
+	MOVE,	//
 	WALL,
-	ITEM
+	ITEM,
+	NPC,
+	DOOR,	// Collide with door object
+	CAVE	// Collide with cave object
 };
 
-/// <summary>
-/// emotion type enum
-/// </summary>
-enum EEmotionType 
-{
-	Fury,
-	Fear,
-	Sadness
-};

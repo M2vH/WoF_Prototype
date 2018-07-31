@@ -92,8 +92,8 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	if (_inWorld)
 	{
 		// add camera offset to destination rect
-		destRect.x -= m_camera.X - SCREEN_WIDTH / 2;
-		destRect.y -= m_camera.Y - SCREEN_HEIGHT / 2;
+		destRect.x -= (int)(m_camera.X - SCREEN_WIDTH / 2);
+		destRect.y -= (int)(m_camera.Y - SCREEN_HEIGHT / 2);
 	}
 
 	// create rotation point

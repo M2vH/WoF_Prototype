@@ -2,20 +2,23 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Engine.cpp">
-      <Filter>Engine\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="MainScene.cpp">
-      <Filter>Game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Helper.cpp">
-      <Filter>Engine\Helper</Filter>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\Texture</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Engine\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Engine\Texture</Filter>
+    <ClCompile Include="TexturedObject.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedObjectSlide.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Engine\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="CContentManagement.cpp">
       <Filter>Engine\ContentManagement</Filter>
@@ -23,184 +26,222 @@
     <ClCompile Include="Game.cpp">
       <Filter>Game\Core</Filter>
     </ClCompile>
-    <ClCompile Include="TexturedObject.cpp">
-      <Filter>Engine\Object</Filter>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
-      <Filter>Engine\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="MoveObject.cpp">
-      <Filter>Engine\Object</Filter>
+      <Filter>Game\Utility\Input</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Game\Core\Time</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>Game\World</Filter>
     </ClCompile>
     <ClCompile Include="Physic.cpp">
-      <Filter>Engine\Physic</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Engine\Time</Filter>
-    </ClCompile>
-    <ClCompile Include="TexturedObjectSlide.cpp">
-      <Filter>Engine\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="BackgroundStatic.cpp">
-      <Filter>Game\Objects</Filter>
+      <Filter>Game\Core\Physics</Filter>
     </ClCompile>
     <ClCompile Include="BackgroundSlide.cpp">
-      <Filter>Game\Objects</Filter>
+      <Filter>Game\World\Backgrounds</Filter>
     </ClCompile>
-    <ClCompile Include="ForegroundSlide.cpp" />
-    <ClCompile Include="Inventory.cpp">
-      <Filter>Game\Inventory</Filter>
+    <ClCompile Include="BackgroundStatic.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
     </ClCompile>
-    <ClCompile Include="InventoryItem.cpp">
-      <Filter>Game\Inventory</Filter>
+    <ClCompile Include="ForegroundSlide.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveObject.cpp">
+      <Filter>Engine\Object</Filter>
     </ClCompile>
     <ClCompile Include="FuryItem.cpp">
-      <Filter>Game\Inventory</Filter>
+      <Filter>Game\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Game\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryItem.cpp">
+      <Filter>Game\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>Game\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimObject.cpp">
+      <Filter>Game\AnimatedObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Engine">
-      <UniqueIdentifier>{11f20be1-02dc-471b-92d1-13e0a3dbedac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game">
-      <UniqueIdentifier>{676359f6-8893-4485-9547-9d4b461d323d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Core">
-      <UniqueIdentifier>{c06bb5be-6954-4be1-8f73-332cfb6c727b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Scene">
-      <UniqueIdentifier>{16fd64e4-ce4a-4c15-a946-49080e68998e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Scene">
-      <UniqueIdentifier>{e6b5a78a-73ad-4de3-ac1b-678ae96f7d9e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Helper">
-      <UniqueIdentifier>{25865dc1-adaf-43c9-888e-52b9ea9509ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Utility">
-      <UniqueIdentifier>{dac8ac6e-55d1-458a-bde9-dcd232a807dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Renderer">
-      <UniqueIdentifier>{02fc611c-2680-47ae-a366-08ef1c28069c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Texture">
-      <UniqueIdentifier>{a9350118-f0c3-41c3-8b8c-8a548a0b2df2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\ContentManagement">
-      <UniqueIdentifier>{a5a38019-80c4-4c16-aa0b-ff01012afd66}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Object">
-      <UniqueIdentifier>{e8934eff-708c-4280-a30b-ddda47208cff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Core">
-      <UniqueIdentifier>{0a01c55e-0121-469e-91dc-c986a4f40af2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Input">
-      <UniqueIdentifier>{8cc52135-e610-4eb6-87c4-7db8c7e95627}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Player">
-      <UniqueIdentifier>{f8fddc9d-2397-4ad5-8dae-21dd3d36b48d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\World">
-      <UniqueIdentifier>{2ccc4030-49af-471d-8ec7-d65be9f331c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Physic">
-      <UniqueIdentifier>{25468902-10eb-451a-9001-a0e1a8193d0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Time">
-      <UniqueIdentifier>{867bee15-8b50-4c5d-a022-86394f6dce94}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Objects">
-      <UniqueIdentifier>{a1c1375f-7697-48ce-b239-52f3db7bac87}</UniqueIdentifier>
-    <Filter Include="Game\Inventory">
-      <UniqueIdentifier>{51faf33f-1305-455c-aaa8-f07e0cdc069e}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Engine.h">
-      <Filter>Engine\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Engine\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="MainScene.h">
-      <Filter>Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>Engine\Helper</Filter>
+    <ClInclude Include="Vector2.h">
+      <Filter>Engine\Utility</Filter>
     </ClInclude>
     <ClInclude Include="Rect.h">
       <Filter>Engine\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Engine\Utility</Filter>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
       <Filter>Engine\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Engine\Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="ContentManagement.h">
-      <Filter>Engine\ContentManagement</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Engine\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Game\Core</Filter>
     </ClInclude>
     <ClInclude Include="TexturedObject.h">
       <Filter>Engine\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Engine\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveObject.h">
+    <ClInclude Include="TexturedObjectSlide.h">
       <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Engine\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentManagement.h">
+      <Filter>Engine\ContentManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Game\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Game\Utility\Input</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Game\Core\Time</Filter>
+    </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Game\World</Filter>
     </ClInclude>
-    <ClInclude Include="Macro.h">
-      <Filter>Engine\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>Engine\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Physic.h">
-      <Filter>Engine\Physic</Filter>
-    </ClInclude>
-    <ClInclude Include="Time.h">
-      <Filter>Engine\Time</Filter>
-    </ClInclude>
-    <ClInclude Include="TexturedObjectSlide.h">
-      <Filter>Engine\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="BackgroundStatic.h">
-      <Filter>Game\Objects</Filter>
+      <Filter>Game\Core\Physics</Filter>
     </ClInclude>
     <ClInclude Include="BackgroundSlide.h">
-      <Filter>Game\Objects</Filter>
+      <Filter>Game\World\Backgrounds</Filter>
     </ClInclude>
-    <ClInclude Include="ForegroundSlide.h" />
-    <ClInclude Include="Inventory.h">
-      <Filter>Game\Inventory</Filter>
+    <ClInclude Include="BackgroundStatic.h">
+      <Filter>Game\World\Backgrounds</Filter>
     </ClInclude>
-    <ClInclude Include="InventoryItem.h">
-      <Filter>Game\Inventory</Filter>
+    <ClInclude Include="ForegroundSlide.h">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveObject.h">
+      <Filter>Engine\Object</Filter>
     </ClInclude>
     <ClInclude Include="FuryItem.h">
-      <Filter>Game\Inventory</Filter>
+      <Filter>Game\Items</Filter>
     </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Game\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryItem.h">
+      <Filter>Game\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumNpcState.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumPlayerState.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumItemState.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumEmotionType.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>Game\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimObject.h">
+      <Filter>Game\AnimatedObjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{c8e3e450-75db-4885-a517-cf56accfeede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ContentManagement">
+      <UniqueIdentifier>{90fe21a6-47eb-4dd0-a888-d40759494f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Core">
+      <UniqueIdentifier>{2e078edb-c6a5-4f35-94a1-77892a0f967a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Helper">
+      <UniqueIdentifier>{9d7ad162-88b8-4c55-84f5-0a5aff3dc9a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Object">
+      <UniqueIdentifier>{bf3f4e35-85f7-47bf-adab-30d6722fee5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Renderer">
+      <UniqueIdentifier>{2cab6ff9-b5ac-4182-b057-8187e8688ad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{50bd80bf-52f9-4b42-bdbb-26da35420cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Texture">
+      <UniqueIdentifier>{5b166e0c-9331-4bbb-aadc-1114cf1fe076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Utility">
+      <UniqueIdentifier>{6a7eb521-d7d5-4a15-afcc-b61c7bc3a8a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{3a2464e3-6ce8-4324-b4f2-274c6316074f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core">
+      <UniqueIdentifier>{85e0dad8-297c-4176-a3cc-d0f6dc0c6d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{2ab73f8e-7ac1-4b4b-b594-f5f265b46455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Utility">
+      <UniqueIdentifier>{88438f3b-ce2f-4a83-8442-576018f576a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Utility\Input">
+      <UniqueIdentifier>{68b541b7-0f15-474d-b541-74497e38bf5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{a8d6a4bc-88b9-4953-8ef3-a9b55a90cbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core\Time">
+      <UniqueIdentifier>{f7badfc9-1d8d-4ece-8119-6ee622356cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World">
+      <UniqueIdentifier>{a17d9ba8-8a07-4a3a-af64-ae73bdccd58c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Core\Physics">
+      <UniqueIdentifier>{807a5dd9-197e-4b51-8725-bc07ae64d5b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World\Backgrounds">
+      <UniqueIdentifier>{d1370ada-e603-44c1-a5b2-460876dd9f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Items">
+      <UniqueIdentifier>{ea2056ac-8407-418b-8f44-6b3abce35117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\NPC">
+      <UniqueIdentifier>{05723641-87a8-4fc1-a624-34f01dca273b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\AnimatedObjects">
+      <UniqueIdentifier>{ee1b214d-7f43-463e-aafd-3ac94b069359}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

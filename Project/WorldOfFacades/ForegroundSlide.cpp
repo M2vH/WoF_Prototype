@@ -53,11 +53,11 @@ void GForegroundSlide::Update(float _deltaTime)
 		m_position.X = 0;
 	}
 	
-	m_rect.x = m_position.X;
+	m_rect.x = (int)m_position.X;
 	// todo: (m2vh) delete
 	//	LOG_MESSAGE("Foreground: ", std::to_string(m_position.X));
 
-	m_position.X = m_rect.x;
+	m_position.X = (float)m_rect.x;
 	
 
 	//CMoveObject::Update(_deltaTime);

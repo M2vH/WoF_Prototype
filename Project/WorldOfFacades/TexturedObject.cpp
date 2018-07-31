@@ -11,10 +11,10 @@ CTexturedObject::CTexturedObject(SVector2 _pos, SVector2 _size, CRenderer * _pRe
 {
 	// set position and rect
 	m_position = _pos;
-	m_rect.x = _pos.X;
-	m_rect.y = _pos.Y;
-	m_rect.w = _size.X;
-	m_rect.h = _size.Y;
+	m_rect.x = (int)_pos.X;
+	m_rect.y = (int)_pos.Y;
+	m_rect.w = (int)_size.X;
+	m_rect.h = (int)_size.Y;
 
 	// create texture
 	m_pTexture = new CTexture(_pFileName, _pRenderer);
@@ -34,8 +34,8 @@ CTexturedObject::~CTexturedObject()
 void CTexturedObject::Update(float _deltaTime)
 {
 	// set position of rect
-	m_rect.x = m_position.X;
-	m_rect.y = m_position.Y;
+	m_rect.x = (int)m_position.X;
+	m_rect.y = (int)m_position.Y;
 
 }
 
