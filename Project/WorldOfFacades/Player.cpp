@@ -53,7 +53,7 @@ void GPlayer::Update(float _deltaTime)
 	//// pick up item
 	if (CInput::GetKey(SDL_SCANCODE_S) && CMoveObject::m_foundItem == true)
 	{
-		LOG_MESSAGE("Grep Item ", std::to_string(m_foundItem));
+		LOG_MESSAGE("Grab Item ", std::to_string(m_foundItem));
 		// ToDo:
 		// Push Item into Inventory;
 		// Put item into RemoveObject-List;

@@ -68,6 +68,14 @@ private:
 	/// </summary>
 	float m_jumpTime;
 
+	/// <summary>
+	/// found item
+	/// </summary>
 	bool m_foundItem;
+
+	/// <summary>
+	/// is colliding with NPC
+	/// </summary>
+	bool m_npcCollision;
 #pragma endregion
 };
