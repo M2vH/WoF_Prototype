@@ -31,7 +31,7 @@ public:
 		SVector2 _pos,
 		SVector2 _size,
 		CRenderer* _pRenderer,
-		const char* _pFileName);
+		const char* _pFileNames[3]);
 	//{
 	//	m_animSpeed = _speed;
 	//	m_blockSize = _blockSize;
@@ -94,7 +94,10 @@ private:
 
 	list<CTexture*>* m_pTextureList;
 
-	CTexture* m_TextureArray[];
+	static CTexture* m_TextureArray[];
+
+	const char* m_pFileNames[];
+
 #pragma endregion
 
 };
