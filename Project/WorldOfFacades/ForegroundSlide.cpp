@@ -9,7 +9,7 @@
 #include "Physic.h"
 #include "Renderer.h"
 #include "Macro.h"
-
+#include "Player.h"
 #pragma endregion
 
 
@@ -21,6 +21,10 @@ GForegroundSlide::~GForegroundSlide()
 
 void GForegroundSlide::Update(float _deltaTime)
 {
+	if (nullptr != GPlayer::Get() && !GPlayer::Get()->IsMoveable())
+	{
+		return;
+	}
 	// movement left
 	if (CInput::GetKey(SDL_SCANCODE_A))
 	{

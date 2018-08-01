@@ -7,7 +7,8 @@ enum ENPCState
 {
 	// NONE = 0,
 	WAITING = 1 << 0,
-	VISITED = 1 << 1,
-	DONE = 1 << 2
+	ISVISITED = 1 << 1,
+	VISITED = 1 << 2,
+	DONE = 1 << 3
 };
 
