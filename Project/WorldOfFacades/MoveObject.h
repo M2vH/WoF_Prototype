@@ -87,6 +87,8 @@ public:
 	/// deactivate gravity
 	/// </summary>
 	inline void DeactivateGravity() { m_gravity = false; }
+
+	 bool IsMoveable() { return m_isMovable; }
 #pragma endregion
 
 protected:
@@ -116,6 +118,9 @@ protected:
 	/// </summary>
 	SVector2 m_movement;
 
-	bool m_foundItem;
+	/// <summary>
+	/// is movable
+	/// </summary>
+	bool m_isMovable = true;
 #pragma endregion
 };

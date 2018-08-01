@@ -8,16 +8,22 @@
 #include "Engine.h"
 #include "ContentManagement.h"
 #include "Physic.h"
+#include "Player.h"
 #pragma endregion
 
 #pragma region public override function
 // update every frame
 void CMoveObject::Update(float _deltaTime)
 {
+	if (!m_isMovable)
+	{
+		return;
+	}
 	// moveable default true
 	//m_foundItem = false;
 	bool moveable = true;
 	bool itemFound = false;
+	bool npcFound = false;
 
 	// next position
 	SVector2 nextPos = m_position + m_movement * m_speed * _deltaTime;
@@ -37,90 +43,108 @@ void CMoveObject::Update(float _deltaTime)
 
 	nextRect.y = (int)nextPos.Y;
 
-	// through all scene objects
-	// ToDo: Copy persistant check
-	for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
+	if (ECollisionType::MOVE)
 	{
-		// if current object is self continue
-		if ((CMoveObject*)pObj && pObj == this)
-			continue;
-
-		// if found item
-		if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+		// through all scene objects
+		// ToDo: Copy persistant check
+		for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
 		{
-			m_foundItem = CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
-			//continue;
-		}
-		else
-		{
-			m_foundItem = false;
-			//continue;
-		}
-
-
-		// if collision type none
-		if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
-		{
-			continue;
-
-		}
-		else
-		{
-
-			// set moveable by checking collision
-			moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
-		}
-
-		// if not moveable cancel collision check
-		if (!moveable)
-			break;
-	}
-
-	// if moveable
-	if (moveable)
-	{
-		// through all persistant objects
-		for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
-		{
-			
 			// if current object is self continue
 			if ((CMoveObject*)pObj && pObj == this)
 				continue;
 
-
-
-			// it is ITEM and in reach
-			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
-			{
-					LOG_MESSAGE("Item found.", "");
-					itemFound = true;
-					
-					continue;
-			} else
-
-			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+			// if collision type none
+			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
 			{
 				continue;
-			} 
-			else if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
-			{
-				continue;
+
 			}
 			else
 			{
 
 				// set moveable by checking collision
 				moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
-				
 			}
 
 			// if not moveable cancel collision check
 			if (!moveable)
 				break;
 		}
-		// reset 
-		m_foundItem = itemFound;
+
+		// if moveable
+		if (moveable)
+		{
+			// through all persistant objects
+			for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
+			{
+				
+				// if current object is self continue
+				if ((CMoveObject*)pObj && pObj == this)
+					continue;
+
+				GPlayer* player = dynamic_cast<GPlayer*>(this);
+				if (nullptr != player)
+				{
+					// it is ITEM and in reach
+					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
+					{
+						LOG_MESSAGE("Item found.", "");
+						player->SetInventoryItem((GInventoryItems*)pObj);
+
+						continue;
+					}
+					else
+					{
+						if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+						{
+							continue;
+						}
+						else if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+						{
+							continue;
+						}
+						else
+						{
+
+							// set moveable by checking collision
+							moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+
+						}
+					}
+					// It is NPC and in reach
+					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NPC && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
+					{
+						LOG_MESSAGE("NPC found.", "");
+						player->SetNPC((GNpc*)pObj);
+
+						continue;
+					}
+					else
+					{
+						if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NPC)
+						{
+							continue;
+						}
+						else if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+						{
+							continue;
+						}
+						else
+						{
+
+							// set moveable by checking collision
+							moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+
+						}
+					}
+				}
+				// if not moveable cancel collision check
+				if (!moveable)
+					break;
+			}
+		}
 	}
+
 
 	// if moveable
 	if (moveable)

@@ -21,11 +21,7 @@ public:
 	/// <param name="_pRenderer">renderer</param>
 	/// <param name="_pFileName">file path name (relative)</param>
 	GNpc(EEmotionType _type, SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
-		const char* _pFileName) : CMoveObject(_pos, _size, _pRenderer, _pFileName) 
-	{
-		m_NpcState = ENPCState::WAITING;
-		m_EmoType = _type;
-	}
+		const char* _pFileName);
 
 	// GNpc();
 	/// <summary>
@@ -33,6 +29,21 @@ public:
 	/// </summary>
 	~GNpc();
 #pragma endregion
+
+#pragma region public override function
+	/// <summary>
+	/// update every frame
+	/// </summary>
+	/// <param name="_deltaTime">time since last frame</param>
+	void Update(float _deltaTime) override;
+
+	/// <summary>
+	/// render every frame
+	/// </summary>
+	/// <param name="_pRenderer"></param>
+	void Render(CRenderer* _pRenderer) override;
+#pragma endregion
+
 
 #pragma region public inline functions
 	// Get and Set of private vars
