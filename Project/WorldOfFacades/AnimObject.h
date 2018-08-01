@@ -8,6 +8,7 @@
 #include "MoveObject.h"
 #include "Time.h"
 #include "Texture.h"
+#include "EnumPlayerState.h"
 
 #pragma endregion
 
@@ -31,7 +32,7 @@ public:
 		SVector2 _pos,
 		SVector2 _size,
 		CRenderer* _pRenderer,
-		const char* _pFileNames[3]);
+		char** _pFileNames);
 	//{
 	//	m_animSpeed = _speed;
 	//	m_blockSize = _blockSize;
@@ -91,12 +92,16 @@ private:
 	/// width and height of a single block
 	/// </summary>
 	SVector2 m_blockSize;
+	/// 
+	
+	EPlayerState m_PlayerState;
+
 
 	list<CTexture*>* m_pTextureList;
 
 	static CTexture* m_TextureArray[];
 
-	const char* m_pFileNames[];
+	char** m_pFileNames;
 
 #pragma endregion
 

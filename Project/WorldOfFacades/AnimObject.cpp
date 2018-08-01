@@ -7,15 +7,16 @@
 //	
 //}
 
-GAnimObject::GAnimObject(int _speed, SVector2 _blockSize, SVector2 _pos, SVector2 _size, CRenderer * _pRenderer, const char * _pFileNames[3]) : CMoveObject(_pos, _size) 
+GAnimObject::GAnimObject(int _speed, SVector2 _blockSize, SVector2 _pos, SVector2 _size, CRenderer * _pRenderer, char ** _pFileNames) : CMoveObject(_pos, _size) 
 {
 		m_animSpeed = _speed;
 		m_blockSize = _blockSize;
 		m_pTextureList = new list<CTexture*>;
 		m_PlayerState = PLAYER_IDLE;
+		m_pFileNames = _pFileNames;
 
 		// create textures and store in list;
-		for (size_t i = 0; i < 3; i++)
+		for (int i = 0; i < 3; i++)
 		{
 
 		}
