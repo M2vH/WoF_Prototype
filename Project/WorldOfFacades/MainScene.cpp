@@ -12,6 +12,7 @@
 #include "TexturedObject.h"
 #include "InventoryItems.h"
 #include "Npc.h"
+#include "AnimObject.h"
 #pragma endregion
 
 #pragma region public override function
@@ -25,15 +26,18 @@ void GMainScene::Init()
 	//m_pWorld = new GWorld(CEngine::Get()->GetRenderer(), "Texture/World/T_WorldSide.png");
 	//m_pWorld->Init();
 
-	// create a screen background from TexturedObject
+#pragma region The static background (Moon)
+					// create a screen background from TexturedObject
 	// ToDo (m2vh) use this for displaying the moon
 	CTexturedObject* pBackground = new CTexturedObject(
-		SVector2(0,0),
+		SVector2(0, 0),
 		SVector2(1280, 720),
 		CEngine::Get()->GetRenderer(),
 		"Texture/World/T_backg_L2_1280x720.png"
 	);
 	pBackground->SetInWorld(false);
+
+#pragma endregion
 
 #pragma region BackgroundStatic
 	// create a moveobject as background
@@ -92,7 +96,7 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Player
-	// add a player
+	// add a NOT animated player
 	GPlayer * pPlayer = new GPlayer(
 		SVector2(WORLD_WIDTH / 2, WORLD_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
@@ -108,8 +112,27 @@ void GMainScene::Init()
 	pPlayer->SetColType(ECollisionType::MOVE);
 
 	pPlayer->ActivateGravity();
+#pragma endregion
+
+#pragma region Animated Object
+
+	char* FileNames[] = { "Texture/Character/Player/T_Player_idle_1.png",
+		"Texture/Character/Player/T_Player_idle_2.png",
+		"Texture/Character/Player/T_Player_idle_1.png"
+	};
+	
+	GAnimObject* pAnimObj = new GAnimObject(
+		0.5f,
+		SVector2(0,0),
+		SVector2(1900, 450),
+		SVector2(128,64),
+		CEngine::Get()->GetRenderer(),
+		FileNames
+	);
 
 #pragma endregion
+
+
 
 #pragma region NPCs
 	// create first NPC of EmoType FURY
@@ -175,6 +198,11 @@ void GMainScene::Init()
 
 	// add NPCs to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pFury);
+
+	// add the anim object
+	CEngine::Get()->GetCM()->AddPersistantObject(pAnimObj);
+	
+
 	
 	//	//	SceneObjects
 	//	// The Trees

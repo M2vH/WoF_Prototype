@@ -1,6 +1,7 @@
 #pragma once
 #pragma region system include
 #include <list>
+#include <map>
 #pragma endregion
 
 
@@ -27,7 +28,7 @@ public:
 #pragma region ctor
 	// constructor
 	GAnimObject(
-		int _speed,
+		float _speed,
 		SVector2 _blockSize,
 		SVector2 _pos,
 		SVector2 _size,
@@ -75,9 +76,9 @@ private:
 #pragma region private primitive vars
 	
 	/// <summary>
-	/// speed of animation in Frames Per Second
+	/// speed of animation in SECONDS pre Frame; SAMPLERATE
 	/// </summary>
-	int m_animSpeed;
+	float m_animSpeed;
 
 	/// <summary>
 	/// number of blocks per slice
@@ -99,9 +100,15 @@ private:
 
 	list<CTexture*>* m_pTextureList;
 
-	static CTexture* m_TextureArray[];
+	CTexture* m_pTextureArray[3];
 
-	char** m_pFileNames;
+	char** m_pFileNames; 
+
+	int m_pIdleTextures[3];
+	int m_pMoveTextures[3];
+
+	int m_pstartIdle = 0;
+	int m_pstartMove = 0;
 
 #pragma endregion
 
