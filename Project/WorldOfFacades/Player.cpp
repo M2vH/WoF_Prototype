@@ -9,6 +9,8 @@
 #include "Physic.h"
 #include "Renderer.h"
 #include "Time.h"	///TODO: DELETE
+#include "EnumEmotionType.h"
+#include "InventoryItems.h"
 #pragma endregion
 
 
@@ -30,6 +32,12 @@ void GPlayer::Update(float _deltaTime)
 		// reset value;
 		// m_foundItem = false;
 		//CEngine::Get()->GetCM()->AddUIObject()
+		
+
+		/*if (m_inventoryItem->GetItemType() == EEmotionType::FURY)
+		{
+			
+		}*/
 
 	}
 

@@ -89,6 +89,7 @@ void CMoveObject::Update(float _deltaTime)
 					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
 					{
 						LOG_MESSAGE("Item found.", "");
+						player->GetInventory()->AddObject(((GInventoryItems*)pObj)->GetItemType());
 						player->SetInventoryItem((GInventoryItems*)pObj);
 
 						continue;

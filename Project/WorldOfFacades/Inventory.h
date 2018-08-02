@@ -1,7 +1,20 @@
 #pragma once
+#pragma region system include
+#include <list>
+#pragma endregion
 
 #pragma region project include
 #include "TexturedObject.h"
+#include "EnumEmotionType.h"
+#include "InventoryItems.h"
+#pragma endregion
+
+#pragma region forward decleration
+class CObject;
+#pragma endregion
+
+#pragma region using
+using namespace std;
 #pragma endregion
 
 /// <summary>
@@ -27,6 +40,15 @@ public:
 	~GInventory() {};
 #pragma endregion
 
+#pragma region public inline funtion
+	/// <summary>
+	/// get scene objects list
+	/// </summary>
+	/// <returns>list of all scene object</returns>
+	inline list<GInventoryItems*> GetItemObjects() { return m_pItemObjects; }
+#pragma endregion
+
+
 #pragma region public override function
 	/// <summary>
 	/// update every frame
@@ -40,5 +62,37 @@ public:
 	/// <param name="_pRenderer">renderer</param>
 	virtual void Render(CRenderer* _pRenderer) override;
 #pragma endregion
+
+#pragma region private variable
+	/// <summary>
+	/// scene / world objects
+	/// </summary>
+	list<GInventoryItems*> m_pItemObjects;
+
+	/// <summary>
+	/// fury item
+	/// </summary>
+	GInventoryItems* m_pFuryItem;
+
+	/// <summary>
+	/// fear item
+	/// </summary>
+	GInventoryItems* m_pFearItem;
+
+	/// <summary>
+	/// sadness item
+	/// </summary>
+	GInventoryItems* m_pSadnessItem;
+#pragma endregion
+
+#pragma region private function
+	/// <summary>
+	/// add object to list
+	/// </summary>
+	/// <param name="_pObj">object</param>
+	/// <param name="_pList">list to add to</param>
+	void AddObject(EEmotionType _emoType);
+#pragma endregion
+
 };
 
