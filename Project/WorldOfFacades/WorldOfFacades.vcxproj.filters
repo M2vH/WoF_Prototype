@@ -166,6 +166,9 @@
     <ClInclude Include="InventoryItems.h">
       <Filter>Game\Items</Filter>
     </ClInclude>
+    <ClInclude Include="EnumAnimState.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

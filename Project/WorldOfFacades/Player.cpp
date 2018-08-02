@@ -77,7 +77,7 @@ void GPlayer::Update(float _deltaTime)
 			// set movement and mirror
 			m_movement.X = -1.0f;
 			m_mirror.X = 1.0f;
-			//m_
+			m_p
 		}
 
 		// movement right
