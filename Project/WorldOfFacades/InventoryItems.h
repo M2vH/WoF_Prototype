@@ -2,6 +2,7 @@
 #pragma region project includes
 #include "MoveObject.h"  
 #include "EnumItemState.h"
+#include "EnumEmotionType.h"
 #pragma endregion
 
 class GInventoryItems :
@@ -66,13 +67,26 @@ public:
 	/// </summary>
 	/// <param name="_state">the new state</param>
 	void SetItemState(EItemState _state) { m_ItemState = _state; }
+
+	// SetItemType
+	/// <summary>
+	/// Set the itemType
+	/// </summary>
+	/// <param name="_state">the new itemType</param>
+	void SetItemType(EEmotionType _itemType) { m_ItemType = _itemType; }
+
+	// GetItemType
+	/// <summary>
+	///  get the type of item
+	/// </summary>
+	/// <returns>type of item</returns>
+	EEmotionType GetItemType() { return m_ItemType; }
 #pragma endregion
 #pragma region private primitive variables
 
 	EItemState m_ItemState = EItemState::ACTIVE;
+	EEmotionType m_ItemType;
 
 #pragma endregion
-
-
 };
 

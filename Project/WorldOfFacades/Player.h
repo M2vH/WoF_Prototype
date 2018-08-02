@@ -3,6 +3,8 @@
 #pragma region project include
 #include "MoveObject.h"  
 #include "EnumPlayerState.h"
+#include "Inventory.h"
+#include "Macro.h"
 #pragma endregion
 
 #pragma region forward declaration
@@ -72,6 +74,18 @@ public:
 	/// </summary>
 	/// <param name="_inventoryItem">inventory item</param>
 	void SetInventoryItem(GInventoryItems* _inventoryItem);
+
+	/// <summary>
+	/// set inventory
+	/// </summary>
+	/// <param name="_inventoryItem">inventory</param>
+	void SetInventory(GInventory* _inventory) { m_inventory = _inventory; };
+
+	/// <summary>
+	/// get inventory
+	/// </summary>
+	/// <returns>the inventory</returns>
+	GInventory* GetInventory() { return m_inventory; }
 	
 	/// /// <summary>
 	/// set NPC
@@ -107,6 +121,11 @@ private:
 	/// inventory item
 	/// </summary>
 	GInventoryItems* m_inventoryItem;
+
+	/// <summary>
+	/// inventory
+	/// </summary>
+	GInventory* m_inventory;
 
 	/// <summary>
 	/// NPC

@@ -54,6 +54,8 @@ void CContentManagement::Update(float _deltaTime)
 
 		// delete first object in list
 		m_pRemoveObjects.pop_front();
+
+		//delete pObj;
 	}
 }
 

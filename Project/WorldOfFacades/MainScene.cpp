@@ -13,6 +13,8 @@
 #include "InventoryItems.h"
 #include "Npc.h"
 #include "AnimObject.h"
+#include <SDL_timer.h>
+#include "EnumEmotionType.h"
 #pragma endregion
 
 #pragma region public override function
@@ -114,6 +116,16 @@ void GMainScene::Init()
 	pPlayer->ActivateGravity();
 #pragma endregion
 
+#pragma region Inventory
+		GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
+		SVector2(48 * 2, 48 * 6),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Inventory/inventorybackground_496x756.png");
+
+		pPlayer->SetInventory(m_inventory);
+#pragma endregion
+
+
 #pragma region Animated Object
 
 	char* FileNames[] = { "Texture/Character/Player/T_Player_idle_1.png",
@@ -129,10 +141,10 @@ void GMainScene::Init()
 		CEngine::Get()->GetRenderer(),
 		FileNames
 	);
-
 #pragma endregion
 
-
+	// TODO: WTF!!!!
+	SDL_Delay(500);
 
 #pragma region NPCs
 	// create first NPC of EmoType FURY
@@ -163,11 +175,11 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Inventory
-	// create Inventory background
-	GInventory* pInventoryBackground = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
-		SVector2(48 * 2, 48 * 6),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/inventorybackground_496x756.png");
+	//// create Inventory background
+	//GInventory* pInventoryBackground = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
+	//	SVector2(48 * 2, 48 * 6),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Inventory/inventorybackground_496x756.png");
 
 #pragma endregion
 
@@ -177,6 +189,7 @@ void GMainScene::Init()
 		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Inventory/Fury_500x500.png");
+	pFuryItem->SetItemType(EEmotionType::FURY);
 
 #pragma endregion
 
@@ -195,6 +208,9 @@ void GMainScene::Init()
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
+
+	// add inventory to UI list
+	CEngine::Get()->GetCM()->AddUIObject(m_inventory);
 
 	// add NPCs to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pFury);
@@ -222,7 +238,7 @@ void GMainScene::Init()
 
 #pragma endregion
 	// add object to cm
-	CEngine::Get()->GetCM()->AddUIObject(pInventoryBackground);
+	//CEngine::Get()->GetCM()->AddUIObject(pInventoryBackground);
 	// CEngine::Get()->GetCM()->AddPersistantObject(pObj);
 	
 	// create world
