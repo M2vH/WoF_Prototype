@@ -2,6 +2,7 @@
 
 #pragma region project include
 #include "MoveObject.h"  
+#include "EnumPlayerState.h"
 #pragma endregion
 
 #pragma region forward declaration
@@ -111,6 +112,11 @@ private:
 	/// NPC
 	/// </summary>
 	GNpc* m_npc;
+
+	///// <summary>
+	///// The state the player is in; A bitwise enum;
+	///// </summary>
+	//EPlayerState m_playerState;
 #pragma endregion
 
  static GPlayer* s_instance;

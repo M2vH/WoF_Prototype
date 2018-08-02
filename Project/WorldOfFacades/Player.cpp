@@ -49,10 +49,21 @@ void GPlayer::Update(float _deltaTime)
 		SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y + PLAYER_HEIGHT / 2)
 	);
 
-	/// <summary>
-	/// TODO: DELETE
-	/// </summary>
-	// LOG_MESSAGE("Found item", std::to_string(m_foundItem));
+
+#pragma region PLAYER_STATE DRAFT
+	/*
+	PlayerState::IDLE // Default state
+	if moveable && moving
+		Press A || D
+		PlayerState::WALK
+		if moveable && jumping
+			PlayerState::JUMP
+	if !moveable
+		PlayerState::IDLE
+	*/
+#pragma endregion
+
+
 
 	if (m_isMovable)
 	{
@@ -66,6 +77,7 @@ void GPlayer::Update(float _deltaTime)
 			// set movement and mirror
 			m_movement.X = -1.0f;
 			m_mirror.X = 1.0f;
+			//m_
 		}
 
 		// movement right
@@ -88,7 +100,9 @@ void GPlayer::Update(float _deltaTime)
 			m_jumpTime = PLAYER_JUMP_TIME;
 			m_gravity = false;
 		}
+#pragma endregion
 
+#pragma region JUMP CHECK
 		// if jump enabled
 		if (m_jump)
 		{
@@ -156,12 +170,17 @@ void GPlayer::Update(float _deltaTime)
 			}
 
 			// if still moveable set y position
+			// player is still jumping
 			if (moveable)
 			{
 				m_position.Y -= PLAYER_JUMP_FORCE * _deltaTime;
 				m_rect.y = (int)m_position.Y;
+
+				// set PLAYER_STATE::JUMP
 			}
+
 		}
+
 #pragma endregion
 	}
 
