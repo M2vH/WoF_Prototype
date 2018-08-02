@@ -1,5 +1,7 @@
 #include "AnimObject.h"
 #include "Texture.h"
+#include <SDL_timer.h>
+
 
 
 
@@ -32,9 +34,10 @@ GAnimObject::GAnimObject(int _count, float _speed, SVector2 _blockSize, SVector2
 
 		// create each texture and store in list;
 		// ToDo (m2vh) get the amount of images;
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < m_animFilesCount; i++)
 		{
 			CTexture* texture= new CTexture(m_pFileNames[i], _pRenderer);
+			SDL_Delay(500);
 			m_pTextureArray[i] = texture;
 		}
 		SetTexture(m_pTextureArray[0]);

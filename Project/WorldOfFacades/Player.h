@@ -47,7 +47,7 @@ public:
 	/// <param name="_pFileNames">path to files to load</param>
 	GPlayer(
 		int _count,
-		float _speed,
+		float _animspeed,
 		SVector2 _blockSize,
 		SVector2 _pos,
 		SVector2 _size,
@@ -55,7 +55,7 @@ public:
 		char** _pFileNames) :
 			GAnimObject(
 				_count,
-				_speed, 
+				_animspeed, 
 				_blockSize,
 				_pos,
 				_size, 
@@ -63,6 +63,7 @@ public:
 				_pFileNames) {
 					m_foundItem = false;
 					s_instance = this;
+					m_speed = PLAYER_SPEED;
 	}
 
 	/// <summary>

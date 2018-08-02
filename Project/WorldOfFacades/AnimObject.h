@@ -68,6 +68,10 @@ public:
 #pragma endregion
 
 #pragma region public inline functions
+	/// <summary>
+	/// set the samplerate of animation
+	/// </summary>
+	/// <param name="_fps"></param>
 	inline void SetSpeed(int _fps) { m_animSpeed = _fps; }
 
 	inline void NextTexture();
@@ -115,7 +119,7 @@ private:
 	/// <summary>
 	/// Array of textures;
 	/// </summary>
-	CTexture* m_pTextureArray[3];
+	CTexture* m_pTextureArray[9];
 
 	/// <summary>
 	/// Pointer pointer (Array) of path_to_files
