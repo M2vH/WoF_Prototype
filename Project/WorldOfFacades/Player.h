@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma region project include
-#include "MoveObject.h"  
+#include "AnimObject.h"  
 #include "EnumPlayerState.h"
 #include "Inventory.h"
 #include "Macro.h"
@@ -17,35 +17,52 @@ class GNpc;
 /// <summary>
 /// player class
 /// </summary>
-class GPlayer :	public CMoveObject
+class GPlayer :	public GAnimObject
 {
 public:
 	static GPlayer* Get() { return s_instance; }
 #pragma region constructor
-	/// <summary>
-	/// constructor
-	/// </summary>
-	/// <param name="_pos">position of object</param>
-	GPlayer(SVector2 _pos) : CMoveObject(_pos) { s_instance = this; }
+	///// <summary>
+	///// constructor
+	///// </summary>
+	///// <param name="_pos">position of object</param>
+	//GPlayer(SVector2 _pos) : CMoveObject(_pos) { s_instance = this; }
+
+	///// <summary>
+	///// constructor
+	///// </summary>
+	///// <param name="_pos">position of object</param>
+	///// <param name="_size">width and height of rect</param>
+	//GPlayer(SVector2 _pos, SVector2 _size) : CMoveObject(_pos, _size) { s_instance = this; }
 
 	/// <summary>
-	/// constructor
+	/// Player ctor; 
 	/// </summary>
-	/// <param name="_pos">position of object</param>
-	/// <param name="_size">width and height of rect</param>
-	GPlayer(SVector2 _pos, SVector2 _size) : CMoveObject(_pos, _size) { s_instance = this; }
-
-	/// <summary>
-	/// constructor
-	/// </summary>
-	/// <param name="_pos">position of object</param>
-	/// <param name="_size">width and height of rect</param>
-	/// <param name="_pRenderer">renderer</param>
-	/// <param name="_pFileName">file path name (relative)</param>
-	GPlayer(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
-		const char* _pFileName) : CMoveObject(_pos, _size, _pRenderer, _pFileName) {
-		m_foundItem = false;
-		s_instance = this;
+	/// <param name="_count">count of images to load</param>
+	/// <param name="_speed">samplerate in seconds</param>
+	/// <param name="_blockSize">size of one block in slice</param>
+	/// <param name="_pos">x and y position where object is rendered</param>
+	/// <param name="_size">width and height of rendered object</param>
+	/// <param name="_pRenderer">the renderer</param>
+	/// <param name="_pFileNames">path to files to load</param>
+	GPlayer(
+		int _count,
+		float _speed,
+		SVector2 _blockSize,
+		SVector2 _pos,
+		SVector2 _size,
+		CRenderer* _pRenderer,
+		char** _pFileNames) :
+			GAnimObject(
+				_count,
+				_speed, 
+				_blockSize,
+				_pos,
+				_size, 
+				_pRenderer, 
+				_pFileNames) {
+					m_foundItem = false;
+					s_instance = this;
 	}
 
 	/// <summary>
