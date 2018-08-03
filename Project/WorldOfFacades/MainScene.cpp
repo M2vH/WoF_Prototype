@@ -24,10 +24,6 @@ void GMainScene::Init()
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
 
 	
-	// create world
-	//m_pWorld = new GWorld(CEngine::Get()->GetRenderer(), "Texture/World/T_WorldSide.png");
-	//m_pWorld->Init();
-
 #pragma region The static background (Moon)
 					// create a screen background from TexturedObject
 	// ToDo (m2vh) use this for displaying the moon
@@ -98,18 +94,40 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Player
-	// add a NOT animated player
+	
+	// create an array of filePaths
+	//	index 0..2	-> IDLE
+	//	index 3..5	-> WALK
+	//	index 6..8	-> JUMP
+
+	char* playerAnimFileNames[] = { 
+		"Texture/Protagonist/protag_jump_1.png",
+		"Texture/Protagonist/protag_jump_1.png",
+		"Texture/Protagonist/protag_jump_1.png",
+
+		"Texture/Protagonist/protag_jump_2.png",
+		"Texture/Protagonist/protag_jump_3.png",
+		"Texture/Protagonist/protag_jump_2.png",
+
+		"Texture/Protagonist/protag_jump_3.png",
+		"Texture/Protagonist/protag_jump_2.png",
+		"Texture/Protagonist/protag_jump_3.png"
+
+	};
+
+	//	// add a NOW animated player
 	GPlayer * pPlayer = new GPlayer(
+		8,
+		0.5f,
+		SVector2(0,0),
 		SVector2(WORLD_WIDTH / 2, WORLD_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
-		//"Texture/Character/Player/T_Samus_Idle.png"
-		//"Texture/Character/Player/A_player_walking.gif"
-		"Texture/Character/Player/T_Player_idle_2.png"
-	);
+		playerAnimFileNames
+		);
 
 	// set player values
-	pPlayer->SetSpeed(PLAYER_SPEED);
+	// pPlayer->SetSpeed(PLAYER_SPEED);
 	pPlayer->SetMirror(PLAYER_MIRROR);
 	pPlayer->SetColType(ECollisionType::MOVE);
 
@@ -128,19 +146,20 @@ void GMainScene::Init()
 
 #pragma region Animated Object
 
-	char* FileNames[] = { "Texture/Character/Player/T_Player_idle_1.png",
-		"Texture/Character/Player/T_Player_idle_2.png",
-		"Texture/Character/Player/T_Player_idle_1.png"
-	};
-	
-	GAnimObject* pAnimObj = new GAnimObject(
-		0.5f,
-		SVector2(0,0),
-		SVector2(1900, 450),
-		SVector2(128,64),
-		CEngine::Get()->GetRenderer(),
-		FileNames
-	);
+	//char* FileNames[] = { "Texture/Character/Player/T_Player_idle_1.png",
+	//	"Texture/Character/Player/T_Player_idle_2.png",
+	//	"Texture/Character/Player/T_Player_idle_1.png"
+	//};
+	//
+	//GAnimObject* pAnimObj = new GAnimObject(
+	//	3,
+	//	0.5f,
+	//	SVector2(0,0),
+	//	SVector2(1900, 450),
+	//	SVector2(128,64),
+	//	CEngine::Get()->GetRenderer(),
+	//	FileNames
+	//);
 #pragma endregion
 
 	// TODO: WTF!!!!
@@ -216,7 +235,7 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddPersistantObject(pFury);
 
 	// add the anim object
-	CEngine::Get()->GetCM()->AddPersistantObject(pAnimObj);
+	// CEngine::Get()->GetCM()->AddPersistantObject(pAnimObj);
 	
 
 	

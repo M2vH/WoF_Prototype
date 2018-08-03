@@ -11,9 +11,10 @@ enum EPlayerState
 	PLAYER_IDLE = 1, // << 0, // Player can move
 	PLAYER_BLOCKED = 2, // << 1,	// Player can't AYER_LwYERShileALPdialog is displayed
 	PLAYER_WALK = 4,	// state when walking anim is lYER_aying
-	PLAYER_AT_ITEM = 8,	// Item is in reach
-	PLAYER_AT_NPC = 16,	// NPC in reach
-	PLAYER_VISIT_NPC = 32 // << 4	// at NPC; block the move
+	PLAYER_JUMP = 8,
+	PLAYER_AT_ITEM = 16,	// Item is in reach
+	PLAYER_AT_NPC = 32,	// NPC in reach
+	PLAYER_VISIT_NPC = 364 // << 4	// at NPC; block the move
 
 	// is it possible to do this:
 	// VISIT_NPC = BLOCKED | 5;

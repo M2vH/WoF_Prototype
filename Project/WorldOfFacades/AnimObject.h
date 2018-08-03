@@ -10,6 +10,7 @@
 #include "Time.h"
 #include "Texture.h"
 #include "EnumPlayerState.h"
+#include "EnumAnimState.h"
 
 #pragma endregion
 
@@ -28,6 +29,7 @@ public:
 #pragma region ctor
 	// constructor
 	GAnimObject(
+		int _count,
 		float _speed,
 		SVector2 _blockSize,
 		SVector2 _pos,
@@ -66,9 +68,17 @@ public:
 #pragma endregion
 
 #pragma region public inline functions
+	/// <summary>
+	/// set the samplerate of animation
+	/// </summary>
+	/// <param name="_fps"></param>
 	inline void SetSpeed(int _fps) { m_animSpeed = _fps; }
 
 	inline void NextTexture();
+
+	inline void SetAnimState(EAnimState _state) { m_animState = _state; }
+
+	inline EAnimState GetAnimState() { return m_animState; }
 
 	// inline void SetTexture(CTexture* _texture);
 #pragma endregion
@@ -80,6 +90,14 @@ private:
 	/// </summary>
 	float m_animSpeed;
 
+	int m_animFilesCount;
+
+	/// <summary>
+	/// The state the object is in; 
+	/// according animation is played
+	/// </summary>
+	EAnimState m_animState;
+
 	/// <summary>
 	/// number of blocks per slice
 	/// </summary>
@@ -89,26 +107,32 @@ private:
 	/// number of slices
 	/// </summary>
 	int m_sliceCount;
-	/// <summary>
+	
+	/// /// <summary>
 	/// width and height of a single block
 	/// </summary>
 	SVector2 m_blockSize;
 	/// 
 	
-	EPlayerState m_PlayerState;
-
-
 	list<CTexture*>* m_pTextureList;
 
-	CTexture* m_pTextureArray[3];
+	/// <summary>
+	/// Array of textures;
+	/// </summary>
+	CTexture* m_pTextureArray[9];
 
+	/// <summary>
+	/// Pointer pointer (Array) of path_to_files
+	/// </summary>
 	char** m_pFileNames; 
 
 	int m_pIdleTextures[3];
 	int m_pMoveTextures[3];
+	int m_pJumpTextures[3];
 
 	int m_pstartIdle = 0;
 	int m_pstartMove = 0;
+	int m_pstartJump = 0;
 
 #pragma endregion
 

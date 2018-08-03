@@ -118,22 +118,22 @@ void GWorld::Init()
 		case 'S':
 		{
 			// create textured object
-			GPlayer * pPlayer = new GPlayer(
-				SVector2(
-					(float)((width - 1) * WORLD_BLOCK_WIDTH), 
-					(float)((height - 1) * WORLD_BLOCK_HEIGHT - PLAYER_HEIGHT)), 
-				SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),
-				CEngine::Get()->GetRenderer(), 
-				"Texture/Character/Player/T_Samus_Idle.png");
+			//GPlayer * pPlayer = new GPlayer(
+			//	SVector2(
+			//		(float)((width - 1) * WORLD_BLOCK_WIDTH), 
+			//		(float)((height - 1) * WORLD_BLOCK_HEIGHT - PLAYER_HEIGHT)), 
+			//	SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),
+			//	CEngine::Get()->GetRenderer(), 
+			//	"Texture/Character/Player/T_Samus_Idle.png");
 
-			// set player values
-			pPlayer->SetSpeed(PLAYER_SPEED);
-			pPlayer->SetMirror(PLAYER_MIRROR);
-			pPlayer->SetColType(ECollisionType::MOVE);
-			pPlayer->ActivateGravity();
+			//// set player values
+			//pPlayer->SetSpeed(PLAYER_SPEED);
+			//pPlayer->SetMirror(PLAYER_MIRROR);
+			//pPlayer->SetColType(ECollisionType::MOVE);
+			//pPlayer->ActivateGravity();
 
-			// add player to persistant list
-			CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
+			//// add player to persistant list
+			//CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
 			break;
 		}
 
