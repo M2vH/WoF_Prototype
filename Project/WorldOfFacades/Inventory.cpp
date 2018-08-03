@@ -10,11 +10,24 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 {
 	// set object in world
 	m_inWorld = false;
+	
 	m_pFuryItem = new GInventoryItems(SVector2(0, 0),
 		SVector2(64, 64),
 		_pRenderer,
 		"Texture/Inventory/Fury_500x500.png");
 	m_pFuryItem->SetInWorld(false);
+
+	m_pFearItem = new GInventoryItems(SVector2(0, 0),
+		SVector2(64, 64),
+		_pRenderer,
+		"Texture/Inventory/Fear_512x512.png");
+	m_pFearItem->SetInWorld(false);
+
+	m_pSadnessItem = new GInventoryItems(SVector2(0, 0),
+		SVector2(64, 64),
+		_pRenderer,
+		"Texture/Inventory/Sadness_512x512");
+	m_pSadnessItem->SetInWorld(false);
 }
 #pragma endregion
 
@@ -26,14 +39,14 @@ void GInventory::Update(float _deltaTime)
 	CTexturedObject::Update(_deltaTime);
 
 	// update every item object
+	int temp = 1;
+	SVector2 offset = { 20,20 };
 	for (GInventoryItems* pObj : m_pItemObjects) 
 	{
-		int temp = 0;
-		SVector2 offset = { 3,0 };
-		SVector2 newPosition = m_position + offset;
+		SVector2 newPosition = m_position + SVector2(offset.X, offset.Y * temp);
 		pObj->SetPosition(newPosition);
 		pObj->Update(_deltaTime);
-
+		temp++;
 	}
 
 	// TODO: offset for items from inventory
@@ -59,9 +72,13 @@ void GInventory::AddObject(EEmotionType _emoType)
 		case EEmotionType::FURY:
 			m_pItemObjects.push_back(m_pFuryItem);
 			break;
-		
-
-		
+		case EEmotionType::FEAR:
+			m_pItemObjects.push_back(m_pFearItem);
+			break;
+		case EEmotionType::SAD:
+			m_pItemObjects.push_back(m_pSadnessItem);
+			break;
+	
 		default:
 			break;
 	}
