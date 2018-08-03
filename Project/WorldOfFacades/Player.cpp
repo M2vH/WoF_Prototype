@@ -80,7 +80,7 @@ void GPlayer::Update(float _deltaTime)
 #pragma region movement
 		// moveable default true
 		bool moveable = true;
-		// SetAnimState(EAnimState::STATE_ANIM_IDLE);
+		SetAnimState(EAnimState::STATE_ANIM_IDLE);
 
 
 		// movement left
@@ -159,13 +159,16 @@ void GPlayer::Update(float _deltaTime)
 
 				// if not moveable cancel collision check
 				if (!moveable)
-					SetAnimState(EAnimState::STATE_ANIM_IDLE);
+					SetAnimState(EAnimState::STATE_ANIM_JUMP);
 				break;
 			}
 
 			// if moveable
 			if (moveable)
 			{
+				// we still fly
+				SetAnimState(EAnimState::STATE_ANIM_JUMP);
+
 				// through all persistant objects
 				for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
 				{
@@ -182,7 +185,7 @@ void GPlayer::Update(float _deltaTime)
 
 					// if not moveable cancel collision check
 					if (!moveable)
-						SetAnimState(EAnimState::STATE_ANIM_IDLE);
+//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
 					break;
 				}
 			}
