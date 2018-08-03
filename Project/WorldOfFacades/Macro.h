@@ -5,9 +5,9 @@
 #define SCREEN_HEIGHT 720
 #define PLAYER_SPEED 500.0f
 #define PLAYER_JUMP_FORCE 500.0f
-#define PLAYER_JUMP_TIME 0.25f
-#define PLAYER_WIDTH 40
-#define PLAYER_HEIGHT 120
+#define PLAYER_JUMP_TIME 0.5f
+#define PLAYER_WIDTH 55
+#define PLAYER_HEIGHT 172
 #define PLAYER_MIRROR SVector2(1.0f, 0.0f)
 #define WORLD_BLOCK_ATLAS_WIDTH 26
 #define WORLD_BLOCK_ATLAS_HEIGHT 26
@@ -20,9 +20,15 @@
 
 #pragma region m2vh
 #define FOREGROUND_DISTFACTOR 1.2f
-#define GROUND_POSITION 500	// Y-Position of top border
-#define NPC_HEIGHT 128
-#define NPC_WIDTH 128
+#define GROUND_POSITION 650	// Y-Position of top border
+#define WAY_HEIGHT 10
+#define NPC_HEIGHT 302
+#define NPC_WIDTH 174
+#define ITEM_WIDTH 55
+#define ITEM_HEIGHT 55
+#define INVENTORY_ITEM_OFFSET_X 10
+#define INVENTORY_ITEM_OFFSET_Y 10
+#define MOON_POSITION_Y 50
 #pragma endregion
 
 

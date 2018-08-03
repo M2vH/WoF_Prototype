@@ -37,30 +37,44 @@ void GMainScene::Init()
 
 #pragma endregion
 
-#pragma region BackgroundStatic
+#pragma region THE MOON and the STARS
 	// create a moveobject as background
 	// but keep it static (dont move it)
-	GBackgroundStatic* pBackgroundStatic = new GBackgroundStatic(
+
+	GBackgroundStatic* pBackgroundHimmel = new GBackgroundStatic(
 		SVector2(0, 0),
 		SVector2(1280, 720),
 		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_backg_L2_1280x720.png"
+		"Texture/Background/Himmel/B_Himmel_Zustand4_1280x720.png"
 	);
 	// set values of object
-	pBackgroundStatic->DeactivateGravity();
-	pBackgroundStatic->SetInWorld(false);
+	pBackgroundHimmel->DeactivateGravity();
+	pBackgroundHimmel->SetInWorld(false);
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 
+	// THE MOON
+	// create a moveobject as background
+	// but keep it static (dont move it)
+	GBackgroundStatic* pBackgroundMoon = new GBackgroundStatic(
+		SVector2(849, MOON_POSITION_Y),
+		SVector2(302, 302),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Background/Mond/B_Mond_4_720x720.png"
+	);
+	// set values of object
+	pBackgroundHimmel->DeactivateGravity();
+	pBackgroundHimmel->SetInWorld(false);
+	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 #pragma endregion
 
 #pragma region ForeGround
 
 	// create a foreground object
 	GForegroundSlide* pForeground = new GForegroundSlide(
-		SVector2(-3840 / 2, 450),
+		SVector2(-3840 / 2, GROUND_POSITION + WAY_HEIGHT),
 		SVector2(3840 * 2, 400),
 		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_world_tree_2_3840x720.png"
+		"Texture/Vordergrund/B_Vordergrund_Weg_2560x604.png"
 	);
 	pForeground->SetInWorld(true);
 	// todo: delete no fx
@@ -88,7 +102,7 @@ void GMainScene::Init()
 		SVector2(0, 100),	// pos of object in World
 		SVector2(3840, 720),	// size; if 0,0 will be set to texture size
 		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_world_tree_3840x720.png"
+		"Texture/Background/Wald/B_Wald_3840x720.png"
 	);
 
 #pragma endregion
@@ -101,15 +115,15 @@ void GMainScene::Init()
 	//	index 6..8	-> JUMP
 
 	char* playerAnimFileNames[] = {
-		"Texture/Protagonist/protag_jump_1.png",
-		"Texture/Protagonist/protag_jump_1.png",
-		"Texture/Protagonist/protag_jump_1.png",
+		"Texture/Protagonist/protag_idle_1.png",
+		"Texture/Protagonist/protag_idle_2.png",
+		"Texture/Protagonist/protag_idle_3.png",
 
-		"Texture/Protagonist/protag_jump_2.png",
-		"Texture/Protagonist/protag_jump_3.png",
-		"Texture/Protagonist/protag_jump_2.png",
+		"Texture/Protagonist/protag_walk_1.png",
+		"Texture/Protagonist/protag_walk_2.png",
+		"Texture/Protagonist/protag_walk_3.png",
 
-		"Texture/Protagonist/protag_jump_3.png",
+		"Texture/Protagonist/protag_jump_1.png",
 		"Texture/Protagonist/protag_jump_2.png",
 		"Texture/Protagonist/protag_jump_3.png"
 
@@ -118,9 +132,9 @@ void GMainScene::Init()
 	//	// add a NOW animated player
 	GPlayer * pPlayer = new GPlayer(
 		8,
-		0.5f,
+		0.1f,
 		SVector2(0, 0),
-		SVector2(WORLD_WIDTH / 2, WORLD_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
+		SVector2(WORLD_WIDTH / 2, 480 - PLAYER_HEIGHT),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
 		playerAnimFileNames
@@ -138,7 +152,7 @@ void GMainScene::Init()
 	GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
 		SVector2(48 * 2, 48 * 6),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/inventorybackground_496x756.png");
+		"Texture/Inventory/item_hub.png");
 
 	pPlayer->SetInventory(m_inventory);
 #pragma endregion
@@ -172,7 +186,7 @@ void GMainScene::Init()
 		SVector2(2500, GROUND_POSITION - NPC_HEIGHT),
 		SVector2(NPC_WIDTH, NPC_HEIGHT),
 		pTheRenderer,
-		"Texture/Character/Player/T_Samus_Idle.png"
+		"Texture/NPC/Anger/anger_mask_1.png"
 	);
 
 #pragma endregion
@@ -204,18 +218,25 @@ void GMainScene::Init()
 
 #pragma region Items
 	// create FuryItem 
-	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(900, 500 - WORLD_BLOCK_HEIGHT),
-		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
+	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(900, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/Fury_500x500.png");
+		"Texture/Item/teddy.png");
 	pFuryItem->SetItemType(EEmotionType::FURY);
 
 	// create FearItem 
-	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1000, 500 - WORLD_BLOCK_HEIGHT),
-		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
+	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1000, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Inventory/Fear_512x512.png");
+		"Texture/Item/candle.png");
 	pFearItem->SetItemType(EEmotionType::FEAR);
+
+	// create SadnessItem 
+	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Item/book_1.png");
+	pSadItem->SetItemType(EEmotionType::SAD);
 #pragma endregion
 
 #pragma region Adding objects to Lists
@@ -231,6 +252,8 @@ void GMainScene::Init()
 	//	The Items
 	CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
 	CEngine::Get()->GetCM()->AddPersistantObject(pFearItem);
+	CEngine::Get()->GetCM()->AddPersistantObject(pSadItem);
+
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
@@ -258,9 +281,15 @@ void GMainScene::Init()
 	// Sliding background NOT working
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
 
-	//	//	The Stars
+
+	//	//	The Stars and the sky and the moon
 	// adding a moveObject and dont move
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
+	
+	// the moon
+	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundMoon);
+	
+	// the stars
+	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundHimmel);
 
 #pragma endregion
 	// add object to cm
