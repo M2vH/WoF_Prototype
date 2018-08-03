@@ -149,8 +149,8 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Inventory
-	GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
-		SVector2(48 * 2, 48 * 6),
+	GInventory* m_inventory = new GInventory(SVector2(20, 120),
+		SVector2(INVENTORY_WIDTH, INVENTORY_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Inventory/item_hub.png");
 
@@ -196,10 +196,10 @@ void GMainScene::Init()
 
 	// Add a ground to walk on;
 	GBackgroundStatic* pGround = new GBackgroundStatic(
-		SVector2(0, GROUND_POSITION),
+		SVector2(0, GROUND_POSITION), 
 		SVector2(3840, 220),
 		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_backg_G1_1280x720.png"
+		"Texture/World/T_backg_G1_1280x720.png" 
 	);
 	pGround->SetColType(ECollisionType::WALL);
 	pGround->DeactivateGravity();
