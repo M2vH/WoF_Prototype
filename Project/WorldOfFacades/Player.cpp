@@ -55,9 +55,21 @@ void GPlayer::Update(float _deltaTime)
 	}
 
 	// set position of camera
+	SVector2 camPosition;
+	camPosition.X = m_position.X + PLAYER_WIDTH / 2;
+	// camPosition.Y = m_position.Y - PLAYER_HEIGHT / 2;
+
+	camPosition.Y = m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2;
+
 	CEngine::Get()->GetRenderer()->SetCamera(
-		SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y + PLAYER_HEIGHT / 2)
+		camPosition
 	);
+
+	
+	// Origin version
+	//CEngine::Get()->GetRenderer()->SetCamera(
+	//	SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2)
+	//);
 
 
 #pragma region PLAYER_STATE DRAFT

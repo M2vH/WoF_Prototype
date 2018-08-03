@@ -46,8 +46,8 @@ void GBackgroundStatic::Update(float _deltaTime)
 #pragma endregion
 
  
-
 	CTexturedObject::Update(_deltaTime);
+	// CMoveObject::Update(_deltaTime);
 }
 
 void GBackgroundStatic::Render(CRenderer * _pRenderer)

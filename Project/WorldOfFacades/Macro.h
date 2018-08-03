@@ -3,6 +3,7 @@
 #pragma region value macro
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
+#define CAMERA_OFFSET_Y 200
 #define PLAYER_SPEED 500.0f
 #define PLAYER_JUMP_FORCE 500.0f
 #define PLAYER_JUMP_TIME 0.5f
@@ -20,7 +21,7 @@
 
 #pragma region m2vh
 #define FOREGROUND_DISTFACTOR 1.2f
-#define GROUND_POSITION 650	// Y-Position of top border
+#define GROUND_POSITION 720	// Y-Position of top border
 #define WAY_HEIGHT 10
 #define NPC_HEIGHT 302
 #define NPC_WIDTH 174
