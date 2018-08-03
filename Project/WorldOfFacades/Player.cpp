@@ -25,6 +25,8 @@ void GPlayer::Update(float _deltaTime)
 	if (CInput::GetKey(SDL_SCANCODE_S) && m_foundItem == true)
 	{
 		LOG_MESSAGE("Grab Item ", std::to_string(m_foundItem));
+		m_inventory->AddObject((m_inventoryItem)->GetItemType());
+		CEngine::Get()->GetCM()->RemoveObject(m_inventoryItem);
 		// ToDo:
 		// Push Item into Inventory;
 		// Put item into RemoveObject-List;
@@ -32,11 +34,11 @@ void GPlayer::Update(float _deltaTime)
 		// reset value;
 		// m_foundItem = false;
 		//CEngine::Get()->GetCM()->AddUIObject()
-		
+
 
 		/*if (m_inventoryItem->GetItemType() == EEmotionType::FURY)
 		{
-			
+
 		}*/
 
 	}
@@ -87,7 +89,7 @@ void GPlayer::Update(float _deltaTime)
 			// set movement and mirror
 			m_movement.X = -1.0f;
 			m_mirror.X = 1.0f;
-			SetAnimState( EAnimState::STATE_ANIM_MOVE);
+			SetAnimState(EAnimState::STATE_ANIM_MOVE);
 		}
 
 		// movement right
@@ -158,7 +160,7 @@ void GPlayer::Update(float _deltaTime)
 				// if not moveable cancel collision check
 				if (!moveable)
 					SetAnimState(EAnimState::STATE_ANIM_IDLE);
-					break;
+				break;
 			}
 
 			// if moveable
@@ -181,7 +183,7 @@ void GPlayer::Update(float _deltaTime)
 					// if not moveable cancel collision check
 					if (!moveable)
 						SetAnimState(EAnimState::STATE_ANIM_IDLE);
-						break;
+					break;
 				}
 			}
 

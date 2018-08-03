@@ -23,9 +23,9 @@ void GMainScene::Init()
 {
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
 
-	
+
 #pragma region The static background (Moon)
-					// create a screen background from TexturedObject
+	// create a screen background from TexturedObject
 	// ToDo (m2vh) use this for displaying the moon
 	CTexturedObject* pBackground = new CTexturedObject(
 		SVector2(0, 0),
@@ -39,7 +39,7 @@ void GMainScene::Init()
 
 #pragma region BackgroundStatic
 	// create a moveobject as background
-// but keep it static (dont move it)
+	// but keep it static (dont move it)
 	GBackgroundStatic* pBackgroundStatic = new GBackgroundStatic(
 		SVector2(0, 0),
 		SVector2(1280, 720),
@@ -94,13 +94,13 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Player
-	
+
 	// create an array of filePaths
 	//	index 0..2	-> IDLE
 	//	index 3..5	-> WALK
 	//	index 6..8	-> JUMP
 
-	char* playerAnimFileNames[] = { 
+	char* playerAnimFileNames[] = {
 		"Texture/Protagonist/protag_jump_1.png",
 		"Texture/Protagonist/protag_jump_1.png",
 		"Texture/Protagonist/protag_jump_1.png",
@@ -119,12 +119,12 @@ void GMainScene::Init()
 	GPlayer * pPlayer = new GPlayer(
 		8,
 		0.5f,
-		SVector2(0,0),
+		SVector2(0, 0),
 		SVector2(WORLD_WIDTH / 2, WORLD_HEIGHT / 2),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
 		playerAnimFileNames
-		);
+	);
 
 	// set player values
 	// pPlayer->SetSpeed(PLAYER_SPEED);
@@ -135,12 +135,12 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Inventory
-		GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
+	GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
 		SVector2(48 * 2, 48 * 6),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Inventory/inventorybackground_496x756.png");
 
-		pPlayer->SetInventory(m_inventory);
+	pPlayer->SetInventory(m_inventory);
 #pragma endregion
 
 
@@ -174,7 +174,7 @@ void GMainScene::Init()
 		pTheRenderer,
 		"Texture/Character/Player/T_Samus_Idle.png"
 	);
-	
+
 #pragma endregion
 
 
@@ -202,7 +202,7 @@ void GMainScene::Init()
 
 #pragma endregion
 
-#pragma region FuryItem
+#pragma region Items
 	// create FuryItem 
 	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(900, 500 - WORLD_BLOCK_HEIGHT),
 		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
@@ -210,10 +210,16 @@ void GMainScene::Init()
 		"Texture/Inventory/Fury_500x500.png");
 	pFuryItem->SetItemType(EEmotionType::FURY);
 
+	// create FearItem 
+	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1000, 500 - WORLD_BLOCK_HEIGHT),
+		SVector2(WORLD_BLOCK_WIDTH, WORLD_BLOCK_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Inventory/Fear_512x512.png");
+	pFearItem->SetItemType(EEmotionType::FEAR);
 #pragma endregion
 
 #pragma region Adding objects to Lists
-					
+
 
 	//	//	PERSISTANT
 	//	THE FOREGROUND
@@ -224,6 +230,7 @@ void GMainScene::Init()
 
 	//	The Items
 	CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
+	CEngine::Get()->GetCM()->AddPersistantObject(pFearItem);
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
@@ -236,9 +243,9 @@ void GMainScene::Init()
 
 	// add the anim object
 	// CEngine::Get()->GetCM()->AddPersistantObject(pAnimObj);
-	
 
-	
+
+
 	//	//	SceneObjects
 	//	// The Trees
 	//	add worldbackground to SceneObject
@@ -247,10 +254,10 @@ void GMainScene::Init()
 
 	// add background to SceneObject-List
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackground);
-	
+
 	// Sliding background NOT working
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
-	
+
 	//	//	The Stars
 	// adding a moveObject and dont move
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundStatic);
@@ -259,7 +266,7 @@ void GMainScene::Init()
 	// add object to cm
 	//CEngine::Get()->GetCM()->AddUIObject(pInventoryBackground);
 	// CEngine::Get()->GetCM()->AddPersistantObject(pObj);
-	
+
 	// create world
 	// m_pWorld = new GWorld(CEngine::Get()->GetRenderer(), "Texture/World/T_WorldSide.png");
 	// m_pWorld->Init();

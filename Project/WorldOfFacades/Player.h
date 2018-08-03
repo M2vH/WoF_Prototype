@@ -17,7 +17,7 @@ class GNpc;
 /// <summary>
 /// player class
 /// </summary>
-class GPlayer :	public GAnimObject
+class GPlayer : public GAnimObject
 {
 public:
 	static GPlayer* Get() { return s_instance; }
@@ -53,17 +53,17 @@ public:
 		SVector2 _size,
 		CRenderer* _pRenderer,
 		char** _pFileNames) :
-			GAnimObject(
-				_count,
-				_animspeed, 
-				_blockSize,
-				_pos,
-				_size, 
-				_pRenderer, 
-				_pFileNames) {
-					m_foundItem = false;
-					s_instance = this;
-					m_speed = PLAYER_SPEED;
+		GAnimObject(
+			_count,
+			_animspeed,
+			_blockSize,
+			_pos,
+			_size,
+			_pRenderer,
+			_pFileNames) {
+		m_foundItem = false;
+		s_instance = this;
+		m_speed = PLAYER_SPEED;
 	}
 
 	/// <summary>
@@ -104,7 +104,7 @@ public:
 	/// </summary>
 	/// <returns>the inventory</returns>
 	GInventory* GetInventory() { return m_inventory; }
-	
+
 	/// /// <summary>
 	/// set NPC
 	/// </summary>
@@ -156,5 +156,5 @@ private:
 	//EPlayerState m_playerState;
 #pragma endregion
 
- static GPlayer* s_instance;
+	static GPlayer* s_instance;
 };
