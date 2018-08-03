@@ -1,5 +1,6 @@
 #pragma region project include
 #include "Inventory.h" 
+#include "Macro.h"
 #pragma endregion
 
 #pragma region constructor
@@ -12,21 +13,21 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 	m_inWorld = false;
 	
 	m_pFuryItem = new GInventoryItems(SVector2(0, 0),
-		SVector2(64, 64),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
-		"Texture/Inventory/Fury_500x500.png");
+		"Texture/Item/teddy.png");
 	m_pFuryItem->SetInWorld(false);
 
 	m_pFearItem = new GInventoryItems(SVector2(0, 0),
-		SVector2(64, 64),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
-		"Texture/Inventory/Fear_512x512.png");
+		"Texture/Item/candle.png");
 	m_pFearItem->SetInWorld(false);
 
 	m_pSadnessItem = new GInventoryItems(SVector2(0, 0),
-		SVector2(64, 64),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
-		"Texture/Inventory/Sadness_512x512");
+		"Texture/Item/book_1.png");
 	m_pSadnessItem->SetInWorld(false);
 }
 #pragma endregion
@@ -40,7 +41,7 @@ void GInventory::Update(float _deltaTime)
 
 	// update every item object
 	int temp = 1;
-	SVector2 offset = { 20,20 };
+	SVector2 offset = { INVENTORY_ITEM_OFFSET_X, INVENTORY_ITEM_OFFSET_Y };
 	for (GInventoryItems* pObj : m_pItemObjects) 
 	{
 		SVector2 newPosition = m_position + SVector2(offset.X, offset.Y * temp);
