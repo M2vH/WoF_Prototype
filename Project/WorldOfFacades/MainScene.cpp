@@ -40,6 +40,7 @@ void GMainScene::Init()
 #pragma region THE MOON and the STARS
 	// create a moveobject as background
 	// but keep it static (dont move it)
+
 	GBackgroundStatic* pBackgroundHimmel = new GBackgroundStatic(
 		SVector2(0, 0),
 		SVector2(1280, 720),
@@ -148,8 +149,8 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Inventory
-	GInventory* m_inventory = new GInventory(SVector2(25, SCREEN_HEIGHT *0.25),
-		SVector2(48 * 2, 48 * 6),
+	GInventory* m_inventory = new GInventory(SVector2(20, 120),
+		SVector2(INVENTORY_WIDTH, INVENTORY_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Inventory/item_hub.png");
 
@@ -195,10 +196,10 @@ void GMainScene::Init()
 
 	// Add a ground to walk on;
 	GBackgroundStatic* pGround = new GBackgroundStatic(
-		SVector2(0, GROUND_POSITION),
+		SVector2(0, GROUND_POSITION), 
 		SVector2(3840, 220),
 		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_backg_G1_1280x720.png"
+		"Texture/World/T_backg_G1_1280x720.png" 
 	);
 	pGround->SetColType(ECollisionType::WALL);
 	pGround->DeactivateGravity();
@@ -236,7 +237,6 @@ void GMainScene::Init()
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/book_1.png");
 	pSadItem->SetItemType(EEmotionType::SAD);
-
 #pragma endregion
 
 #pragma region Adding objects to Lists
@@ -253,6 +253,7 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
 	CEngine::Get()->GetCM()->AddPersistantObject(pFearItem);
 	CEngine::Get()->GetCM()->AddPersistantObject(pSadItem);
+
 
 	// add player to persistant list
 	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
@@ -279,6 +280,7 @@ void GMainScene::Init()
 
 	// Sliding background NOT working
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundSlide);
+
 
 	//	//	The Stars and the sky and the moon
 	// adding a moveObject and dont move

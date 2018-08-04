@@ -19,6 +19,7 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 	m_pFuryItem->SetInWorld(false);
 
 	m_pFearItem = new GInventoryItems(SVector2(0, 0),
+
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/candle.png");
@@ -28,6 +29,7 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/book_1.png");
+
 	m_pSadnessItem->SetInWorld(false);
 }
 #pragma endregion
@@ -41,7 +43,9 @@ void GInventory::Update(float _deltaTime)
 
 	// update every item object
 	int temp = 1;
+
 	SVector2 offset = { INVENTORY_ITEM_OFFSET_X, INVENTORY_ITEM_OFFSET_Y };
+
 	for (GInventoryItems* pObj : m_pItemObjects) 
 	{
 		SVector2 newPosition = m_position + SVector2(offset.X, offset.Y * temp);
