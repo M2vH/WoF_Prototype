@@ -27,18 +27,12 @@
 #define NPC_WIDTH 174
 #define ITEM_WIDTH 55
 #define ITEM_HEIGHT 55
-#define INVENTORY_ITEM_OFFSET_X 10
-#define INVENTORY_ITEM_OFFSET_Y 10
-<<<<<<< HEAD
-#define MOON_POSITION_Y 50
-=======
+#define INVENTORY_ITEM_OFFSET_X 22
+#define INVENTORY_ITEM_OFFSET_Y 17
 #define INVENTORY_WIDTH 97
 #define INVENTORY_HEIGHT 244
 #define MOON_POSITION_Y -50
 #define MOON_POSITION_X 850
->>>>>>> upstream/develop
-#define	INVENTORY_WIDTH 97
-#define	INVENTORY_HEIGHT 244
 #pragma endregion
 
 

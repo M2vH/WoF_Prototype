@@ -200,12 +200,8 @@ void GMainScene::Init()
 		SVector2(0, GROUND_POSITION), 
 		SVector2(3840, 220),
 		CEngine::Get()->GetRenderer(),
-<<<<<<< HEAD
-		"Texture/World/T_backg_G1_1280x720.png" 
-=======
 		//"Texture/World/T_backg_G1_1280x720.png"
 		""	// add empty string to create collision object
->>>>>>> upstream/develop
 	);
 	pGround->SetColType(ECollisionType::WALL);
 	pGround->DeactivateGravity();
