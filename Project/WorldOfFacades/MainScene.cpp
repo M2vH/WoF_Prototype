@@ -15,6 +15,7 @@
 #include "AnimObject.h"
 #include <SDL_timer.h>
 #include "EnumEmotionType.h"
+#include "WorldBackground.h"
 #pragma endregion
 
 #pragma region public override function
@@ -98,10 +99,18 @@ void GMainScene::Init()
 
 	// create a worldspace background
 	// as TexturedObject
-	CTexturedObject* pBackgroundWorld = new CTexturedObject(
-		SVector2(0, 100),	// pos of object in World
-		SVector2(3840, 720),	// size; if 0,0 will be set to texture size
-		CEngine::Get()->GetRenderer(),
+	//// the following is working;
+	//CTexturedObject* pBackgroundWorld = new CTexturedObject(
+	//	SVector2(0, 100),	// pos of object in World
+	//	SVector2(3840, 720),	// size; if 0,0 will be set to texture size
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Background/Wald/B_Wald_3840x720.png"
+	//);
+
+	GWorldBackground* pBackgroundWorld = new GWorldBackground(
+		SVector2(0, 100),
+		SVector2(3840, 720),
+		pTheRenderer,
 		"Texture/Background/Wald/B_Wald_3840x720.png"
 	);
 

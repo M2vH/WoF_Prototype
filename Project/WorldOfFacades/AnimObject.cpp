@@ -37,7 +37,7 @@ GAnimObject::GAnimObject(int _count, float _speed, SVector2 _blockSize, SVector2
 		for (int i = 0; i < m_animFilesCount; i++)
 		{
 			CTexture* texture= new CTexture(m_pFileNames[i], _pRenderer);
-			SDL_Delay(500);
+			// SDL_Delay(500);
 			m_pTextureArray[i] = texture;
 		}
 		SetTexture(m_pTextureArray[0]);

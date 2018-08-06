@@ -88,7 +88,18 @@ public:
 	/// </summary>
 	inline void DeactivateGravity() { m_gravity = false; }
 
-	 bool IsMoveable() { return m_isMovable; }
+	/// <summary>
+	/// get moveable bool
+	/// </summary>
+	/// <returns>true if object is moveable</returns>
+	inline bool IsMoveable() { return m_isMovable; }
+
+	/// <summary>
+	/// get grounded bool
+	/// </summary>
+ 	/// <returns>true if object is on the ground</returns>
+	inline bool IsGrounded() { return m_grounded; };
+
 #pragma endregion
 
 protected:
