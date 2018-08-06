@@ -28,19 +28,38 @@ void CMoveObject::Update(float _deltaTime)
 	// next position
 	SVector2 nextPos = m_position + m_movement * m_speed * _deltaTime;
 
-	// next rect
+	// create next rect out of nextPos to do the collision calc on
 	SRect nextRect = m_rect;
-	if (nextPos.X < 700)
+
+	// ToDo (m2vh) create bool hasBorder and check;
+
+	//// set the WORLD_PLAYER_BORDER_LEFT and WORLD_PLAYER_BORDER_RIGHT
+	//if (nextPos.X < WORLD_PLAYER_BORDER_LEFT)
+	//{
+	//	nextPos.X = WORLD_PLAYER_BORDER_LEFT;
+	//}
+
+	//if (nextPos.X > WORLD_PLAYER_BORDER_RIGHT)
+	//{
+	//	nextPos.X = WORLD_PLAYER_BORDER_RIGHT;
+	//}
+
+
+	// let the player pos rotate
+	// on the left 
+	if (nextPos.X < 0)
 	{
-		nextPos.X = 700;
+		// we jump to the right - 1
+		// we have pos 0 -> 3839 (3840 pixel)
+		nextPos.X = nextPos.X + WORLD_WIDTH - 1;
 	}
+	// on the right
+	if (nextPos.X > WORLD_WIDTH)
+	{
+		nextPos.X = (float)((int)nextPos.X % WORLD_WIDTH) - 1;
+	}
+
 	nextRect.x = (int)nextPos.X;
-
-	if (nextPos.X > 3000)
-	{
-		nextPos.X = 3000;
-	}
-
 	nextRect.y = (int)nextPos.Y;
 
 	if (ECollisionType::MOVE)

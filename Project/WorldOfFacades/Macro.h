@@ -17,6 +17,8 @@
 #define GRAVITY_VALUE 9.81f
 #define WORLD_WIDTH 3840
 #define WORLD_HEIGHT 720
+#define WORLD_PLAYER_BORDER_LEFT 700
+#define WORLD_PLAYER_BORDER_RIGHT 3000
 #pragma endregion
 
 #pragma region m2vh

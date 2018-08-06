@@ -44,6 +44,7 @@ public:
 	/// Fills the right half of the screen with the left side of the background image;
 	/// </summary>
 	CTexturedObject* m_pRightFill;
+
 #pragma endregion
 
 };

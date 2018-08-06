@@ -66,7 +66,7 @@ void GPlayer::Update(float _deltaTime)
 		camPosition
 	);
 
-	
+
 	// Origin version
 	//CEngine::Get()->GetRenderer()->SetCamera(
 	//	SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2)
@@ -93,7 +93,12 @@ void GPlayer::Update(float _deltaTime)
 #pragma region movement
 		// moveable default true
 		bool moveable = true;
-		SetAnimState(EAnimState::STATE_ANIM_IDLE);
+		
+		// check if we are not jumping
+		if ((GetAnimState() & EAnimState::STATE_ANIM_JUMP) != STATE_ANIM_JUMP)
+		{
+			SetAnimState(EAnimState::STATE_ANIM_IDLE);
+		}
 
 
 		// movement left
@@ -198,8 +203,8 @@ void GPlayer::Update(float _deltaTime)
 
 					// if not moveable cancel collision check
 					if (!moveable)
-//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
-					break;
+						//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
+						break;
 				}
 			}
 
@@ -219,8 +224,6 @@ void GPlayer::Update(float _deltaTime)
 
 #pragma endregion
 	}
-
-
 
 	// update parent
 	GAnimObject::Update(_deltaTime);

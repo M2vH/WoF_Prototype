@@ -17,7 +17,7 @@ GWorldBackground::GWorldBackground(SVector2 _pos, SVector2 _size, CRenderer* _pR
 	// player will possibly move towards 0,
 	// but never go further;
 	m_pLeftFill = new CTexturedObject(
-		SVector2(this->m_position.X - SCREEN_WIDTH / 2, 0),	// pos is { -640, 0 }
+		SVector2(this->m_position.X - SCREEN_WIDTH / 2, this->m_position.Y),	// pos is { -640, 0 }
 		SVector2((float)SCREEN_WIDTH / 2, this->m_rect.h)
 	);
 	// re-use the texture of THIS GWorldBackground object
@@ -34,14 +34,14 @@ GWorldBackground::GWorldBackground(SVector2 _pos, SVector2 _size, CRenderer* _pR
 	// player will reach right end at 3840,
 	// but will never go any further
 	m_pRightFill = new CTexturedObject(
-		SVector2(this->m_rect.w, 0), // the position is { 3840, 0 }
+		SVector2(this->m_rect.w, this->m_position.Y), // the position is { 3840, 0 }
 		SVector2((float)SCREEN_WIDTH / 2, this->m_rect.h)
 	);
-	// re-use teh texture of THIS object;
+	// re-use the texture of THIS object;
 	m_pRightFill->SetTexture(this->m_pTexture);
 	m_pRightFill->SetSrcRect(
 		SRect(
-			this->m_rect.w - SCREEN_WIDTH / 2,	// for the right fill use the left side of picture
+			0,	// for the right fill use the left side of picture
 			0,				// the upper border
 			SCREEN_WIDTH / 2,
 			this->m_rect.h
