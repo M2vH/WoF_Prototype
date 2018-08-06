@@ -68,6 +68,7 @@
     <ClCompile Include="InventoryItems.cpp">
       <Filter>Game\Items</Filter>
     </ClCompile>
+    <ClCompile Include="WorldBackground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -169,6 +170,7 @@
     <ClInclude Include="EnumAnimState.h">
       <Filter>Game\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="WorldBackground.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

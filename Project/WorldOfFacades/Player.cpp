@@ -55,9 +55,21 @@ void GPlayer::Update(float _deltaTime)
 	}
 
 	// set position of camera
+	SVector2 camPosition;
+	camPosition.X = m_position.X + PLAYER_WIDTH / 2;
+	// camPosition.Y = m_position.Y - PLAYER_HEIGHT / 2;
+
+	camPosition.Y = m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2;
+
 	CEngine::Get()->GetRenderer()->SetCamera(
-		SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y + PLAYER_HEIGHT / 2)
+		camPosition
 	);
+
+	
+	// Origin version
+	//CEngine::Get()->GetRenderer()->SetCamera(
+	//	SVector2(m_position.X + PLAYER_WIDTH / 2, m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2)
+	//);
 
 
 #pragma region PLAYER_STATE DRAFT
@@ -80,7 +92,7 @@ void GPlayer::Update(float _deltaTime)
 #pragma region movement
 		// moveable default true
 		bool moveable = true;
-		// SetAnimState(EAnimState::STATE_ANIM_IDLE);
+		SetAnimState(EAnimState::STATE_ANIM_IDLE);
 
 
 		// movement left
@@ -159,13 +171,16 @@ void GPlayer::Update(float _deltaTime)
 
 				// if not moveable cancel collision check
 				if (!moveable)
-					SetAnimState(EAnimState::STATE_ANIM_IDLE);
+					SetAnimState(EAnimState::STATE_ANIM_JUMP);
 				break;
 			}
 
 			// if moveable
 			if (moveable)
 			{
+				// we still fly
+				SetAnimState(EAnimState::STATE_ANIM_JUMP);
+
 				// through all persistant objects
 				for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
 				{
@@ -182,7 +197,7 @@ void GPlayer::Update(float _deltaTime)
 
 					// if not moveable cancel collision check
 					if (!moveable)
-						SetAnimState(EAnimState::STATE_ANIM_IDLE);
+//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
 					break;
 				}
 			}

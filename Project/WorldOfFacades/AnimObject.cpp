@@ -20,12 +20,12 @@ GAnimObject::GAnimObject(int _count, float _speed, SVector2 _blockSize, SVector2
 		m_pFileNames = _pFileNames;
 
 		m_pIdleTextures[0] = 0;
-		m_pIdleTextures[1] = 0;
-		m_pIdleTextures[2] = 0;
+		m_pIdleTextures[1] = 1;
+		m_pIdleTextures[2] = 2;
 
-		m_pMoveTextures[0] = 0;
-		m_pMoveTextures[1] = 1;
-		m_pMoveTextures[2] = 2;
+		m_pMoveTextures[0] = 3;
+		m_pMoveTextures[1] = 4;
+		m_pMoveTextures[2] = 5;
 
 		m_pJumpTextures[0] = 6;
 		m_pJumpTextures[1] = 7;

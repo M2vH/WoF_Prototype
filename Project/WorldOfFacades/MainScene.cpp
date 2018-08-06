@@ -24,16 +24,16 @@ void GMainScene::Init()
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
 
 
-#pragma region The static background (Moon)
-	// create a screen background from TexturedObject
-	// ToDo (m2vh) use this for displaying the moon
-	CTexturedObject* pBackground = new CTexturedObject(
-		SVector2(0, 0),
-		SVector2(1280, 720),
-		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_backg_L2_1280x720.png"
-	);
-	pBackground->SetInWorld(false);
+#pragma region The static background (deactivated)
+	//// create a screen background from TexturedObject
+	//// ToDo (m2vh) use this for displaying the moon
+	//CTexturedObject* pBackground = new CTexturedObject(
+	//	SVector2(0, 0),
+	//	SVector2(1280, 720),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/World/T_backg_L2_1280x720.png"
+	//);
+	//pBackground->SetInWorld(false);
 
 #pragma endregion
 
@@ -56,7 +56,7 @@ void GMainScene::Init()
 	// create a moveobject as background
 	// but keep it static (dont move it)
 	GBackgroundStatic* pBackgroundMoon = new GBackgroundStatic(
-		SVector2(849, MOON_POSITION_Y),
+		SVector2(MOON_POSITION_X, MOON_POSITION_Y),
 		SVector2(302, 302),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Background/Mond/B_Mond_4_720x720.png"
@@ -71,12 +71,13 @@ void GMainScene::Init()
 
 	// create a foreground object
 	GForegroundSlide* pForeground = new GForegroundSlide(
-		SVector2(-3840 / 2, GROUND_POSITION + WAY_HEIGHT),
+		SVector2(-3840 / 2, GROUND_POSITION - 55),
 		SVector2(3840 * 2, 400),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Vordergrund/B_Vordergrund_Weg_2560x604.png"
 	);
 	pForeground->SetInWorld(true);
+	pForeground->SetColType(ECollisionType::NONE);
 	// todo: delete no fx
 	// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
 
@@ -199,7 +200,12 @@ void GMainScene::Init()
 		SVector2(0, GROUND_POSITION), 
 		SVector2(3840, 220),
 		CEngine::Get()->GetRenderer(),
+<<<<<<< HEAD
 		"Texture/World/T_backg_G1_1280x720.png" 
+=======
+		//"Texture/World/T_backg_G1_1280x720.png"
+		""	// add empty string to create collision object
+>>>>>>> upstream/develop
 	);
 	pGround->SetColType(ECollisionType::WALL);
 	pGround->DeactivateGravity();
