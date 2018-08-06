@@ -32,6 +32,8 @@
 #define INVENTORY_WIDTH 97
 #define INVENTORY_HEIGHT 244
 #define MOON_POSITION_Y 50
+#define	INVENTORY_WIDTH 97
+#define	INVENTORY_HEIGHT 244
 #pragma endregion
 
 
