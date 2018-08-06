@@ -55,7 +55,7 @@ void GMainScene::Init()
 	// create a moveobject as background
 	// but keep it static (dont move it)
 	GBackgroundStatic* pBackgroundMoon = new GBackgroundStatic(
-		SVector2(849, MOON_POSITION_Y),
+		SVector2(MOON_POSITION_X, MOON_POSITION_Y),
 		SVector2(302, 302),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Background/Mond/B_Mond_4_720x720.png"
