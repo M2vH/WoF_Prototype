@@ -45,7 +45,6 @@ public:
 	/// </summary>
 	CTexturedObject* m_pRightFill;
 
-	// ToDo (m2vh) Add Player instance
 #pragma endregion
 
 };

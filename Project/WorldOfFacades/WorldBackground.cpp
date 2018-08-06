@@ -58,7 +58,6 @@ void GWorldBackground::Update(float _deltaTime)
 
 void GWorldBackground::Render(CRenderer* _pRenderer)
 {
-	// ToDo (m2vh) use Player instance to calc the necessary rendering
 	CTexturedObject::Render(_pRenderer);
 	m_pLeftFill->Render(_pRenderer);
 	m_pRightFill->Render(_pRenderer);
