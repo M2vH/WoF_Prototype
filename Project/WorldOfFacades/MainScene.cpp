@@ -24,16 +24,16 @@ void GMainScene::Init()
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
 
 
-#pragma region The static background (Moon)
-	// create a screen background from TexturedObject
-	// ToDo (m2vh) use this for displaying the moon
-	CTexturedObject* pBackground = new CTexturedObject(
-		SVector2(0, 0),
-		SVector2(1280, 720),
-		CEngine::Get()->GetRenderer(),
-		"Texture/World/T_backg_L2_1280x720.png"
-	);
-	pBackground->SetInWorld(false);
+#pragma region The static background (deactivated)
+	//// create a screen background from TexturedObject
+	//// ToDo (m2vh) use this for displaying the moon
+	//CTexturedObject* pBackground = new CTexturedObject(
+	//	SVector2(0, 0),
+	//	SVector2(1280, 720),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/World/T_backg_L2_1280x720.png"
+	//);
+	//pBackground->SetInWorld(false);
 
 #pragma endregion
 
