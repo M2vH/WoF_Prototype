@@ -47,6 +47,14 @@ GWorldBackground::GWorldBackground(SVector2 _pos, SVector2 _size, CRenderer* _pR
 			this->m_rect.h
 		));
 }
+GWorldBackground::~GWorldBackground()
+{
+	delete m_pRightFill;
+	m_pRightFill = nullptr;
+	delete m_pLeftFill;
+	m_pLeftFill = nullptr;
+};
+
 
 #pragma region override functions
 void GWorldBackground::Update(float _deltaTime)
@@ -65,6 +73,6 @@ void GWorldBackground::Render(CRenderer* _pRenderer)
 #pragma endregion
 
 
-GWorldBackground::~GWorldBackground()
-{
-}
+//GWorldBackground::~GWorldBackground()
+//{
+//}

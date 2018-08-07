@@ -16,7 +16,7 @@ public:
 	GWorldBackground::GWorldBackground(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
 		const char* _pFileName);
 
-	~GWorldBackground();
+	GWorldBackground::~GWorldBackground();
 
 #pragma endregion
 #pragma region inline override functions

@@ -50,9 +50,6 @@
     <ClCompile Include="BackgroundStatic.cpp">
       <Filter>Game\World\Backgrounds</Filter>
     </ClCompile>
-    <ClCompile Include="ForegroundSlide.cpp">
-      <Filter>Game\World\Backgrounds</Filter>
-    </ClCompile>
     <ClCompile Include="MoveObject.cpp">
       <Filter>Engine\Object</Filter>
     </ClCompile>
@@ -68,7 +65,13 @@
     <ClCompile Include="InventoryItems.cpp">
       <Filter>Game\Items</Filter>
     </ClCompile>
-    <ClCompile Include="WorldBackground.cpp" />
+    <ClCompile Include="WorldBackground.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="ForegroundSlide.cpp">
+      <Filter>Game\World\Foregrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Foreground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -137,9 +140,6 @@
     <ClInclude Include="BackgroundStatic.h">
       <Filter>Game\World\Backgrounds</Filter>
     </ClInclude>
-    <ClInclude Include="ForegroundSlide.h">
-      <Filter>Game\World\Backgrounds</Filter>
-    </ClInclude>
     <ClInclude Include="MoveObject.h">
       <Filter>Engine\Object</Filter>
     </ClInclude>
@@ -170,7 +170,13 @@
     <ClInclude Include="EnumAnimState.h">
       <Filter>Game\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="WorldBackground.h" />
+    <ClInclude Include="WorldBackground.h">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="ForegroundSlide.h">
+      <Filter>Game\World\Foregrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="Foreground.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -238,6 +244,9 @@
     </Filter>
     <Filter Include="Game\AnimatedObjects">
       <UniqueIdentifier>{ee1b214d-7f43-463e-aafd-3ac94b069359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World\Foregrounds">
+      <UniqueIdentifier>{4a0108f0-53eb-4d95-ba21-873733103e29}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
