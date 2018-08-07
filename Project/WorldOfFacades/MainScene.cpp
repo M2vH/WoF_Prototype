@@ -16,6 +16,7 @@
 #include <SDL_timer.h>
 #include "EnumEmotionType.h"
 #include "WorldBackground.h"
+#include "Foreground.h"
 #include "TextFPS.h"
 #include "Game.h"
 #pragma endregion
@@ -70,27 +71,12 @@ void GMainScene::Init()
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 #pragma endregion
 
-#pragma region ForeGround
-
-	// create a foreground object
-	GForegroundSlide* pForeground = new GForegroundSlide(
-		SVector2(-3840 / 2, GROUND_POSITION - 55),
-		SVector2(3840 * 2, 400),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Vordergrund/B_Vordergrund_Weg_2560x604.png"
-	);
-	pForeground->SetInWorld(true);
-	pForeground->SetColType(ECollisionType::NONE);
-	// todo: delete no fx
-	// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
-
-
-#pragma endregion
 
 #pragma region BackgroundSlide (NOT WORKING)
 
-					// ToDo (m2vh) BackgroundSlide
+	// ToDo (m2vh) BackgroundSlide
 	// create a BackgroundSlide
+	// we reuse the foreground with negative speed
 	// NOT WORKING
 	//GBackgroundSlide* pBackgroundSlide = new GBackgroundSlide(
 	//	"Texture/World/T_backg_L2_1280x720.png"
@@ -111,7 +97,7 @@ void GMainScene::Init()
 	//);
 
 	GWorldBackground* pBackgroundWorld = new GWorldBackground(
-		SVector2(0, 100),
+		SVector2(0, -50),
 		SVector2(3840, 720),
 		pTheRenderer,
 		"Texture/Background/Wald/B_Wald_3840x720.png"
@@ -146,7 +132,7 @@ void GMainScene::Init()
 		8,
 		0.1f,
 		SVector2(0, 0),
-		SVector2(WORLD_WIDTH / 2, 480 - PLAYER_HEIGHT),	// in the middle of the screen // ToDo (m2vh) adjust player size
+		SVector2(WORLD_WIDTH / 2, 478 - PLAYER_HEIGHT),	// in the middle of the screen // ToDo (m2vh) adjust player size
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
 		playerAnimFileNames
@@ -169,6 +155,32 @@ void GMainScene::Init()
 	pPlayer->SetInventory(m_inventory);
 #pragma endregion
 
+#pragma region ForeGround
+
+	
+	//// create a foreground object
+	//// following is working
+	//GForegroundSlide* pForeground = new GForegroundSlide(
+	//	SVector2(-3840 / 2, GROUND_POSITION - 55),
+	//	SVector2(3840 * 2, 400),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Vordergrund/B_Vordergrund_Weg_2560x604.png"
+	//);
+	//pForeground->SetInWorld(true);
+	//pForeground->SetColType(ECollisionType::NONE);
+	//// todo: delete no fx
+	//// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
+
+	GForeground* pForeground = new GForeground(
+		-2.0f,	// the speed
+		SVector2(0, GROUND_POSITION),
+		SVector2(1280, 302),
+		pTheRenderer,
+		"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
+	);
+
+
+#pragma endregion
 #pragma region Text
 #pragma region FPS text
 	// create fps text

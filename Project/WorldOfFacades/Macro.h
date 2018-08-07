@@ -23,7 +23,8 @@
 
 #pragma region m2vh
 #define FOREGROUND_DISTFACTOR 1.2f
-#define GROUND_POSITION 720	// Y-Position of top border
+#define FOREGROUND_MARGIN 5
+#define GROUND_POSITION 600	// Y-Position of top border
 #define WAY_HEIGHT 10
 #define NPC_HEIGHT 302
 #define NPC_WIDTH 174

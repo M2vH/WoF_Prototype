@@ -16,7 +16,7 @@ public:
 		int m_distance = 1
 	) : CMoveObject(_pos, _size, _pRenderer, _pFileName) 
 	{
-		m_speed = PLAYER_SPEED * m_distance * FOREGROUND_DISTFACTOR;
+		m_speed = PLAYER_SPEED * m_distance * m_distFactor;
 	};
 
 	~GForegroundSlide();

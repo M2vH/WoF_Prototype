@@ -215,6 +215,7 @@ void GPlayer::Update(float _deltaTime)
 				m_position.Y -= PLAYER_JUMP_FORCE * _deltaTime;
 				m_rect.y = (int)m_position.Y;
 
+
 				// set PLAYER_STATE::JUMP
 				SetAnimState(EAnimState::STATE_ANIM_JUMP);
 
@@ -227,6 +228,7 @@ void GPlayer::Update(float _deltaTime)
 
 	// update parent
 	GAnimObject::Update(_deltaTime);
+	//LOG_MESSAGE("Position Y: ", to_string(m_position.Y));
 }
 
 // render every frame
