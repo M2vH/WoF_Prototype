@@ -42,13 +42,13 @@ void GInventory::Update(float _deltaTime)
 	CTexturedObject::Update(_deltaTime);
 
 	// update every item object
-	int temp = 1;
+	int temp = 0;
 
 	SVector2 offset = { INVENTORY_ITEM_OFFSET_X, INVENTORY_ITEM_OFFSET_Y };
 
 	for (GInventoryItems* pObj : m_pItemObjects) 
 	{
-		SVector2 newPosition = m_position + SVector2(offset.X, offset.Y * temp);
+		SVector2 newPosition = m_position + SVector2(offset.X, offset.Y * temp + ITEM_HEIGHT * temp + offset.Y);
 		pObj->SetPosition(newPosition);
 		pObj->Update(_deltaTime);
 		temp++;
@@ -86,6 +86,24 @@ void GInventory::AddObject(EEmotionType _emoType)
 	
 		default:
 			break;
+	}
+}
+void GInventory::RemoveObjectItem(EEmotionType _emoType)
+{
+	switch (_emoType)
+	{
+	case EEmotionType::FURY:
+		m_pItemObjects.remove(m_pFuryItem);
+		break;
+	case EEmotionType::FEAR:
+		m_pItemObjects.remove(m_pFearItem);
+		break;
+	case EEmotionType::SAD:
+		m_pItemObjects.remove(m_pSadnessItem);
+		break;
+
+	default:
+		break;
 	}
 }
 #pragma endregion

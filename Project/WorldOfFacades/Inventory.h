@@ -92,6 +92,12 @@ public:
 	/// <param name="_pObj">object</param>
 	/// <param name="_pList">list to add to</param>
 	void AddObject(EEmotionType _emoType);
+	
+	/// <summary>
+	/// remove object from list
+	/// </summary>
+	/// <param name="_emoType">object</param>
+	void RemoveObjectItem(EEmotionType _emoType);
 #pragma endregion
 
 };

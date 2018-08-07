@@ -22,17 +22,18 @@ void GPlayer::Update(float _deltaTime)
 {
 	// ToDo!
 	//// pick up item
-	if (CInput::GetKey(SDL_SCANCODE_S) && m_foundItem == true)
+	if (CInput::GetKeyDown(SDL_SCANCODE_S) && m_foundItem == true)
 	{
 		LOG_MESSAGE("Grab Item ", std::to_string(m_foundItem));
-		m_inventory->AddObject((m_inventoryItem)->GetItemType());
+		m_inventory->RemoveObjectItem(m_inventoryItem->GetItemType());
+		m_inventory->AddObject(m_inventoryItem->GetItemType());
 		CEngine::Get()->GetCM()->RemoveObject(m_inventoryItem);
 		// ToDo:
 		// Push Item into Inventory;
 		// Put item into RemoveObject-List;
 		// Put item into Inventory-List;
 		// reset value;
-		// m_foundItem = false;
+		m_foundItem = false;
 		//CEngine::Get()->GetCM()->AddUIObject()
 
 
