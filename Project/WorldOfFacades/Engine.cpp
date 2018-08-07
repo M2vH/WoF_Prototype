@@ -1,12 +1,14 @@
 #pragma region system include
 #include <iostream>
 #include <SDL.h>
+#include <SDL_ttf.h>
 #pragma endregion
 
 #pragma region project include
 #include "Engine.h"
 #include "Renderer.h"
 #include "ContentManagement.h"
+#include "TextureManagement.h"
 #include "Game.h"
 #include "Scene.h"
 #include "Input.h"
@@ -81,6 +83,15 @@ bool CEngine::Init()
 			return false;
 		}
 
+		// initialize font
+		if (TTF_Init() < 0)
+		{
+			// error message
+			LOG_ERROR("Font could not be created!", SDL_GetError());
+
+			return false;
+		}
+
 		// create content management system
 		m_pCM = new CContentManagement();
 
@@ -89,6 +100,18 @@ bool CEngine::Init()
 		{
 			// error message
 			LOG_ERROR("Content Management System could not be created!", SDL_GetError());
+
+			return false;
+		}
+
+		// create texture managemant system
+		m_pTM = new CTextureManagement();
+
+		// if texture management could not be created
+		if (!m_pTM)
+		{
+			// error message
+			LOG_ERROR("Texture Management System could not be created!", "");
 
 			return false;
 		}
@@ -145,6 +168,12 @@ void CEngine::Clean()
 
 	// delete time
 	delete m_pTime;
+
+	// delete content management
+	delete m_pCM;
+
+	// delete texture management
+	delete m_pTM;
 
 	// delete renderer
 	delete m_pRenderer;

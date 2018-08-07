@@ -1,5 +1,10 @@
 #pragma once
 
+#pragma region forward declaration
+class CFont;
+#pragma endregion
+
+
 /// <summary>
 /// core game class for game logic
 /// </summary>
@@ -15,7 +20,7 @@ public:
 	/// <summary>
 	/// destructor
 	/// </summary>
-	~GGame() {}
+	~GGame() { Clean(); }
 #pragma endregion
 
 #pragma region public inline function
@@ -31,6 +36,30 @@ public:
 		// return game
 		return pGame;
 	}
+
+	/// <summary>
+	/// set gigi font
+	/// </summary>
+	/// <param name="_pGigiFont">gigi font</param>
+	inline void SetGigiFont(CFont* _pGigiFont) { m_pGigiFont = _pGigiFont; }
+
+	/// <summary>
+	/// get gigi font
+	/// </summary>
+	/// <returns>gigi  font</returns>
+	inline CFont* GetGigiFont() { return m_pGigiFont; }
+
+	/// <summary>
+	/// set pristina font
+	/// </summary>
+	/// <param name="_pGigiFont">pristina font</param>
+	inline void SetPristinaFont(CFont* _pPristinaFont) { m_pPristinaFont = _pPristinaFont; }
+
+	/// <summary>
+	/// get pristina font
+	/// </summary>
+	/// <returns>pristina  font</returns>
+	inline CFont* GetPristinaFont() { return m_pPristinaFont; }
 #pragma endregion
 
 #pragma region public function
@@ -38,5 +67,23 @@ public:
 	/// initialize game
 	/// </summary>
 	void Init();
+
+	/// <summary>
+	/// clean game
+	/// </summary>
+	void Clean();
 #pragma endregion
+
+#pragma region private variables
+	/// <summary>
+	/// base gigi font
+	/// </summary>
+	CFont* m_pGigiFont = nullptr;
+
+	/// <summary>
+	/// base gigi font
+	/// </summary>
+	CFont* m_pPristinaFont = nullptr;
+#pragma endregion
+
 };

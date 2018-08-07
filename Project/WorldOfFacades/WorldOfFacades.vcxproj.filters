@@ -171,6 +171,24 @@
       <Filter>Game\Utility</Filter>
     </ClInclude>
     <ClInclude Include="WorldBackground.h" />
+    <ClInclude Include="Color.h">
+      <Filter>Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManagement.h">
+      <Filter>Engine\TextureManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Engine\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Engine\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFPS.h">
+      <Filter>Game\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryText.h">
+      <Filter>Game\Text</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -238,6 +256,18 @@
     </Filter>
     <Filter Include="Game\AnimatedObjects">
       <UniqueIdentifier>{ee1b214d-7f43-463e-aafd-3ac94b069359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\TextureManagement">
+      <UniqueIdentifier>{e6a42861-3513-49d1-9bb9-c80205dc7d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Font">
+      <UniqueIdentifier>{fe0e431c-8615-47d5-b6dc-681f6c4cb74c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Text">
+      <UniqueIdentifier>{7bf5273a-c8c5-4d63-b319-ba855fe00d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Text">
+      <UniqueIdentifier>{caaaa16e-ab17-4e11-a195-edd96233a834}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,8 @@
 #include <SDL_timer.h>
 #include "EnumEmotionType.h"
 #include "WorldBackground.h"
+#include "TextFPS.h"
+#include "Game.h"
 #pragma endregion
 
 #pragma region public override function
@@ -167,6 +169,31 @@ void GMainScene::Init()
 	pPlayer->SetInventory(m_inventory);
 #pragma endregion
 
+#pragma region Text
+#pragma region FPS text
+	// create fps text
+	GTextFPS* pFPSText = new GTextFPS("FPS: 0",
+		GGame::Get()->GetPristinaFont(),
+		SRect(SCREEN_WIDTH / 2 + 500, 0, 100, 50));
+
+	// add fps text to list
+	CEngine::Get()->GetCM()->AddUIObject(pFPSText);
+#pragma endregion  
+
+#pragma region Inventory text
+	// create inventory text
+	CText* pInventoryText = new CText("Inventory",
+		GGame::Get()->GetPristinaFont(),
+		SRect(20, 80, INVENTORY_WIDTH, 50),
+		YELLOW);
+
+	// add inventory text to list
+	CEngine::Get()->GetCM()->AddUIObject(pInventoryText);
+#pragma endregion
+#pragma endregion
+
+
+
 
 #pragma region Animated Object
 
@@ -317,5 +344,8 @@ void GMainScene::Clean()
 {
 	// delete world
 	// delete m_pWorld;
+
+	// clean all objects
+
 }
 #pragma endregion
