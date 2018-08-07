@@ -31,6 +31,12 @@ public:
 	/// </summary>
 	/// <returns>sdl texture</returns>
 	inline SDL_Texture* GetSDLTexture() { return m_pTexture; }
+
+	/// <summary>
+	/// set sdl texture
+	/// </summary>
+	/// <param name="_pTexture">set sdl texture</param>
+	inline void SetSDLTexture(SDL_Texture* _pTexture) { m_pTexture = _pTexture; }
 #pragma endregion
 
 private:

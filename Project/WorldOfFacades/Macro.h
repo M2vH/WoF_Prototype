@@ -38,6 +38,11 @@
 #define MOON_POSITION_X 850
 #pragma endregion
 
+#pragma region Color
+#define YELLOW SColor(255, 255, 0)
+#pragma endregion
+
+
 
 #pragma region function macro
 #define LOG_ERROR(TEXT, ERROR)		\

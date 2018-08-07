@@ -11,6 +11,7 @@ class CRenderer;
 class CScene;
 class CContentManagement;
 class CTime;
+class CTextureManagement;
 #pragma endregion
 
 /// <summary>
@@ -46,6 +47,17 @@ public:
 	}
 
 	/// <summary>
+	/// exit engine
+	/// </summary>
+	inline void Exit() { m_isRunning = false; }
+
+	/// <summary>
+	/// get sdl surface
+	/// </summary>
+	/// <returns>sdl surface</returns>
+	inline SDL_Surface* GetSDLSurface() { return m_pSurface; }
+
+	/// <summary>
 	/// get renderer
 	/// </summary>
 	/// <returns>renderer</returns>
@@ -54,8 +66,14 @@ public:
 	/// <summary>
 	/// get content management system
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>content management</returns>
 	inline CContentManagement* GetCM() { return m_pCM; }
+
+	/// <summary>
+	/// get texture management system
+	/// </summary>
+	/// <returns>texture management</returns>
+	inline CTextureManagement* GetTM() { return m_pTM; }
 
 	/// <summary>
 	/// get time class
@@ -122,6 +140,11 @@ private:
 	/// content management system
 	/// </summary>
 	CContentManagement* m_pCM;
+
+	/// <summary>
+	/// texture management system
+	/// </summary>
+	CTextureManagement* m_pTM;
 
 	/// <summary>
 	/// active scene
