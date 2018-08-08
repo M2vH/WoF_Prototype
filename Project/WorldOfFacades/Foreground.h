@@ -18,6 +18,7 @@ public:
 	GForeground(float _speed, SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
 		const char* _pFileName) : GWorldBackground(_pos, _size, _pRenderer, _pFileName) 
 	{
+		m_startPosition = _pos;
 		m_speed = _speed;
 		m_inWorld = false;
 		m_pPlayer = GPlayer::Get();
@@ -58,7 +59,16 @@ private:
 	/// </summary>
 	float m_speed;
 
+	/// <summary>
+	/// the movement of this object;
+	/// is calculated relative to player pos.
+	/// </summary>
 	SVector2 m_movement = SVector2(0,0);
+
+	/// <summary>
+	/// The origin position;
+	/// </summary>
+	SVector2 m_startPosition;
 #pragma endregion
 #pragma region private variables
 	

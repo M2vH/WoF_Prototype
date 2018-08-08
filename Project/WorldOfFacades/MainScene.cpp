@@ -171,14 +171,27 @@ void GMainScene::Init()
 	//// todo: delete no fx
 	//// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
 
+	/// <summary>
+	/// the foreground in front of the player
+	/// </summary>
 	GForeground* pForeground = new GForeground(
 		-2.0f,	// the speed
-		SVector2(0, GROUND_POSITION),
+		SVector2(0, FOREGROUND_POSITION_Y),
 		SVector2(1280, 302),
 		pTheRenderer,
 		"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
 	);
 
+	/// <summary>
+	/// is the way, the player is moving on; place it between player and world
+	/// </summary>
+	GForeground* pWalkground = new GForeground(
+		-1.0f,	// is moving with playerspeed on the worldimage in opposite direction
+		SVector2(0, GROUND_POSITION - WAY_HEIGHT),
+		SVector2(1280, 170),
+		pTheRenderer,
+		"Texture/Background/Wald/B_Hintergrund_Weg_1280x170.png"
+	);
 
 #pragma endregion
 #pragma region Text
@@ -189,7 +202,7 @@ void GMainScene::Init()
 		SRect(SCREEN_WIDTH / 2 + 500, 0, 100, 50));
 
 	// add fps text to list
-	CEngine::Get()->GetCM()->AddUIObject(pFPSText);
+	// CEngine::Get()->GetCM()->AddUIObject(pFPSText);
 #pragma endregion  
 
 #pragma region Inventory text
@@ -232,7 +245,7 @@ void GMainScene::Init()
 	// create first NPC of EmoType FURY
 	GNpc* pFury = new GNpc(
 		EEmotionType::FURY,
-		SVector2(2500, GROUND_POSITION - NPC_HEIGHT),
+		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
 		SVector2(NPC_WIDTH, NPC_HEIGHT),
 		pTheRenderer,
 		"Texture/NPC/Anger/anger_mask_1.png"
@@ -320,6 +333,9 @@ void GMainScene::Init()
 
 
 	//	//	SceneObjects
+	//	// The Way 
+	//	add pWalkground
+	CEngine::Get()->GetCM()->AddSceneObject(pWalkground);
 	//	// The Trees
 	//	add worldbackground to SceneObject
 	//  first in list, last to be rendered;

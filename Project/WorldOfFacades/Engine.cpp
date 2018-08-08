@@ -150,9 +150,26 @@ void CEngine::Run()
 	// as long as engine running
 	while (m_isRunning)
 	{
+		clock_t checkTime = clock();
+
 		Update();
 
+		double updateTime = (clock() - checkTime) / (double)CLOCKS_PER_SEC;
+
+		checkTime = clock();
+
 		Render();
+
+		double renderTime = (clock() - checkTime) / (double)CLOCKS_PER_SEC;
+
+		if (updateTime + renderTime > 1.0f / 40)
+		{
+			LOG_MESSAGE("Update: ", updateTime);
+			LOG_MESSAGE("Render: ", renderTime);
+			LOG_MESSAGE("","---");
+
+		}
+
 	}
 }
 
@@ -244,11 +261,14 @@ void CEngine::Update()
 
 	// update content
 	m_pCM->Update(m_pTime->GetDeltaTime());
+
+
 }
 
 // render every frame
 void CEngine::Render()
 {
+
 	// clear current screen
 	m_pRenderer->ClearScreen();
 
@@ -257,5 +277,7 @@ void CEngine::Render()
 
 	// present rendered image
 	m_pRenderer->Present();
+
+
 }
 #pragma endregion

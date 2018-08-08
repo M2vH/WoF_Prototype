@@ -107,7 +107,7 @@ void CMoveObject::Update(float _deltaTime)
 					// it is ITEM and in reach
 					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
 					{
-						LOG_MESSAGE("Item found.", "");
+						// LOG_MESSAGE("Item found.", "");
 						player->SetInventoryItem((GInventoryItems*)pObj);
 
 						continue;
@@ -133,7 +133,7 @@ void CMoveObject::Update(float _deltaTime)
 					// It is NPC and in reach
 					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NPC && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
 					{
-						LOG_MESSAGE("NPC found.", "");
+						//LOG_MESSAGE("NPC found.", "");
 						player->SetNPC((GNpc*)pObj);
 
 						continue;
