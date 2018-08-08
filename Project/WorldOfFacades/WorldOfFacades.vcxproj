@@ -218,11 +218,8 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="EnumAnimState.h" />
     <ClInclude Include="EnumEmotionType.h" />
     <ClInclude Include="EnumItemState.h" />
-<<<<<<< HEAD
     <ClInclude Include="Foreground.h" />
-=======
     <ClInclude Include="Font.h" />
->>>>>>> pr/24
     <ClInclude Include="ForegroundSlide.h" />
     <ClInclude Include="InventoryItems.h" />
     <ClInclude Include="Game.h" />
