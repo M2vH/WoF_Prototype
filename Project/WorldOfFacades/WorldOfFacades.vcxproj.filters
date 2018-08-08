@@ -266,6 +266,7 @@
     </Filter>
     <Filter Include="Game\World\Foregrounds">
       <UniqueIdentifier>{4a0108f0-53eb-4d95-ba21-873733103e29}</UniqueIdentifier>
+      </Filter>
     <Filter Include="Engine\TextureManagement">
       <UniqueIdentifier>{e6a42861-3513-49d1-9bb9-c80205dc7d05}</UniqueIdentifier>
     </Filter>
