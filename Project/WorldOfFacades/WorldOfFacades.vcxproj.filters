@@ -203,6 +203,8 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Engine\Audio</Filter>
+          </ClInclude>
+
     <ClInclude Include="EnumWorldState.h">
       <Filter>Game\Utility</Filter>
     </ClInclude>
