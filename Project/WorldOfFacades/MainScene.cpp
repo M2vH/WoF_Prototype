@@ -132,9 +132,9 @@ void GMainScene::Init()
 	//	// add a NOW animated player
 	GPlayer * pPlayer = new GPlayer(
 		8,
-		0.1f,
+		0.15f,
 		SVector2(0, 0),
-		SVector2(WORLD_WIDTH / 2, 478 - PLAYER_HEIGHT),	// in the middle of the screen // ToDo (m2vh) adjust player size
+		SVector2(WORLD_WIDTH / 2, 478 - PLAYER_HEIGHT),	// X: in the middle of the world Y: will fall till ground
 		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
 		CEngine::Get()->GetRenderer(),
 		playerAnimFileNames
@@ -301,26 +301,46 @@ void GMainScene::Init()
 
 #pragma region Items
 	// create FuryItem 
-	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(900, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/teddy.png");
 	pFuryItem->SetItemType(EEmotionType::FURY);
 
 	// create FearItem 
-	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1000, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/candle.png");
 	pFearItem->SetItemType(EEmotionType::FEAR);
 
 	// create SadnessItem 
-	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/book_1.png");
 	pSadItem->SetItemType(EEmotionType::SAD);
 #pragma endregion
+
+#pragma region THE HOUSE
+	// is a textured object.
+	// must be placed with the 'door';
+	// door is collision type 'DOOR';
+	CTexturedObject* pHouse = new CTexturedObject(
+		SVector2(HOUSE_POS_X,HOUSE_POS_Y),
+		SVector2(HOUSE_WIDTH,HOUSE_HEIGHT),
+		pTheRenderer,
+		"Texture/Haus/B_House_373x296.png"
+	);
+
+	// is inWorld
+	pHouse->SetInWorld(true);
+	// has CollisionType of HOUSE
+	pHouse->SetColType(ECollisionType::HOUSE);
+
+#pragma endregion
+
+
 
 #pragma region Adding objects to Lists
 
@@ -353,6 +373,9 @@ void GMainScene::Init()
 
 
 	//	//	SceneObjects
+	//	// The House
+	//	add pHouse
+	CEngine::Get()->GetCM()->AddSceneObject(pHouse);
 	//	// The Way 
 	//	add pWalkground
 	CEngine::Get()->GetCM()->AddSceneObject(pWalkground);
@@ -374,6 +397,8 @@ void GMainScene::Init()
 	// the moon
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundMoon);
 	
+	//	// last to list, first to render
+	//	// will be in the background
 	// the stars
 	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundHimmel);
 

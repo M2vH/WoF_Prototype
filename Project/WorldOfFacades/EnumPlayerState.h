@@ -14,7 +14,7 @@ enum EPlayerState
 	PLAYER_JUMP = 8,
 	PLAYER_AT_ITEM = 16,	// Item is in reach
 	PLAYER_AT_NPC = 32,	// NPC in reach
-	PLAYER_VISIT_NPC = 364 // << 4	// at NPC; block the move
+	PLAYER_VISIT_NPC = 64 // << 4	// at NPC; block the move
 
 	// is it possible to do this:
 	// VISIT_NPC = BLOCKED | 5;

@@ -71,7 +71,10 @@
     <ClCompile Include="ForegroundSlide.cpp">
       <Filter>Game\World\Foregrounds</Filter>
     </ClCompile>
-    <ClCompile Include="Foreground.cpp" />
+    <ClCompile Include="Foreground.cpp">
+      <Filter>Game\World\Foregrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldStatus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -176,7 +179,6 @@
     <ClInclude Include="ForegroundSlide.h">
       <Filter>Game\World\Foregrounds</Filter>
     </ClInclude>
-    <ClInclude Include="Foreground.h" />
     <ClInclude Include="WorldBackground.h" />
     <ClInclude Include="Color.h">
       <Filter>Engine\Utility</Filter>
@@ -201,6 +203,14 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Engine\Audio</Filter>
+    <ClInclude Include="EnumWorldState.h">
+      <Filter>Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Foreground.h">
+      <Filter>Game\World\Foregrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldStatus.h">
+      <Filter>Game\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
