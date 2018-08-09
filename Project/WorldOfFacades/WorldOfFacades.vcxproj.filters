@@ -1,76 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="AnimObject.cpp" />
-    <ClCompile Include="BackgroundSlide.cpp" />
-    <ClCompile Include="BackgroundStatic.cpp" />
-    <ClCompile Include="CContentManagement.cpp" />
-    <ClCompile Include="Foreground.cpp" />
-    <ClCompile Include="ForegroundSlide.cpp" />
-    <ClCompile Include="InventoryItems.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Helper.cpp" />
-    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainScene.cpp" />
-    <ClCompile Include="MoveObject.cpp" />
-    <ClCompile Include="Npc.cpp" />
-    <ClCompile Include="Physic.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="TexturedObject.cpp" />
-    <ClCompile Include="TexturedObjectSlide.cpp" />
-    <ClCompile Include="Time.cpp" />
-    <ClCompile Include="World.cpp" />
-    <ClCompile Include="WorldBackground.cpp" />
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedObject.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedObjectSlide.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Engine\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CContentManagement.cpp">
+      <Filter>Engine\ContentManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Game\Utility\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Game\Core\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Game\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Physic.cpp">
+      <Filter>Game\Core\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundSlide.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundStatic.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveObject.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Game\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>Game\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimObject.cpp">
+      <Filter>Game\AnimatedObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryItems.cpp">
+      <Filter>Game\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldBackground.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="ForegroundSlide.cpp">
+      <Filter>Game\World\Foregrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Foreground.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClInclude Include="AnimObject.h" />
-    <ClInclude Include="BackgroundSlide.h" />
-    <ClInclude Include="BackgroundStatic.h" />
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="ContentManagement.h" />
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="Enum.h" />
-    <ClInclude Include="EnumAnimState.h" />
-    <ClInclude Include="EnumEmotionType.h" />
-    <ClInclude Include="EnumItemState.h" />
-    <ClInclude Include="Foreground.h" />
-    <ClInclude Include="Font.h" />
-    <ClInclude Include="ForegroundSlide.h" />
-    <ClInclude Include="InventoryItems.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="EnumPlayerState.h" />
-    <ClInclude Include="Helper.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Inventory.h" />
-    <ClInclude Include="InventoryText.h" />
-    <ClInclude Include="Macro.h" />
-    <ClInclude Include="MainScene.h" />
-    <ClInclude Include="MoveObject.h" />
-    <ClInclude Include="EnumNpcState.h" />
-    <ClInclude Include="Npc.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Physic.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Rect.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="Text.h" />
-    <ClInclude Include="TextFPS.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="TexturedObject.h" />
-    <ClInclude Include="TexturedObjectSlide.h" />
-    <ClInclude Include="TextureManagement.h" />
-    <ClInclude Include="Time.h" />
-    <ClInclude Include="Vector2.h" />
-    <ClInclude Include="World.h" />
-    <ClInclude Include="WorldBackground.h" />
-=======
     <ClInclude Include="Vector2.h">
       <Filter>Engine\Utility</Filter>
     </ClInclude>
@@ -193,6 +196,12 @@
     <ClInclude Include="InventoryText.h">
       <Filter>Game\Text</Filter>
     </ClInclude>
+    <ClInclude Include="Music.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -263,7 +272,7 @@
     </Filter>
     <Filter Include="Game\World\Foregrounds">
       <UniqueIdentifier>{4a0108f0-53eb-4d95-ba21-873733103e29}</UniqueIdentifier>
-      </Filter>
+    </Filter>
     <Filter Include="Engine\TextureManagement">
       <UniqueIdentifier>{e6a42861-3513-49d1-9bb9-c80205dc7d05}</UniqueIdentifier>
     </Filter>
@@ -276,7 +285,9 @@
     <Filter Include="Game\Text">
       <UniqueIdentifier>{caaaa16e-ab17-4e11-a195-edd96233a834}</UniqueIdentifier>
     </Filter>
->>>>>>> pr/6
+    <Filter Include="Engine\Audio">
+      <UniqueIdentifier>{4e333b17-2343-4a3a-a69d-d0bf391cfbfd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

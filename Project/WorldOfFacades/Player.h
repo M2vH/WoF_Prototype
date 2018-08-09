@@ -10,6 +10,7 @@
 #pragma region forward declaration
 class GInventoryItems;
 class GNpc;
+class CSound;
 #pragma endregion
 
 
@@ -86,6 +87,15 @@ public:
 	void Render(CRenderer* _pRenderer) override;
 #pragma endregion
 
+#pragma region public inline function
+	/// <summary>
+	/// set pickup item sound
+	/// </summary>
+	/// <param name="_pPickupItemSound">sound to set</param>
+	inline void SetPickupItemSound(CSound* _pPickupItemSound) { m_pPickupItemSound = _pPickupItemSound; }
+#pragma endregion
+
+
 #pragma region public function
 	/// <summary>
 	/// set inventory item
@@ -149,6 +159,11 @@ private:
 	/// NPC
 	/// </summary>
 	GNpc* m_npc;
+
+	/// <summary>
+	/// pick up item sound
+	/// </summary>
+	CSound* m_pPickupItemSound = nullptr;
 
 	///// <summary>
 	///// The state the player is in; A bitwise enum;

@@ -6,6 +6,7 @@
 
 #pragma region forward decleration
 class GWorld;
+class CMusic;
 #pragma endregion
 
 /// <summary>
@@ -39,6 +40,11 @@ private:
 	/// world
 	/// </summary>
 	GWorld* m_pWorld;
+
+	/// <summary>
+	/// background music
+	/// </summary>
+	CMusic* m_pBackgroundMusic;
 #pragma endregion
 
 };

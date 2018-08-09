@@ -232,6 +232,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MoveObject.h" />
     <ClInclude Include="EnumNpcState.h" />
+    <ClInclude Include="Music.h" />
     <ClInclude Include="Npc.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Physic.h" />
@@ -239,6 +240,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TextFPS.h" />
     <ClInclude Include="Texture.h" />
