@@ -196,6 +196,12 @@
     <ClInclude Include="InventoryText.h">
       <Filter>Game\Text</Filter>
     </ClInclude>
+    <ClInclude Include="Music.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -266,7 +272,7 @@
     </Filter>
     <Filter Include="Game\World\Foregrounds">
       <UniqueIdentifier>{4a0108f0-53eb-4d95-ba21-873733103e29}</UniqueIdentifier>
-      </Filter>
+    </Filter>
     <Filter Include="Engine\TextureManagement">
       <UniqueIdentifier>{e6a42861-3513-49d1-9bb9-c80205dc7d05}</UniqueIdentifier>
     </Filter>
@@ -278,6 +284,9 @@
     </Filter>
     <Filter Include="Game\Text">
       <UniqueIdentifier>{caaaa16e-ab17-4e11-a195-edd96233a834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Audio">
+      <UniqueIdentifier>{4e333b17-2343-4a3a-a69d-d0bf391cfbfd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

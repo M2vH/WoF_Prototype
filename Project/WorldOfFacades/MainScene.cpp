@@ -19,6 +19,8 @@
 #include "Foreground.h"
 #include "TextFPS.h"
 #include "Game.h"
+#include "Music.h"
+#include "Sound.h"
 #pragma endregion
 
 #pragma region public override function
@@ -217,6 +219,24 @@ void GMainScene::Init()
 #pragma endregion
 #pragma endregion
 
+#pragma region Music
+	// create background music
+	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Moment-of-Strange.mp3", 4).c_str());
+
+	// play music
+	m_pBackgroundMusic->Play(true);
+#pragma endregion
+
+#pragma region SoundFX
+	// create pickup item sound
+	CSound* pPickupItemSound = new CSound(GetAssetPath("Audio/Item _pickup.mp3", 4).c_str());
+
+	// set pickup item sound
+	pPlayer->SetPickupItemSound(pPickupItemSound);
+#pragma endregion
+
+
+
 
 
 
@@ -375,5 +395,7 @@ void GMainScene::Clean()
 
 	// clean all objects
 
+	// delete music
+	delete m_pBackgroundMusic;
 }
 #pragma endregion

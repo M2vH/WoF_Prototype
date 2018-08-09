@@ -11,6 +11,7 @@
 #include "Time.h"	///TODO: DELETE
 #include "EnumEmotionType.h"
 #include "InventoryItems.h"
+#include "Sound.h"
 #pragma endregion
 
 
@@ -28,6 +29,10 @@ void GPlayer::Update(float _deltaTime)
 		m_inventory->RemoveObjectItem (m_inventoryItem->GetItemType());
 		m_inventory->AddObject(m_inventoryItem->GetItemType());
 		CEngine::Get()->GetCM()->RemoveObject(m_inventoryItem);
+
+		// play pickup item sound
+		m_pPickupItemSound->Play();
+
 		// ToDo:
 		// Push Item into Inventory;
 		// Put item into RemoveObject-List;

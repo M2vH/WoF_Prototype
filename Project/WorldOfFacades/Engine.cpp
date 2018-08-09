@@ -2,6 +2,7 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #pragma endregion
 
 #pragma region project include
@@ -88,6 +89,15 @@ bool CEngine::Init()
 		{
 			// error message
 			LOG_ERROR("Font could not be created!", SDL_GetError());
+
+			return false;
+		}
+
+		// initialize audio
+		if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) < 0)
+		{
+			// error message
+			LOG_ERROR("Audio could not be created!", SDL_GetError());
 
 			return false;
 		}
@@ -183,6 +193,9 @@ void CEngine::Clean()
 	// delete scene
 	delete m_pScene;
 
+	// delete game
+	delete GGame::Get();
+
 	// delete time
 	delete m_pTime;
 
@@ -196,7 +209,6 @@ void CEngine::Clean()
 	delete m_pRenderer;
 
 	// free sdl components
-
 	// check if exists
 	if (m_pSurface != nullptr)
 	{
