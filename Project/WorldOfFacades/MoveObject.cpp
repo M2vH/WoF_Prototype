@@ -62,10 +62,10 @@ void CMoveObject::Update(float _deltaTime)
 	nextRect.x = (int)nextPos.X;
 	nextRect.y = (int)nextPos.Y;
 
+	// only CollisionType MOVE check for collisions
 	if (ECollisionType::MOVE)
 	{
 		// through all scene objects
-		// ToDo: Copy persistant check
 		for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
 		{
 			// if current object is self continue
@@ -73,12 +73,21 @@ void CMoveObject::Update(float _deltaTime)
 				continue;
 
 			// if collision type none
+			// for all objects without any reactions
 			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
 			{
 				continue;
 
 			}
+			// or all objects with ECollisionType >= 4 (ITEM)
+			// they dont stop the movement
+			else if (((CTexturedObject*)pObj)->GetColType() >= ECollisionType::ITEM)
+			{
+				continue;
+			}
 			else
+				// this are MOVE or WALL types
+				// we check for collision
 			{
 
 				// set moveable by checking collision

@@ -1,4 +1,8 @@
 #pragma once
+#pragma region project include
+#include "WorldStatus.h"
+#pragma endregion
+
 
 #pragma region forward declaration
 class CFont;
@@ -73,7 +77,7 @@ public:
 	/// </summary>
 	void Clean();
 #pragma endregion
-
+private:
 #pragma region private variables
 	/// <summary>
 	/// base gigi font
@@ -81,9 +85,14 @@ public:
 	CFont* m_pGigiFont = nullptr;
 
 	/// <summary>
-	/// base gigi font
+	/// base Pristina font
 	/// </summary>
 	CFont* m_pPristinaFont = nullptr;
+
+	/// <summary>
+	/// pointer to worldstatus class;
+	/// </summary>
+	GWorldStatus* m_pWorldStatus;
 #pragma endregion
 
 };

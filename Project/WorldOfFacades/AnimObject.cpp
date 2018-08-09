@@ -78,7 +78,7 @@ void GAnimObject::Update(float _deltaTime)
 		// set next index
 		m_pstartIdle++;
 		m_pstartIdle %= 3;
-	}
+	}else
 	
 	// check if we are in moving state;
 	if ((m_animState & EAnimState::STATE_ANIM_MOVE) == STATE_ANIM_MOVE)
@@ -92,9 +92,10 @@ void GAnimObject::Update(float _deltaTime)
 		// set next index
 		m_pstartMove++;
 		m_pstartMove %= 3;
-	}
+	}else
 
-	// check if we are in moving state;
+	// check if we are in jumping state;
+		// we are jumping
 	if ((m_animState & EAnimState::STATE_ANIM_JUMP) == STATE_ANIM_JUMP)
 	{
 		// reset the other anim

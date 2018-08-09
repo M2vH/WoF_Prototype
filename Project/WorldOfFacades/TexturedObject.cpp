@@ -19,7 +19,7 @@ CTexturedObject::CTexturedObject(SVector2 _pos, SVector2 _size, CRenderer * _pRe
 
 	// create texture
 	m_pTexture = new CTexture(_pFileName, _pRenderer);
-	SDL_Delay(500);
+	// SDL_Delay(500);
 }
 
 // destructor

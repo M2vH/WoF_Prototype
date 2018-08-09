@@ -46,7 +46,7 @@ void GPlayer::Update(float _deltaTime)
 
 	//TODO!
 	// talk to NPC
-	if (CInput::GetKey(SDL_SCANCODE_E) && m_npcCollision == true)
+	if (CInput::GetKeyDown(SDL_SCANCODE_E) && m_npcCollision == true)
 	{
 		LOG_MESSAGE("Talk to NPC ", std::to_string(m_npcCollision));
 		// ToDo:
@@ -225,6 +225,19 @@ void GPlayer::Update(float _deltaTime)
 
 #pragma endregion
 	}
+	
+	//// ToDo (m2vh) put this into SetAnimState using default values;
+	//float animSpeedIdle = 0.5f;
+	//float animSpeed = 0.1f;
+	//// set the animSpeed of IDLE
+	//if (GetAnimState() == STATE_ANIM_MOVE)
+	//{
+	//	SetAnimSpeed(animSpeed);
+	//}
+	//else {
+	//	SetAnimSpeed(animSpeedIdle);
+	//}
+
 
 	// update parent
 	GAnimObject::Update(_deltaTime);
@@ -234,7 +247,7 @@ void GPlayer::Update(float _deltaTime)
 // render every frame
 void GPlayer::Render(CRenderer * _pRenderer)
 {
-	CMoveObject::Render(_pRenderer);
+	CTexturedObject::Render(_pRenderer);
 }
 
 

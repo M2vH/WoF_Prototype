@@ -5,12 +5,12 @@
 /// </summary>
 enum ECollisionType
 {
-	NONE,
-	MOVE,	//
-	WALL,
-	ITEM,
-	NPC,
-	DOOR,	// Collide with door object
-	CAVE	// Collide with cave object
+	NONE = 0,
+	WALL = 1 << 0,
+	MOVE = 1 << 1,	//
+	ITEM = 1 << 2,
+	NPC = 1 << 3,
+	DOOR = 1 << 4,	// Collide with door object
+	HOUSE = 1 << 5	// Collide with cave object
 };
 
