@@ -71,8 +71,8 @@
     <ClCompile Include="ForegroundSlide.cpp">
       <Filter>Game\World\Foregrounds</Filter>
     </ClCompile>
-    <ClCompile Include="Foreground.cpp">
-      <Filter>Game\World\Foregrounds</Filter>
+    <ClCompile Include="Foreground.cpp" />
+       <Filter>Game\World\Foregrounds</Filter>
     </ClCompile>
     <ClCompile Include="WorldStatus.cpp" />
   </ItemGroup>
@@ -179,6 +179,7 @@
     <ClInclude Include="ForegroundSlide.h">
       <Filter>Game\World\Foregrounds</Filter>
     </ClInclude>
+    <ClInclude Include="Foreground.h" />
     <ClInclude Include="WorldBackground.h" />
     <ClInclude Include="Color.h">
       <Filter>Engine\Utility</Filter>
@@ -198,7 +199,7 @@
     <ClInclude Include="InventoryText.h">
       <Filter>Game\Text</Filter>
     </ClInclude>
-    <ClInclude Include="Music.h">
+     <ClInclude Include="Music.h">
       <Filter>Engine\Audio</Filter>
     </ClInclude>
     <ClInclude Include="Sound.h">
@@ -282,7 +283,7 @@
     </Filter>
     <Filter Include="Game\World\Foregrounds">
       <UniqueIdentifier>{4a0108f0-53eb-4d95-ba21-873733103e29}</UniqueIdentifier>
-    </Filter>
+      </Filter>
     <Filter Include="Engine\TextureManagement">
       <UniqueIdentifier>{e6a42861-3513-49d1-9bb9-c80205dc7d05}</UniqueIdentifier>
     </Filter>
