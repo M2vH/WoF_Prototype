@@ -18,11 +18,18 @@ void GForeground::Update(float _deltaTime)
 	// get the player Y pos;
 	// and add the difference to y pos
 	m_position.Y = 
-		GROUND_POSITION + 
-		GROUND_POSITION - 
+		m_startPosition.Y + 
+		m_startPosition.Y - 
 		(int)m_pPlayer->GetPosition().Y -
 		m_pPlayer->GetRect().h +
 		FOREGROUND_MARGIN;
+
+		//	// the following is working
+		//GROUND_POSITION + 
+		//GROUND_POSITION - 
+		//(int)m_pPlayer->GetPosition().Y -
+		//m_pPlayer->GetRect().h +
+		//FOREGROUND_MARGIN;
 	
 	// calc the new position
 	// check if out of bounds
@@ -56,7 +63,7 @@ void GForeground::Update(float _deltaTime)
 		SetNewPosition(SVector2(0, 0));
 	}
 
-	LOG_MESSAGE("Position Y: ", to_string(m_position.Y));
+	//LOG_MESSAGE("Position Y: ", to_string(m_position.Y));
 
 	m_pLeftFill->SetPosition(SVector2(
 		m_pLeftFill->GetPosition().X,

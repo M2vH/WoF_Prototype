@@ -5,8 +5,13 @@
 #include <string>
 #pragma endregion
 
+#pragma region project include
+#include "Texture.h"
+#pragma endregion
+
+
 #pragma region forward decleration
-class CTexture;
+//class CTexture;
 #pragma endregion
 
 #pragma region using
