@@ -77,6 +77,7 @@
     <ClCompile Include="WorldStatus.cpp">
       <Filter>Game\World\WorldStatus</Filter>
     </ClCompile>
+    <ClCompile Include="WorldImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -215,6 +216,7 @@
     <ClInclude Include="WorldStatus.h">
       <Filter>Game\World\WorldStatus</Filter>
     </ClInclude>
+    <ClInclude Include="WorldImage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

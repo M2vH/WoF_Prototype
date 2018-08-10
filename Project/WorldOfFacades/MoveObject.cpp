@@ -45,6 +45,7 @@ void CMoveObject::Update(float _deltaTime)
 	//}
 
 
+	// if player in mainsceen
 	// let the player pos rotate
 	// on the left 
 	if (nextPos.X < 0)
@@ -61,6 +62,12 @@ void CMoveObject::Update(float _deltaTime)
 
 	nextRect.x = (int)nextPos.X;
 	nextRect.y = (int)nextPos.Y;
+
+	// else player in housesceen
+	// if pos.x <= PLAYER_LEFT_BORDER
+	//		pos.x = PLAYER_LEFT_BORDER
+	// and same for right border.
+
 
 	// only CollisionType MOVE check for collisions
 	if (ECollisionType::MOVE)

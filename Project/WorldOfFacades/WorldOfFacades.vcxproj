@@ -206,6 +206,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldBackground.cpp" />
+    <ClCompile Include="WorldImage.cpp" />
     <ClCompile Include="WorldStatus.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +254,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="WorldBackground.h" />
+    <ClInclude Include="WorldImage.h" />
     <ClInclude Include="WorldStatus.h" />
   </ItemGroup>
   <ItemGroup>
