@@ -27,6 +27,12 @@ public:
 	/// Get the state the world is in;
 	/// </summary>
 	EWorldState GetState() { return m_worldState; };
+	
+	/// <summary>
+	/// Set the status of the world; 
+	/// Use bitshift to increase state;
+	/// </summary>
+	/// <param name="_newState">bitshift the GetState</param>
 	void SetState(EWorldState _newState) {
 		if (
 			_newState < EWorldState::WORLD_STATE_1 ||
@@ -58,9 +64,15 @@ private:
 
 #pragma endregion
 #pragma region private variables
+	/// <summary>
+	/// The instance of this singleton
+	/// </summary>
 	static GWorldStatus* m_instance;
-	
-	EWorldState m_worldState = EWorldState::WORLD_STATE_NONE;
+ 
+	/// <summary>
+	/// The state the world is in.
+	/// </summary>
+	EWorldState m_worldState = EWorldState::WORLD_STATE_1;
 #pragma endregion
 
 

@@ -3,7 +3,6 @@
 #pragma region value macro
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
-#define CAMERA_OFFSET_Y 200
 #define PLAYER_SPEED 500.0f
 #define PLAYER_JUMP_FORCE 500.0f
 #define PLAYER_JUMP_TIME 0.5f
@@ -46,7 +45,8 @@
 #define DOOR_POS_X (HOUSE_POS_X + 226)
 #define DOOR_POS_Y (HOUSE_POS_Y + 158)
 #pragma endregion
-#define CAMERA_OFFSET_X (HOUSE_WIDTH)
+#define CAMERA_OFFSET_X (HOUSE_WIDTH +10 )
+#define CAMERA_OFFSET_Y 200
 
 #pragma region Color
 #define YELLOW SColor(255, 255, 0)

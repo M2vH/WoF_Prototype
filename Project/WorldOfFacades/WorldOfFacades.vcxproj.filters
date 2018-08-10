@@ -74,7 +74,9 @@
     <ClCompile Include="Foreground.cpp">
       <Filter>Game\World\Foregrounds</Filter>
     </ClCompile>
-    <ClCompile Include="WorldStatus.cpp" />
+    <ClCompile Include="WorldStatus.cpp">
+      <Filter>Game\World\WorldStatus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -203,8 +205,7 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Engine\Audio</Filter>
-          </ClInclude>
-
+    </ClInclude>
     <ClInclude Include="EnumWorldState.h">
       <Filter>Game\Utility</Filter>
     </ClInclude>
@@ -212,7 +213,7 @@
       <Filter>Game\World\Foregrounds</Filter>
     </ClInclude>
     <ClInclude Include="WorldStatus.h">
-      <Filter>Game\World</Filter>
+      <Filter>Game\World\WorldStatus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +300,9 @@
     </Filter>
     <Filter Include="Engine\Audio">
       <UniqueIdentifier>{4e333b17-2343-4a3a-a69d-d0bf391cfbfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World\WorldStatus">
+      <UniqueIdentifier>{4eddbec7-b43a-42dc-a91e-99fdf75e6027}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
