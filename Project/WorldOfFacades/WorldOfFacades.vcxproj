@@ -206,6 +206,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldBackground.cpp" />
+    <ClCompile Include="WorldStatus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimObject.h" />
@@ -218,6 +219,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="EnumAnimState.h" />
     <ClInclude Include="EnumEmotionType.h" />
     <ClInclude Include="EnumItemState.h" />
+    <ClInclude Include="EnumWorldState.h" />
     <ClInclude Include="Foreground.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="ForegroundSlide.h" />
@@ -251,6 +253,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="WorldBackground.h" />
+    <ClInclude Include="WorldStatus.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

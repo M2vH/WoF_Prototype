@@ -50,6 +50,7 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	SRect srcRect = _srcRect;
 
 	// if source rect has no width or height
+	// (m2vh) do we really need this
 	if (_srcRect.w == 0 || _srcRect.h == 0)
 	{
 		// get width and height of texture
@@ -67,12 +68,12 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	}
 
 	// if texture is rendered in world and is not in screen return
-	// ToDo (m2vh) we render everything all the time
+	// (m2vh) we render everything all the time
 	//if (_inWorld &&
-	//	(destRect.x >= m_camera.X + SCREEN_WIDTH / 2 + WORLD_BLOCK_WIDTH ||
-	//	destRect.x <= m_camera.X - SCREEN_WIDTH / 2 - WORLD_BLOCK_WIDTH ||
-	//	destRect.y >= m_camera.Y + SCREEN_HEIGHT / 2 + WORLD_BLOCK_HEIGHT ||
-	//	destRect.y <= m_camera.Y - SCREEN_HEIGHT / 2 - WORLD_BLOCK_HEIGHT))
+	//	(destRect.x >= m_camera.X + SCREEN_WIDTH / 2 + CAMERA_OFFSET_X ||
+	//	destRect.x <= m_camera.X - SCREEN_WIDTH / 2 - CAMERA_OFFSET_X ||
+	//	destRect.y >= m_camera.Y + SCREEN_HEIGHT / 2 + CAMERA_OFFSET_X ||
+	//	destRect.y <= m_camera.Y - SCREEN_HEIGHT / 2 - CAMERA_OFFSET_X))
 	//{
 	//	return;
 	//}
@@ -80,13 +81,13 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	// if texture is not in world and not in screen return
 	// ToDo (m2vh) 
 	// we render everything
-	//if (!_inWorld &&
-	//	(destRect.x >= SCREEN_WIDTH || destRect.x <= 0 ||
-	//		destRect.y >= SCREEN_HEIGHT || destRect.y <= 0)
-	//	)
-	//{
-	//	return;
-	//}
+	if (!_inWorld &&
+		(destRect.x >= SCREEN_WIDTH || destRect.x <= 0 - SCREEN_WIDTH / 2 /*||
+			destRect.y >= SCREEN_HEIGHT || destRect.y <= 0*/)
+		)
+	{
+		return;
+	}
 
 	// if texture is rendered in world
 	if (_inWorld)

@@ -72,11 +72,13 @@ public:
 	/// set the samplerate of animation
 	/// </summary>
 	/// <param name="_fps"></param>
-	inline void SetSpeed(int _fps) { m_animSpeed = _fps; }
+	inline void SetAnimSpeed(int _fps) { m_animSpeed = _fps; }
+
+	inline float GetAnimSpeed() { return m_animSpeed; };
 
 	inline void NextTexture();
 
-	inline void SetAnimState(EAnimState _state) { m_animState = _state; }
+	inline void SetAnimState(EAnimState _state ) { m_animState = _state; }
 
 	inline EAnimState GetAnimState() { return m_animState; }
 
