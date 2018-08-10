@@ -44,6 +44,10 @@ inline void GWorldImage::Update(float _deltaTime)
 	// if equal do nothing
 	if (m_lastWorldState == m_pWorldStatus->GetState())
 	{
+		// ToDo (m2vh) delete
+		// different textures are possible;
+		// SetTexture(m_pTextures[6]);
+		// (m2vh) end delete
 		return;
 	}
 	else
@@ -85,7 +89,7 @@ inline void GWorldImage::Update(float _deltaTime)
 
 inline void GWorldImage::Render(CRenderer * pRenderer)
 {
-
+	GBackgroundStatic::Render(pRenderer);
 }
 
 #pragma endregion

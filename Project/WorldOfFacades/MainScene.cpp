@@ -21,6 +21,7 @@
 #include "Game.h"
 #include "Music.h"
 #include "Sound.h"
+#include "WorldImage.h"
 #pragma endregion
 
 #pragma region public override function
@@ -71,6 +72,25 @@ void GMainScene::Init()
 	pBackgroundHimmel->DeactivateGravity();
 	pBackgroundHimmel->SetInWorld(false);
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
+
+	//	The Moon as WorldImage
+	//	the array of images;
+	char* moonImages[7] = {
+		"Texture/Background/Mond/B_Mond_1_720x720.png",
+		"Texture/Background/Mond/B_Mond_2_720x720.png",
+		"Texture/Background/Mond/B_Mond_3_720x720.png",
+		"Texture/Background/Mond/B_Mond_4_720x720.png",
+		"Texture/Background/Mond/B_Mond_5_720x720.png",
+		"Texture/Background/Mond/B_Mond_6_720x720.png",
+		"Texture/Background/Mond/B_Mond_7_720x720.png"
+	};
+	GWorldImage* pWorldImageMoon = new GWorldImage(
+		moonImages,
+		SVector2(MOON_POSITION_X, MOON_POSITION_Y),
+		SVector2(302,302),
+		pTheRenderer
+	);
+
 #pragma endregion
 
 
@@ -382,7 +402,7 @@ void GMainScene::Init()
 	//	// The Trees
 	//	add worldbackground to SceneObject
 	//  first in list, last to be rendered;
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
+	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
 
 	// add background to SceneObject-List
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackground);
@@ -395,7 +415,12 @@ void GMainScene::Init()
 	// adding a moveObject and dont move
 	
 	// the moon
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundMoon);
+	//	as backgroundImage
+	//	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundMoon);
+	//	as worldImage
+	CEngine::Get()->GetCM()->AddSceneObject(pWorldImageMoon);
+	
+
 	
 	//	// last to list, first to render
 	//	// will be in the background
