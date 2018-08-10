@@ -12,6 +12,7 @@
 #include "EnumEmotionType.h"
 #include "InventoryItems.h"
 #include "Sound.h"
+#include "HouseScene.h"
 #pragma endregion
 
 
@@ -60,6 +61,15 @@ void GPlayer::Update(float _deltaTime)
 
 	}
 
+	// go into house and change scene
+	if (CInput::GetKeyDown(SDL_SCANCODE_W) && m_houseCollision == true)
+	{
+		// change to house scene
+		CEngine::Get()->ChangeScene(new GHouseScene());
+	}
+
+	// TODO!
+	// change camera position if player 'bool inHouse = true;'
 	// set position of camera
 	SVector2 camPosition;
 	camPosition.X = m_position.X + PLAYER_WIDTH / 2;
@@ -243,7 +253,12 @@ void GPlayer::Update(float _deltaTime)
 	//	SetAnimSpeed(animSpeedIdle);
 	//}
 
-
+	// set found item false
+	m_foundItem = false;
+	
+	// set found npc false
+	m_npcCollision = false;
+	
 	// update parent
 	GAnimObject::Update(_deltaTime);
 	//LOG_MESSAGE("Position Y: ", to_string(m_position.Y));

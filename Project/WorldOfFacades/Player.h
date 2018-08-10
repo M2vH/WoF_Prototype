@@ -146,6 +146,11 @@ private:
 	bool m_npcCollision;
 
 	/// <summary>
+	/// is colliding with house
+	/// </summary>
+	bool m_houseCollision;
+
+	/// <summary>
 	/// inventory item
 	/// </summary>
 	GInventoryItems* m_inventoryItem;

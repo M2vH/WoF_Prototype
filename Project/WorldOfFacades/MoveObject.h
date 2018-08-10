@@ -133,5 +133,10 @@ protected:
 	/// is movable
 	/// </summary>
 	bool m_isMovable = true;
+
+	/// <summary>
+	/// is in house
+	/// </summary>
+	bool m_isInHouse = true;
 #pragma endregion
 };
