@@ -50,22 +50,25 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	SRect srcRect = _srcRect;
 
 	// if source rect has no width or height
-	// (m2vh) do we really need this
+	// ToDo (m2vh) do we really need this
 	if (_srcRect.w == 0 || _srcRect.h == 0)
 	{
 		// get width and height of texture
 		SDL_QueryTexture(_pTexture->GetSDLTexture(), nullptr, nullptr, &srcRect.w, &srcRect.h);
 	}
+	// (m2vh) end
 
 	// destination rect
 	SRect destRect = _destRect;
 
 	// if destination rect has no width or height
+	// ToDo (m2vh) do we need this ???
 	if (destRect.w == 0 || destRect.h == 0)
 	{
 		destRect.w = SCREEN_WIDTH;
 		destRect.h = SCREEN_HEIGHT;
 	}
+	// (m2vh) end
 
 	// if texture is rendered in world and is not in screen return
 	// (m2vh) we render everything all the time

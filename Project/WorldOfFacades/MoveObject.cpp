@@ -262,6 +262,8 @@ void CMoveObject::Update(float _deltaTime)
 		m_fallTime = 0.001f;
 		m_grounded = true;
 	}
+
+	CTexturedObject::Update(_deltaTime);
 }
 
 // render every frame

@@ -110,7 +110,8 @@ void GAnimObject::Update(float _deltaTime)
 	}
 
 	}
-	CMoveObject::Update(_deltaTime);
+	// Update the movement of the anim
+	 CMoveObject::Update(_deltaTime);
 
 	// 
 }

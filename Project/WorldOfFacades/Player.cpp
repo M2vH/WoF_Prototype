@@ -208,7 +208,7 @@ void GPlayer::Update(float _deltaTime)
 
 					// if not moveable cancel collision check
 					if (!moveable)
-						//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
+						//	SetAnimState(EAnimState::STATE_ANIM_IDLE);
 						break;
 				}
 			}
