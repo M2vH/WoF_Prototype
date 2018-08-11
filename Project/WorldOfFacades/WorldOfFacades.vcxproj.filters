@@ -77,7 +77,9 @@
     <ClCompile Include="WorldStatus.cpp">
       <Filter>Game\World\WorldStatus</Filter>
     </ClCompile>
-    <ClCompile Include="WorldImage.cpp" />
+    <ClCompile Include="WorldImage.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -216,7 +218,9 @@
     <ClInclude Include="WorldStatus.h">
       <Filter>Game\World\WorldStatus</Filter>
     </ClInclude>
-    <ClInclude Include="WorldImage.h" />
+    <ClInclude Include="WorldImage.h">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

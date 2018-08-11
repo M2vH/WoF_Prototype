@@ -29,6 +29,7 @@
 void GMainScene::Init()
 {
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
+	CContentManagement* pTheCM = CEngine::Get()->GetCM();
 
 
 #pragma region The static background (deactivated)
@@ -59,30 +60,54 @@ void GMainScene::Init()
 	pBackgroundHimmel->SetInWorld(false);
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
 
+	//	//	THE SKY as WorldImage;
+	//	create the filePath array;
+	char * skyImages[7] = {
+		"Texture/Background/Himmel/B_Himmel_Zustand1_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand2_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand3_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand4_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand5_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand6_1280x720.png",
+		"Texture/Background/Himmel/B_Himmel_Zustand7_1280x720.png"
+	};
+
+	// create instance of WorldImage;
+	GWorldImage* pWorldImageSky = new GWorldImage(
+		skyImages,
+		SVector2(0,0),
+		SVector2(1280, 720),
+		pTheRenderer
+	);
+	pWorldImageSky->SetSrcRect(SRect(0, 0, 1280, 720));
+
+
 	// THE MOON
 	// create a moveobject as background
 	// but keep it static (dont move it)
-	GBackgroundStatic* pBackgroundMoon = new GBackgroundStatic(
-		SVector2(MOON_POSITION_X, MOON_POSITION_Y),
-		SVector2(302, 302),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Background/Mond/B_Mond_4_720x720.png"
-	);
-	// set values of object
-	pBackgroundHimmel->DeactivateGravity();
-	pBackgroundHimmel->SetInWorld(false);
+	// ToDo (m2vh) delete
+	//GBackgroundStatic* pBackgroundMoon = new GBackgroundStatic(
+	//	SVector2(MOON_POSITION_X, MOON_POSITION_Y),
+	//	SVector2(302, 302),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Background/Mond/B_Mond_4_720x720.png"
+	//);
+	//// set values of object
+	//pBackgroundHimmel->DeactivateGravity();
+	//pBackgroundHimmel->SetInWorld(false);
 	// pBackgroundStatic->SetSpeed(PLAYER_SPEED / 3);
+	// (m2vh) enddelete
 
 	//	The Moon as WorldImage
 	//	the array of images;
 	char* moonImages[7] = {
-		"Texture/Background/Mond/B_Mond_1_720x720.png",
-		"Texture/Background/Mond/B_Mond_2_720x720.png",
-		"Texture/Background/Mond/B_Mond_3_720x720.png",
-		"Texture/Background/Mond/B_Mond_4_720x720.png",
-		"Texture/Background/Mond/B_Mond_5_720x720.png",
-		"Texture/Background/Mond/B_Mond_6_720x720.png",
-		"Texture/Background/Mond/B_Mond_7_720x720.png"
+		"Texture/Background/Mond/B_Mond_Zustand1_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand2_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand3_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand4_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand5_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand6_302x302.png",
+		"Texture/Background/Mond/B_Mond_Zustand7_302x302.png"
 	};
 	GWorldImage* pWorldImageMoon = new GWorldImage(
 		moonImages,
@@ -90,6 +115,7 @@ void GMainScene::Init()
 		SVector2(302,302),
 		pTheRenderer
 	);
+	pWorldImageMoon->SetSrcRect(SRect(0, 0, 302, 302));
 
 #pragma endregion
 
@@ -302,11 +328,12 @@ void GMainScene::Init()
 		SVector2(3840, 220),
 		CEngine::Get()->GetRenderer(),
 		//"Texture/World/T_backg_G1_1280x720.png"
-		""	// add empty string to create collision object
+		"Texture/Background/T_GroundToWalkOn.png"	// add empty string to create collision object
 	);
 	pGround->SetColType(ECollisionType::WALL);
 	pGround->DeactivateGravity();
 	pGround->SetInWorld(true);
+	pGround->SetSrcRect(SRect(0, 0, 4, 4));
 
 #pragma endregion
 
@@ -367,6 +394,7 @@ void GMainScene::Init()
 
 	//	//	PERSISTANT
 	//	THE FOREGROUND
+	// ToDo (m2vh) check performance;
 	CEngine::Get()->GetCM()->AddPersistantObject(pForeground);
 
 	// THE GROUND TO WALK ON
@@ -388,6 +416,7 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddPersistantObject(pFury);
 
 	// add the anim object
+	// ToDo (m2vh) delete
 	// CEngine::Get()->GetCM()->AddPersistantObject(pAnimObj);
 
 
@@ -398,11 +427,12 @@ void GMainScene::Init()
 	CEngine::Get()->GetCM()->AddSceneObject(pHouse);
 	//	// The Way 
 	//	add pWalkground
+	// ToDo (m2vh) check walkground performance
 	CEngine::Get()->GetCM()->AddSceneObject(pWalkground);
 	//	// The Trees
 	//	add worldbackground to SceneObject
 	//  first in list, last to be rendered;
-	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
+	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundWorld);
 
 	// add background to SceneObject-List
 	// CEngine::Get()->GetCM()->AddSceneObject(pBackground);
@@ -425,7 +455,8 @@ void GMainScene::Init()
 	//	// last to list, first to render
 	//	// will be in the background
 	// the stars
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundHimmel);
+	// CEngine::Get()->GetCM()->AddSceneObject(pBackgroundHimmel);
+	pTheCM->AddSceneObject(pWorldImageSky);
 
 #pragma endregion
 	// add object to cm

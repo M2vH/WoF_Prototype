@@ -12,7 +12,12 @@
 GWorldBackground::GWorldBackground(SVector2 _pos, SVector2 _size, CRenderer* _pRenderer,
 	const char* _pFileName) : CTexturedObject(_pos, _size, _pRenderer, _pFileName) 
 {
-	
+	// set the source rect;
+	// calculate values to be used in children;
+	SetSrcRect(SRect(0, 0, _size.X, _size.Y));
+	// ToDo (m2vh) use _pos in srcrect calculation;
+	//		see MainScene.cpp pBackgroundWorld;
+
 	// create the left fill of the screen
 	// player will possibly move towards 0,
 	// but never go further;

@@ -46,7 +46,7 @@ inline void GWorldImage::Update(float _deltaTime)
 	{
 		// ToDo (m2vh) delete
 		// different textures are possible;
-		// SetTexture(m_pTextures[6]);
+		SetTexture(m_pTextures[6]);
 		// (m2vh) end delete
 		return;
 	}

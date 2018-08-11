@@ -56,7 +56,10 @@ GAnimObject::~GAnimObject()
 
 void GAnimObject::Update(float _deltaTime)
 {
-	// temp animSpeed value;
+	// Update the movement of the anim
+	 CMoveObject::Update(_deltaTime);
+
+	 // temp animSpeed value;
 	static float speedReset = m_animSpeed;
 	
 	// decrease samplerate
@@ -113,8 +116,6 @@ void GAnimObject::Update(float _deltaTime)
 	}
 
 	}
-	// Update the movement of the anim
-	 CMoveObject::Update(_deltaTime);
 
 	// 
 }

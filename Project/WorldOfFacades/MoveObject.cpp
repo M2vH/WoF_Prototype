@@ -188,8 +188,12 @@ void CMoveObject::Update(float _deltaTime)
 		m_position = nextPos;
 
 		// set position of rect
-		m_rect.x = (int)m_position.X;
-		m_rect.y = (int)m_position.Y;
+		// ToDo (m2vh) "nextRect only" are we shure we want do this on actual rect;
+		// collision detection is always on nextRect;
+		 m_rect.x = (int)m_position.X;
+		 m_rect.y = (int)m_position.Y;
+		 //nextRect.x = (int)m_position.X;
+		 //nextRect.y = (int)m_position.Y;
 	}
 
 	// if no gravity return
@@ -200,6 +204,7 @@ void CMoveObject::Update(float _deltaTime)
 	moveable = true;
 
 	// set next rect down
+	// ToDo (m2vh) "nextRect only" uncomment next line
 	nextRect = m_rect;
 
 	// set y value
@@ -250,8 +255,10 @@ void CMoveObject::Update(float _deltaTime)
 	// if still moveable set y position
 	if (moveable)
 	{
-		m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
-		m_rect.y = (int)m_position.Y;
+		// ToDo (m2vh) "tne nextRect issue"
+		 m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
+		 m_rect.y = (int)m_position.Y;
+		// m_position.Y = nextRect.y;
 		m_grounded = false;
 		m_fallTime += _deltaTime;
 	}
