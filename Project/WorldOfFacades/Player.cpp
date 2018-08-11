@@ -50,7 +50,7 @@ void GPlayer::Update(float _deltaTime)
 
 	}
 
-	//TODO!
+	//TODO (m2vh) NPC state!
 	// talk to NPC
 	if (CInput::GetKeyDown(SDL_SCANCODE_E) && m_npcCollision == true)
 	{
@@ -67,9 +67,12 @@ void GPlayer::Update(float _deltaTime)
 		// put in UIList;
 
 	}
-	// // close TextDialog
+	// // ToDo (m2vh) close TextDialog
+	// stop talking to NPC
+	// if Key == "R" &&  
 	// put TextDialog object into RemoveList;
 	// shift NPC into next state (???)
+	// set NPC state to ISVISITED
 	// set m_isMovable = true;
 
 	// set position of camera

@@ -50,6 +50,7 @@
 
 #pragma region Color
 #define YELLOW SColor(255, 255, 0)
+#define BLACK SColor(0,0,0)
 #pragma endregion
 
 

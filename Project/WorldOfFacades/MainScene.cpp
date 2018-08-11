@@ -22,6 +22,7 @@
 #include "Music.h"
 #include "Sound.h"
 #include "WorldImage.h"
+#include "TextBubble.h"
 #pragma endregion
 
 #pragma region public override function
@@ -281,6 +282,14 @@ void GMainScene::Init()
 	pPlayer->SetPickupItemSound(pPickupItemSound);
 #pragma endregion
 
+#pragma region TextBubble
+	// instatiate a bubble
+	GTextBubble* m_ptheBubble = new GTextBubble(
+		SVector2(SCREEN_WIDTH / 2 - 50, SCREEN_HEIGHT / 2 - 50),
+		SVector2(100,100)
+	);
+	pTheCM->AddUIObject(m_ptheBubble);
+#pragma endregion
 
 
 

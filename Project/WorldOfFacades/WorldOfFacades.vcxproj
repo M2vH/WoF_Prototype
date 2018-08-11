@@ -185,6 +185,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="BackgroundSlide.cpp" />
     <ClCompile Include="BackgroundStatic.cpp" />
     <ClCompile Include="CContentManagement.cpp" />
+    <ClCompile Include="Dialog.cpp" />
     <ClCompile Include="Foreground.cpp" />
     <ClCompile Include="ForegroundSlide.cpp" />
     <ClCompile Include="InventoryItems.cpp" />
@@ -200,6 +201,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Physic.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="TextBubble.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturedObject.cpp" />
     <ClCompile Include="TexturedObjectSlide.cpp" />
@@ -215,6 +217,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="BackgroundStatic.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="ContentManagement.h" />
+    <ClInclude Include="Dialog.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="EnumAnimState.h" />
@@ -245,6 +248,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Text.h" />
+    <ClInclude Include="TextBubble.h" />
     <ClInclude Include="TextFPS.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturedObject.h" />
