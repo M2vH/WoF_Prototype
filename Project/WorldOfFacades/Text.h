@@ -35,6 +35,10 @@ public:
 		m_rect = _rect;
 		m_color = _color;
 
+		if (m_pFont == nullptr)
+		{
+			m_pFont = new CFont("Font/PRISTINA.ttf");
+		}
 		// load text
 		Load();
 	}

@@ -8,6 +8,8 @@
 
 GForeground::~GForeground()
 {
+	// (m2vh)	delete image left and right;
+	//			checked, that this is done in parent;
 }
 
 void GForeground::Update(float _deltaTime)
@@ -79,6 +81,8 @@ void GForeground::Update(float _deltaTime)
 
 void GForeground::Render(CRenderer * _pRenderer)
 {
+	// ToDo (m2vh) render only if in sight;
+	//	put rendering from parent to here;
 	GWorldBackground::Render(_pRenderer);
 }
 

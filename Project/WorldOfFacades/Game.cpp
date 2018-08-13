@@ -14,8 +14,8 @@ void GGame::Init()
 	// initialize the world status
 	m_pWorldStatus = m_pWorldStatus->Get();
 	//	// ToDo (m2vh) Delete before release
-	//m_pWorldStatus->SetState((EWorldState)(m_pWorldStatus->GetState()<< 1));
-	//LOG_MESSAGE("State of the world" , m_pWorldStatus->GetState());
+	m_pWorldStatus->SetState((EWorldState)(m_pWorldStatus->GetState()<< 3));
+	LOG_MESSAGE("State of the world" , m_pWorldStatus->GetState());
 
 	// create base gigi font
 	m_pGigiFont = new CFont("Font/GIGI.ttf", 50);

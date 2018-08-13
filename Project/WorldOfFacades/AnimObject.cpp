@@ -37,10 +37,13 @@ GAnimObject::GAnimObject(int _count, float _speed, SVector2 _blockSize, SVector2
 		for (int i = 0; i < m_animFilesCount; i++)
 		{
 			CTexture* texture= new CTexture(m_pFileNames[i], _pRenderer);
+
 			// SDL_Delay(500);
 			m_pTextureArray[i] = texture;
 		}
 		SetTexture(m_pTextureArray[0]);
+		
+		SetSrcRect(SRect(0, 0, _size.X, _size.Y));
 }
 
 GAnimObject::~GAnimObject()
@@ -53,7 +56,10 @@ GAnimObject::~GAnimObject()
 
 void GAnimObject::Update(float _deltaTime)
 {
-	// temp animSpeed value;
+	// Update the movement of the anim
+	 CMoveObject::Update(_deltaTime);
+
+	 // temp animSpeed value;
 	static float speedReset = m_animSpeed;
 	
 	// decrease samplerate
@@ -110,7 +116,6 @@ void GAnimObject::Update(float _deltaTime)
 	}
 
 	}
-	CMoveObject::Update(_deltaTime);
 
 	// 
 }

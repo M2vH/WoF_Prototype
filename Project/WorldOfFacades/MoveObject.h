@@ -101,9 +101,14 @@ public:
 	inline bool IsGrounded() { return m_grounded; };
 
 	/// <summary>
-	///  isInHouse = true
+	///  Set variable 'isInHouse' to true;
 	/// </summary>
 	inline void IsInHouse() { m_isInHouse = true; };
+
+	/// <summary>
+	/// Set var 'isInHouse' to false;
+	/// </summary>
+	inline void IsNotInHouse() { m_isInHouse = false; }
 #pragma endregion
 
 protected:

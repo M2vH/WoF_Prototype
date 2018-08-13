@@ -3,7 +3,7 @@
 #pragma region value macro
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
-#define PLAYER_SPEED 500.0f
+#define PLAYER_SPEED 499.0f
 #define PLAYER_JUMP_FORCE 500.0f
 #define PLAYER_JUMP_TIME 0.5f
 #define PLAYER_WIDTH 126
@@ -49,8 +49,14 @@
 #define CAMERA_OFFSET_X (HOUSE_WIDTH +10 )
 #define CAMERA_OFFSET_Y 200
 
+#define DIALOG_POS_X 500
+#define DIALOG_POS_Y 300
+#define DIALOG_TEXT_WIDTH 200
+#define DIALOG_TEXT_HEIGHT 100
+
 #pragma region Color
 #define YELLOW SColor(255, 255, 0)
+#define BLACK SColor(0,0,0)
 #pragma endregion
 
 
