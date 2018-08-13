@@ -24,7 +24,7 @@ void GGame::Init()
 	m_pPristinaFont = new CFont("Font/PRISTINA.ttf", 50);
 
 	// start game by creating new main scene
-	CEngine::Get()->ChangeScene(new GHouseScene()); // TODO! change back to GMainScene() 
+	CEngine::Get()->ChangeScene(new GMainScene()); // TODO! change back to GMainScene() 
 }
 
 // clean game

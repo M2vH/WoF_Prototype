@@ -137,6 +137,10 @@ void GHouseScene::Init()
 
 void GHouseScene::Clean()
 {
+	// remove player
+	CEngine::Get()->GetCM()->RemoveObject(
+		CEngine::Get()->GetCM()->GetSceneObjects().front()
+	);
 }
 #pragma endregion
 

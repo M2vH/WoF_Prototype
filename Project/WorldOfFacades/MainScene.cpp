@@ -430,5 +430,10 @@ void GMainScene::Clean()
 
 	// delete music
 	delete m_pBackgroundMusic;
+
+	// clean all objects
+	CEngine::Get()->GetCM()->CleanScene();
+	
+	CEngine::Get()->GetCM()->CleanPersistantObjects();
 }
 #pragma endregion

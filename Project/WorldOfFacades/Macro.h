@@ -18,6 +18,7 @@
 #define WORLD_HEIGHT 720
 #define WORLD_PLAYER_BORDER_LEFT 700
 #define WORLD_PLAYER_BORDER_RIGHT 3000
+#define PLAYER_INHOUSE_MARGIN 30
 #pragma endregion
 
 #pragma region m2vh
