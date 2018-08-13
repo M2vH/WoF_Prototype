@@ -1,7 +1,8 @@
 #pragma once
 
 /// <summary>
-/// The states a NPC is in.
+/// The states a NPC can be in;
+/// Is bitwise shiftable;
 /// </summary>
 enum ENPCState
 {

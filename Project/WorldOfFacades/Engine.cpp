@@ -44,7 +44,7 @@ bool CEngine::Init()
 	{
 		// create window
 		m_pWindow = SDL_CreateWindow(
-			"Natural Engine",			// name of window
+			"World of Facades",			// name of window
 			SDL_WINDOWPOS_CENTERED,		// position x of screen
 			SDL_WINDOWPOS_CENTERED,		// position y of screen
 			SCREEN_WIDTH,				// width

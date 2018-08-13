@@ -80,6 +80,16 @@
     <ClCompile Include="HouseScene.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="WorldImage.cpp">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog.cpp">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBubble.cpp">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClCompile>
+    <ClCompile Include="DIalogImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -221,6 +231,16 @@
     <ClInclude Include="HouseScene.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="WorldImage.h">
+      <Filter>Game\World\Backgrounds</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog.h">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBubble.h">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClInclude>
+    <ClInclude Include="DIalogImage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -309,6 +329,9 @@
     </Filter>
     <Filter Include="Game\World\WorldStatus">
       <UniqueIdentifier>{4eddbec7-b43a-42dc-a91e-99fdf75e6027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World\TextBubble">
+      <UniqueIdentifier>{74cf21f4-4492-4530-833f-63f77f3e3295}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

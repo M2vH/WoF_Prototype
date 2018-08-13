@@ -13,6 +13,7 @@
 #include "InventoryItems.h"
 #include "Sound.h"
 #include "HouseScene.h"
+#include "Npc.h"
 #pragma endregion
 
 
@@ -50,16 +51,30 @@ void GPlayer::Update(float _deltaTime)
 
 	}
 
-	//TODO!
+	//TODO (m2vh) NPC state!
 	// talk to NPC
 	if (CInput::GetKeyDown(SDL_SCANCODE_E) && m_npcCollision == true)
 	{
-		LOG_MESSAGE("Talk to NPC ", std::to_string(m_npcCollision));
+		LOG_MESSAGE(
+			"Talk to NPC ", 
+			std::to_string((int)(GetNPC()->GetNPCType()))
+		);
+
 		// ToDo:
-		//movable = false;
+		// Player stops while talking to NPC;
 		m_isMovable = false;
+		// // open TextDialog
+		// create textobject;
+		// put in UIList;
 
 	}
+	// // ToDo (m2vh) close TextDialog
+	// stop talking to NPC
+	// if Key == "R" &&  
+	// put TextDialog object into RemoveList;
+	// shift NPC into next state (???)
+	// set NPC state to ISVISITED
+	// set m_isMovable = true;
 
 	// go into house and change scene
 	if (m_houseCollision == true && CInput::GetKeyDown(SDL_SCANCODE_W))
@@ -239,7 +254,7 @@ void GPlayer::Update(float _deltaTime)
 
 					// if not moveable cancel collision check
 					if (!moveable)
-						//						SetAnimState(EAnimState::STATE_ANIM_IDLE);
+						//	SetAnimState(EAnimState::STATE_ANIM_IDLE);
 						break;
 				}
 			}
@@ -288,7 +303,7 @@ void GPlayer::Update(float _deltaTime)
 // render every frame
 void GPlayer::Render(CRenderer * _pRenderer)
 {
-	CTexturedObject::Render(_pRenderer);
+	GAnimObject::Render(_pRenderer);
 }
 
 
@@ -317,7 +332,7 @@ void GPlayer::SetNPC(GNpc * _npc)
 	else
 	{
 		m_npcCollision = true;
-		m_npc = _npc;
+		m_pNPC = _npc;
 	}
 }
 #pragma endregion

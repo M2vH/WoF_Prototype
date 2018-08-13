@@ -47,6 +47,10 @@ void CMoveObject::Update(float _deltaTime)
 
 	// check if player is in house
 	if (m_isInHouse)
+	// if player in mainsceen
+	// let the player pos rotate
+	// on the left 
+	if (nextPos.X < 0)
 	{
 		// if yes 
 
@@ -86,6 +90,12 @@ void CMoveObject::Update(float _deltaTime)
 
 	nextRect.x = (int)nextPos.X;
 	nextRect.y = (int)nextPos.Y;
+
+	// else player in housesceen
+	// if pos.x <= PLAYER_LEFT_BORDER
+	//		pos.x = PLAYER_LEFT_BORDER
+	// and same for right border.
+
 
 	// only CollisionType MOVE check for collisions
 	if (ECollisionType::MOVE)
@@ -217,8 +227,12 @@ void CMoveObject::Update(float _deltaTime)
 		m_position = nextPos;
 
 		// set position of rect
-		m_rect.x = (int)m_position.X;
-		m_rect.y = (int)m_position.Y;
+		// ToDo (m2vh) "nextRect only" are we shure we want do this on actual rect;
+		// collision detection is always on nextRect;
+		 m_rect.x = (int)m_position.X;
+		 m_rect.y = (int)m_position.Y;
+		 //nextRect.x = (int)m_position.X;
+		 //nextRect.y = (int)m_position.Y;
 	}
 
 	// if no gravity return
@@ -229,6 +243,7 @@ void CMoveObject::Update(float _deltaTime)
 	moveable = true;
 
 	// set next rect down
+	// ToDo (m2vh) "nextRect only" uncomment next line
 	nextRect = m_rect;
 
 	// set y value
@@ -279,8 +294,10 @@ void CMoveObject::Update(float _deltaTime)
 	// if still moveable set y position
 	if (moveable)
 	{
-		m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
-		m_rect.y = (int)m_position.Y;
+		// ToDo (m2vh) "tne nextRect issue"
+		 m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
+		 m_rect.y = (int)m_position.Y;
+		// m_position.Y = nextRect.y;
 		m_grounded = false;
 		m_fallTime += _deltaTime;
 	}
@@ -291,6 +308,8 @@ void CMoveObject::Update(float _deltaTime)
 		m_fallTime = 0.001f;
 		m_grounded = true;
 	}
+
+	CTexturedObject::Update(_deltaTime);
 }
 
 // render every frame

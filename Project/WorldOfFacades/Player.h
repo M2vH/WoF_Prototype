@@ -115,8 +115,8 @@ public:
 	/// <returns>the inventory</returns>
 	GInventory* GetInventory() { return m_inventory; }
 
-	/// /// <summary>
-	/// set NPC
+	/// <summary>
+	/// set NPC the Player has contact with;
 	/// </summary>
 	/// <param name="_npc">NPC</param>
 	void SetNPC(GNpc* _npc);
@@ -126,6 +126,8 @@ public:
 	/// </summary>
 	/// <param name="_isAtHouse">set true if colliding with house</param>
 	void SetIsAtHouse(bool _isAtHouse) { m_houseCollision = _isAtHouse; }
+
+	GNpc* GetNPC() { return m_pNPC; };
 #pragma endregion
 
 
@@ -167,9 +169,10 @@ private:
 	GInventory* m_inventory;
 
 	/// <summary>
-	/// NPC
+	/// The last NPC the player had contact with; 
+	/// Value is set in collision detection of MoveObject;
 	/// </summary>
-	GNpc* m_npc;
+	GNpc* m_pNPC;
 
 	/// <summary>
 	/// pick up item sound
