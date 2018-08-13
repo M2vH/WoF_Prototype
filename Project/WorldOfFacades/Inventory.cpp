@@ -12,24 +12,25 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 	// set object in world
 	m_inWorld = false;
 	
+	// fury item
 	m_pFuryItem = new GInventoryItems(SVector2(0, 0),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/teddy.png");
 	m_pFuryItem->SetInWorld(false);
 
+	// fear item
 	m_pFearItem = new GInventoryItems(SVector2(0, 0),
-
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/candle.png");
 	m_pFearItem->SetInWorld(false);
 
+	// sadness item
 	m_pSadnessItem = new GInventoryItems(SVector2(0, 0),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/book_1.png");
-
 	m_pSadnessItem->SetInWorld(false);
 }
 #pragma endregion

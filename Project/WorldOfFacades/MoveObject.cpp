@@ -45,19 +45,44 @@ void CMoveObject::Update(float _deltaTime)
 	//}
 
 
-	// let the player pos rotate
-	// on the left 
-	if (nextPos.X < 0)
+	// check if player is in house
+	if (m_isInHouse)
 	{
-		// we jump to the right - 1
-		// we have pos 0 -> 3839 (3840 pixel)
-		nextPos.X = nextPos.X + WORLD_WIDTH - 1;
+		// if yes 
+
+		// set player in world
+		// on the left 
+		if (nextPos.X < PLAYER_INHOUSE_MARGIN)
+		{
+			// we jump to the right - 1
+			// we have pos 0 -> 3839 (3840 pixel)
+			nextPos.X = PLAYER_INHOUSE_MARGIN;
+		}
+		// on the right
+		if (nextPos.X > SCREEN_WIDTH - PLAYER_INHOUSE_MARGIN - PLAYER_WIDTH)
+		{
+			nextPos.X = SCREEN_WIDTH - PLAYER_INHOUSE_MARGIN - PLAYER_WIDTH;
+		}
 	}
-	// on the right
-	if (nextPos.X > WORLD_WIDTH)
+	else
 	{
-		nextPos.X = (float)((int)nextPos.X % WORLD_WIDTH) - 1;
+		// else player is in world
+
+		// let the player pos rotate
+		// on the left 
+		if (nextPos.X < 0)
+		{
+			// we jump to the right - 1
+			// we have pos 0 -> 3839 (3840 pixel)
+			nextPos.X = nextPos.X + WORLD_WIDTH - 1;
+		}
+		// on the right
+		if (nextPos.X > WORLD_WIDTH)
+		{
+			nextPos.X = (float)((int)nextPos.X % WORLD_WIDTH) - 1;
+		}
 	}
+
 
 	nextRect.x = (int)nextPos.X;
 	nextRect.y = (int)nextPos.Y;
@@ -72,26 +97,37 @@ void CMoveObject::Update(float _deltaTime)
 			if ((CMoveObject*)pObj && pObj == this)
 				continue;
 
-			// if collision type none
-			// for all objects without any reactions
-			if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
-			{
-				continue;
+			GPlayer* player = dynamic_cast<GPlayer*>(this);
 
-			}
-			// or all objects with ECollisionType >= 4 (ITEM)
-			// they dont stop the movement
-			else if (((CTexturedObject*)pObj)->GetColType() >= ECollisionType::ITEM)
+			if (nullptr != player)
 			{
-				continue;
-			}
-			else
-				// this are MOVE or WALL types
-				// we check for collision
-			{
+				player->SetIsAtHouse(false);
+				// if collision type none
+				// for all objects without any reactions
+				if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+				{
+					continue;
 
-				// set moveable by checking collision
-				moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+				}
+				// or all objects with ECollisionType >= 4 (ITEM)
+				// they dont stop the movement
+				else if (((CTexturedObject*)pObj)->GetColType() >= ECollisionType::ITEM)
+				{
+					// or object with ECollisionType(HOUSE)
+					if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::HOUSE && CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect()))
+					{
+						player->SetIsAtHouse(true);
+					}
+					continue;
+				}
+				else
+					// this are MOVE or WALL types
+					// we check for collision
+				{
+
+					// set moveable by checking collision
+					moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
+				}
 			}
 
 			// if not moveable cancel collision check
@@ -105,7 +141,7 @@ void CMoveObject::Update(float _deltaTime)
 			// through all persistant objects
 			for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
 			{
-				
+
 				// if current object is self continue
 				if ((CMoveObject*)pObj && pObj == this)
 					continue;

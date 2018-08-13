@@ -12,6 +12,7 @@
 #include "EnumEmotionType.h"
 #include "InventoryItems.h"
 #include "Sound.h"
+#include "HouseScene.h"
 #pragma endregion
 
 
@@ -26,7 +27,7 @@ void GPlayer::Update(float _deltaTime)
 	if (CInput::GetKeyDown(SDL_SCANCODE_S) && m_foundItem == true)
 	{
 		LOG_MESSAGE("Grab Item ", std::to_string(m_foundItem));
-		m_inventory->RemoveObjectItem (m_inventoryItem->GetItemType());
+		m_inventory->RemoveObjectItem(m_inventoryItem->GetItemType());
 		m_inventory->AddObject(m_inventoryItem->GetItemType());
 		CEngine::Get()->GetCM()->RemoveObject(m_inventoryItem);
 
@@ -60,12 +61,37 @@ void GPlayer::Update(float _deltaTime)
 
 	}
 
+	// go into house and change scene
+	if (m_houseCollision == true && CInput::GetKeyDown(SDL_SCANCODE_W))
+	{
+		LOG_MESSAGE("Change to GHouseScene", std::to_string(m_houseCollision));
+		// change to house scene
+		CEngine::Get()->ChangeScene(new GHouseScene());
+	}
+
+	// TODO!
+	// change camera position if player 'bool inHouse = true;'
 	// set position of camera
 	SVector2 camPosition;
-	camPosition.X = m_position.X + PLAYER_WIDTH / 2;
-	// camPosition.Y = m_position.Y - PLAYER_HEIGHT / 2;
 
-	camPosition.Y = m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2;
+	// if inHouse
+	if (m_isInHouse)
+	{
+		// set camera fix SCREEN_WIDTH /2 and SCREEN_HEIGHT / 2
+		// camposition.x
+		camPosition.X = SCREEN_WIDTH / 2;
+
+		// camposition.y
+		camPosition.Y = SCREEN_HEIGHT / 2;
+	}
+	// else
+	else
+	{
+		camPosition.X = m_position.X + PLAYER_WIDTH / 2;
+		// camPosition.Y = m_position.Y - PLAYER_HEIGHT / 2;
+
+		camPosition.Y = m_position.Y - CAMERA_OFFSET_Y + PLAYER_HEIGHT / 2;
+	}
 
 	CEngine::Get()->GetRenderer()->SetCamera(
 		camPosition
@@ -98,7 +124,7 @@ void GPlayer::Update(float _deltaTime)
 #pragma region movement
 		// moveable default true
 		bool moveable = true;
-		
+
 		// check if we are not jumping
 		if ((GetAnimState() & EAnimState::STATE_ANIM_JUMP) != STATE_ANIM_JUMP)
 		{
@@ -112,6 +138,7 @@ void GPlayer::Update(float _deltaTime)
 			// set movement and mirror
 			m_movement.X = -1.0f;
 			m_mirror.X = 1.0f;
+
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
 		}
 
@@ -121,13 +148,17 @@ void GPlayer::Update(float _deltaTime)
 			// set movemenet and mirror
 			m_movement.X = 1.0f;
 			m_mirror.X = 0.0f;
+
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
+
+			// TODO! do we need this?
 			GPlayer* test = this;
 		}
 
 		// no movement left or right
 		else
 			m_movement.X = 0.0f;
+
 
 		// if key space is pressed this frame and jump not active and grounded
 		if (CInput::GetKeyDown(SDL_SCANCODE_SPACE) && !m_jump && m_grounded)
@@ -230,7 +261,7 @@ void GPlayer::Update(float _deltaTime)
 
 #pragma endregion
 	}
-	
+
 	//// ToDo (m2vh) put this into SetAnimState using default values;
 	//float animSpeedIdle = 0.5f;
 	//float animSpeed = 0.1f;
@@ -243,6 +274,11 @@ void GPlayer::Update(float _deltaTime)
 	//	SetAnimSpeed(animSpeedIdle);
 	//}
 
+	// set found item false
+	m_foundItem = false;
+
+	// set found npc false
+	m_npcCollision = false;
 
 	// update parent
 	GAnimObject::Update(_deltaTime);
@@ -271,6 +307,7 @@ void GPlayer::SetInventoryItem(GInventoryItems * _inventoryItem)
 		m_inventoryItem = _inventoryItem;
 	}
 }
+
 void GPlayer::SetNPC(GNpc * _npc)
 {
 	if (nullptr == _npc)

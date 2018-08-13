@@ -187,6 +187,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="CContentManagement.cpp" />
     <ClCompile Include="Foreground.cpp" />
     <ClCompile Include="ForegroundSlide.cpp" />
+    <ClCompile Include="HouseScene.cpp" />
     <ClCompile Include="InventoryItems.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -223,6 +224,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Foreground.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="ForegroundSlide.h" />
+    <ClInclude Include="HouseScene.h" />
     <ClInclude Include="InventoryItems.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="EnumPlayerState.h" />

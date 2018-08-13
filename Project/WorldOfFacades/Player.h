@@ -120,6 +120,12 @@ public:
 	/// </summary>
 	/// <param name="_npc">NPC</param>
 	void SetNPC(GNpc* _npc);
+	
+	/// <summary>
+	/// set house collision
+	/// </summary>
+	/// <param name="_isAtHouse">set true if colliding with house</param>
+	void SetIsAtHouse(bool _isAtHouse) { m_houseCollision = _isAtHouse; }
 #pragma endregion
 
 
@@ -144,6 +150,11 @@ private:
 	/// is colliding with NPC
 	/// </summary>
 	bool m_npcCollision;
+
+	/// <summary>
+	/// is colliding with house
+	/// </summary>
+	bool m_houseCollision;
 
 	/// <summary>
 	/// inventory item
