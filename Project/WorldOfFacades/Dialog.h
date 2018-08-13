@@ -44,7 +44,8 @@ public:
 	void Render(CRenderer* _pRenderer) override;
 #pragma endregion
 #pragma region public functions
-
+	// ToDo (m2vh) delete; parent class has function already;
+	//inline void SetFont(CFont* _pfont) { m_pFont = _pfont; };
 #pragma endregion
 
 
@@ -60,7 +61,7 @@ private:
 	/// </summary>
 	GTextBubble* m_pTextBubble = nullptr;
 
-	CFont* m_pFont = GGame::Get()->GetPristinaFont();
+	//CFont* m_pFont;
 
 	SVector2 m_position;
 

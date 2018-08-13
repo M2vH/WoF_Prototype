@@ -23,6 +23,7 @@
 #include "Sound.h"
 #include "WorldImage.h"
 #include "TextBubble.h"
+#include "Dialog.h"
 #pragma endregion
 
 #pragma region public override function
@@ -284,11 +285,26 @@ void GMainScene::Init()
 
 #pragma region TextBubble
 	// instatiate a bubble
-	GTextBubble* m_ptheBubble = new GTextBubble(
-		SVector2(SCREEN_WIDTH / 2 - 50, SCREEN_HEIGHT / 2 - 50),
-		SVector2(100,100)
+	// // (m2vh) bubbleOnly
+	// next is working
+	//GTextBubble* m_ptheBubble = new GTextBubble(
+	//	SVector2(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 100),
+	//	SVector2(200,200)
+	//);
+	//pTheCM->AddUIObject(m_ptheBubble);
+	//	// (m2vh) end bubbleOnly
+
+	//	// (m2vh) textBubble
+	GDialog* m_pDialog = new GDialog(
+		SVector2(DIALOG_POS_X, DIALOG_POS_Y),
+		SVector2(DIALOG_TEXT_WIDTH, DIALOG_TEXT_HEIGHT),
+		"This is the text.\n \
+		The second line."
 	);
-	pTheCM->AddUIObject(m_ptheBubble);
+	
+	m_pDialog->SetFont(GGame::Get()->GetPristinaFont());
+	pTheCM->AddUIObject(m_pDialog);
+	//	// (m2vh) end textBubble
 #pragma endregion
 
 
