@@ -47,19 +47,12 @@ void CMoveObject::Update(float _deltaTime)
 
 	// check if player is in house
 	if (m_isInHouse)
-	// if player in mainsceen
-	// let the player pos rotate
-	// on the left 
-	if (nextPos.X < 0)
 	{
-		// if yes 
 
-		// set player in world
+		// set player in house
 		// on the left 
 		if (nextPos.X < PLAYER_INHOUSE_MARGIN)
 		{
-			// we jump to the right - 1
-			// we have pos 0 -> 3839 (3840 pixel)
 			nextPos.X = PLAYER_INHOUSE_MARGIN;
 		}
 		// on the right
@@ -69,9 +62,10 @@ void CMoveObject::Update(float _deltaTime)
 		}
 	}
 	else
+		// else player is in mainsceen
+		// let the player pos rotate
+		// on the left 
 	{
-		// else player is in world
-
 		// let the player pos rotate
 		// on the left 
 		if (nextPos.X < 0)
@@ -86,6 +80,7 @@ void CMoveObject::Update(float _deltaTime)
 			nextPos.X = (float)((int)nextPos.X % WORLD_WIDTH) - 1;
 		}
 	}
+	
 
 
 	nextRect.x = (int)nextPos.X;

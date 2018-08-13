@@ -198,6 +198,10 @@ void GMainScene::Init()
 	pPlayer->SetColType(ECollisionType::MOVE);
 
 	pPlayer->ActivateGravity();
+
+	// set the Player to be in MainSceen
+	// pPlayer->SetIsAtHouse(false);
+	// pPlayer->IsNotInHouse();
 #pragma endregion
 
 #pragma region Inventory
