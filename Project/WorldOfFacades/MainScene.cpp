@@ -1,3 +1,8 @@
+#pragma region system include
+#include <SDL_timer.h>
+#pragma endregion
+
+
 #pragma region project include
 #include "MainScene.h"
 #include "World.h"
@@ -13,7 +18,6 @@
 #include "InventoryItems.h"
 #include "Npc.h"
 #include "AnimObject.h"
-#include <SDL_timer.h>
 #include "EnumEmotionType.h"
 #include "WorldBackground.h"
 #include "Foreground.h"
@@ -130,7 +134,7 @@ void GMainScene::Init()
 	};
 
 	//	// add a NOW animated player
-	GPlayer * pPlayer = new GPlayer(
+	GPlayer* pPlayer = new GPlayer(
 		8,
 		0.15f,
 		SVector2(0, 0),
@@ -184,6 +188,8 @@ void GMainScene::Init()
 		"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
 	);
 
+#pragma region Walkground
+
 	/// <summary>
 	/// is the way, the player is moving on; place it between player and world
 	/// </summary>
@@ -194,6 +200,8 @@ void GMainScene::Init()
 		pTheRenderer,
 		"Texture/Background/Wald/B_Hintergrund_Weg_1280x170.png"
 	);
+#pragma endregion
+
 
 #pragma endregion
 #pragma region Text

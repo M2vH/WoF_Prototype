@@ -122,6 +122,15 @@ void GPlayer::Update(float _deltaTime)
 			// set movement and mirror
 			m_movement.X = -1.0f;
 			m_mirror.X = 1.0f;
+			
+			if (m_isInHouse)
+			{
+				if (m_movement.X < 30)
+				{
+					m_movement.X = 30;
+				}
+			}
+
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
 		}
 
@@ -131,6 +140,15 @@ void GPlayer::Update(float _deltaTime)
 			// set movemenet and mirror
 			m_movement.X = 1.0f;
 			m_mirror.X = 0.0f;
+			
+			if (m_isInHouse)
+			{
+				if (m_movement.X > 1250 - PLAYER_WIDTH)
+				{
+					m_movement.X = 1250 - PLAYER_WIDTH;
+				}
+			}
+
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
 			GPlayer* test = this;
 		}
@@ -138,6 +156,7 @@ void GPlayer::Update(float _deltaTime)
 		// no movement left or right
 		else
 			m_movement.X = 0.0f;
+		
 
 		// if key space is pressed this frame and jump not active and grounded
 		if (CInput::GetKeyDown(SDL_SCANCODE_SPACE) && !m_jump && m_grounded)

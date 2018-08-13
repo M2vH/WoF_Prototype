@@ -100,6 +100,10 @@ public:
  	/// <returns>true if object is on the ground</returns>
 	inline bool IsGrounded() { return m_grounded; };
 
+	/// <summary>
+	///  isInHouse = true
+	/// </summary>
+	inline void IsInHouse() { m_isInHouse = true; };
 #pragma endregion
 
 protected:
@@ -137,6 +141,6 @@ protected:
 	/// <summary>
 	/// is in house
 	/// </summary>
-	bool m_isInHouse = true;
+	bool m_isInHouse;
 #pragma endregion
 };

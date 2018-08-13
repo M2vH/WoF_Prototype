@@ -4,6 +4,7 @@
 #include "MainScene.h"
 #include "Font.h"
 #include "WorldStatus.h"
+#include "HouseScene.h"  // TODO! delete
 #pragma endregion
 
 #pragma region public function
@@ -23,7 +24,7 @@ void GGame::Init()
 	m_pPristinaFont = new CFont("Font/PRISTINA.ttf", 50);
 
 	// start game by creating new main scene
-	CEngine::Get()->ChangeScene(new GMainScene());
+	CEngine::Get()->ChangeScene(new GHouseScene()); // TODO! change back to GMainScene() 
 }
 
 // clean game
