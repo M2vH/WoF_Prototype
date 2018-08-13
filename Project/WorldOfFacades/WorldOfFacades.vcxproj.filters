@@ -80,8 +80,13 @@
     <ClCompile Include="WorldImage.cpp">
       <Filter>Game\World\Backgrounds</Filter>
     </ClCompile>
-    <ClCompile Include="Dialog.cpp" />
-    <ClCompile Include="TextBubble.cpp" />
+    <ClCompile Include="Dialog.cpp">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBubble.cpp">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClCompile>
+    <ClCompile Include="DIalogImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -223,8 +228,13 @@
     <ClInclude Include="WorldImage.h">
       <Filter>Game\World\Backgrounds</Filter>
     </ClInclude>
-    <ClInclude Include="Dialog.h" />
-    <ClInclude Include="TextBubble.h" />
+    <ClInclude Include="Dialog.h">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBubble.h">
+      <Filter>Game\World\TextBubble</Filter>
+    </ClInclude>
+    <ClInclude Include="DIalogImage.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

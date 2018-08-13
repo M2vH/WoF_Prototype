@@ -63,7 +63,7 @@ private:
 
 	//CFont* m_pFont;
 
-	SVector2 m_position;
+	//SVector2 m_position;
 
 	SColor m_TextColor = BLACK;
 #pragma endregion
