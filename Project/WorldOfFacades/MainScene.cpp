@@ -28,6 +28,7 @@
 #include "WorldImage.h"
 #include "TextBubble.h"
 #include "Dialog.h"
+#include "DIalogImage.h"
 #pragma endregion
 
 #pragma region public override function
@@ -307,16 +308,37 @@ void GMainScene::Init()
 	//	// (m2vh) end bubbleOnly
 
 	//	// (m2vh) textBubble
-	GDialog* m_pDialog = new GDialog(
-		SVector2(DIALOG_POS_X, DIALOG_POS_Y),
-		SVector2(DIALOG_TEXT_WIDTH, DIALOG_TEXT_HEIGHT),
-		"This is the text.\n \
-		The second line."
-	);
-	
-	m_pDialog->SetFont(GGame::Get()->GetPristinaFont());
-	pTheCM->AddUIObject(m_pDialog);
+	//GDialog* m_pDialog = new GDialog(
+	//	SVector2(DIALOG_POS_X, DIALOG_POS_Y),
+	//	SVector2(DIALOG_TEXT_WIDTH, DIALOG_TEXT_HEIGHT),
+	//	"This is the text.\n \
+	//	The second line."
+	//);
+	//
+	//m_pDialog->SetFont(GGame::Get()->GetPristinaFont());
+	//pTheCM->AddUIObject(m_pDialog);
 	//	// (m2vh) end textBubble
+
+	//	// (m2vh) DialogImage bubble
+	//	the array of text images
+	char* m_textImages[3] = {
+		"Texture/Text/T_Text_Fear_1_330x85.png",
+		"Texture/Text/T_Text_Fear_2_330x85.png",
+		"Texture/Text/T_Text_Fear_3_330x85.png"
+	};
+	// instance of DialogImage
+	GDialogImage* m_pDialogImage = new GDialogImage(
+		SVector2(DIALOG_POS_X, DIALOG_POS_Y),		// pos
+		SVector2(330,85),		// size of text
+		SVector2(32,32),		// margin
+		m_textImages
+	);
+	// set display value to true
+	m_pDialogImage->SetRenderDisplay(true);
+	// add to UIList
+	pTheCM->AddUIObject(m_pDialogImage);
+
+	//	// (m2vh) end DialogImage bubble
 #pragma endregion
 
 

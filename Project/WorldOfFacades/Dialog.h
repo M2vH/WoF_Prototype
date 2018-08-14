@@ -54,7 +54,9 @@ private:
 	/// <summary>
 	/// Dialog will be displayed;
 	/// </summary>
-	bool m_isDisplayed = true;	// ToDo (m2vh) reverse after test;
+	bool m_isDisplayed = true;	
+	// ToDo (m2vh) reverse after test;
+	// add public Get and Set method
 
 	/// <summary>
 	/// The TextBubble, the text is rendered on;
