@@ -27,6 +27,14 @@ void GHouseScene::Init()
 {
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
 
+
+#pragma region the new INIT
+	CContentManagement* pTheCM = CEngine::Get()->GetCM();
+	// we clear CM Scene List
+	pTheCM->CleanScene();
+
+#pragma endregion
+
 #pragma region InHouse background
 	GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
 		SVector2(0, 0),
