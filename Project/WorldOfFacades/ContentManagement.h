@@ -45,6 +45,18 @@ public:
 	inline list<CObject*> GetSceneObjects() { return m_pSceneObjects; }
 
 	/// <summary>
+	/// get player object list
+	/// </summary>
+	/// <returns>list of all player objects</returns>
+	inline list<CObject*> GetPlayerObjects() { return m_pPlayerObjects; }
+
+	/// <summary>
+	/// add object to player list
+	/// </summary>
+	/// <param name="_pObject">object to add</param>
+	inline void AddPlayerObject(CObject* _pObject) { AddObject(_pObject, m_pPlayerObjects); }
+
+	/// <summary>
 	/// add object to persitant list
 	/// </summary>
 	/// <param name="_pObject">object to add</param>
@@ -116,6 +128,11 @@ private:
 	/// scene / world objects
 	/// </summary>
 	list<CObject*> m_pSceneObjects;
+
+	/// <summary>
+	/// Player
+	/// </summary>
+	list<CObject*> m_pPlayerObjects;
 
 	/// <summary>
 	/// persistant object

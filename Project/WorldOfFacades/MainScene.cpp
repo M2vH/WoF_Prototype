@@ -444,7 +444,7 @@ void GMainScene::Init()
 
 
 	// add player to persistant list
-	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
+	CEngine::Get()->GetCM()->AddPlayerObject(pPlayer);
 
 	// add inventory to UI list
 	CEngine::Get()->GetCM()->AddUIObject(m_inventory);
@@ -519,6 +519,8 @@ void GMainScene::Clean()
 	// clean all objects
 	CEngine::Get()->GetCM()->CleanScene();
 	
+	// TODO! Do not delete persistent object list
+	// clean PersistentObjects 
 	CEngine::Get()->GetCM()->CleanPersistantObjects();
 }
 #pragma endregion

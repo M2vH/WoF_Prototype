@@ -13,6 +13,8 @@
 #include "Player.h"
 #include "Foreground.h"
 #include "MoveObject.h"
+#include "Helper.h"
+#include "Dialog.h"
 #pragma endregion
 
 
@@ -48,7 +50,7 @@ void GHouseScene::Init()
 	//	index 3..5	-> WALK
 	//	index 6..8	-> JUMP
 
-	char* playerAnimFileNames[] = {
+	/*char* playerAnimFileNames[] = {
 		"Texture/Protagonist/protag_idle_1.png",
 		"Texture/Protagonist/protag_idle_2.png",
 		"Texture/Protagonist/protag_idle_3.png",
@@ -61,28 +63,42 @@ void GHouseScene::Init()
 		"Texture/Protagonist/protag_jump_2.png",
 		"Texture/Protagonist/protag_jump_3.png"
 
-	};
+	};*/
+	
+	//GPlayer* pPlayer = CEngine::Get()->GetCM()->GetPlayerObjects();
 
-	//	// add a NOW animated player
-	GPlayer* pPlayer = new GPlayer(
-		8,
-		0.15f,
-		SVector2(0, 0),
-		SVector2(SCREEN_WIDTH / 2, GROUND_POSITION - PLAYER_HEIGHT - 30),	// X: in the middle of the world Y: will fall till ground
-		SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
-		CEngine::Get()->GetRenderer(),
-		playerAnimFileNames
-	);
+	// get player from playerObject list
+	
 
-	// set player values
-	// pPlayer->SetSpeed(PLAYER_SPEED);
-	pPlayer->SetMirror(PLAYER_MIRROR);
-	pPlayer->SetColType(ECollisionType::MOVE);
 
-	pPlayer->ActivateGravity();
+	////	// add a NOW animated player
+	//GPlayer* pPlayer = new GPlayer(
+	//	8,
+	//	0.15f,
+	//	SVector2(0, 0),
+	//	SVector2(SCREEN_WIDTH / 2, GROUND_POSITION - PLAYER_HEIGHT - 30),	// X: in the middle of the world Y: will fall till ground
+	//	SVector2(PLAYER_WIDTH, PLAYER_HEIGHT),			// 
+	//	CEngine::Get()->GetRenderer(),
+	//	playerAnimFileNames
+	//);
+
+	//// set player values
+	//// pPlayer->SetSpeed(PLAYER_SPEED);
+	//pPlayer->SetMirror(PLAYER_MIRROR);
+	//pPlayer->SetColType(ECollisionType::MOVE);
+
+	//pPlayer->ActivateGravity();
+	GPlayer* pPlayer = dynamic_cast<GPlayer*>(CEngine::Get()->GetCM()->GetPlayerObjects().front());
 	pPlayer->IsInHouse();
 #pragma endregion
 
+#pragma region Music
+	// create background music
+	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Bedtime_Story.mp3", 4).c_str());
+
+	// play music
+	m_pBackgroundMusic->Play(true);
+#pragma endregion
 
 #pragma region Walkground
 
@@ -126,8 +142,8 @@ void GHouseScene::Init()
 	CEngine::Get()->GetCM()->AddPersistantObject(pGround);
 	
 
-	// player
-	CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
+	//// player
+	//CEngine::Get()->GetCM()->AddPersistantObject(pPlayer);
 
 	//// walkground
 	//CEngine::Get()->GetCM()->AddSceneObject(pWalkground);
@@ -137,10 +153,21 @@ void GHouseScene::Init()
 
 void GHouseScene::Clean()
 {
-	// remove player
-	CEngine::Get()->GetCM()->RemoveObject(
-		CEngine::Get()->GetCM()->GetSceneObjects().front()
-	);
+	// delete music
+	delete m_pBackgroundMusic;
+
+	// set IsInHouse() = false
+	
+
+	// clean all objects
+	CEngine::Get()->GetCM()->CleanScene();
+
+	CEngine::Get()->GetCM()->CleanPersistantObjects();
+
+	//// remove sceneObjects
+	//CEngine::Get()->GetCM()->RemoveObject(
+	//	CEngine::Get()->GetCM()->GetSceneObjects().front()
+	//);
 }
 #pragma endregion
 

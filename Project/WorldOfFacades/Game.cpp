@@ -35,5 +35,8 @@ void GGame::Clean()
 
 	// delete gigi font
 	delete m_pPristinaFont;
+
+	// TODO!
+	// delete world status
 }
 #pragma endregion
