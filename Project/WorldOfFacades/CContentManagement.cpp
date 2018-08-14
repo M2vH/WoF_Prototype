@@ -12,6 +12,10 @@ CContentManagement::~CContentManagement()
 		m_pSceneObjects.pop_front();
 
 	// as long as there is a object in list delete first element
+	while (m_pPlayerObjects.size() > 0)
+		m_pPlayerObjects.pop_front();
+
+	// as long as there is a object in list delete first element
 	while (m_pPersistantObjects.size() > 0)
 		m_pPersistantObjects.pop_front();
 
@@ -27,6 +31,10 @@ void CContentManagement::Update(float _deltaTime)
 {
 	// update every scene object
 	for each (CObject* pObj in m_pSceneObjects)
+		pObj->Update(_deltaTime);
+
+	// update every player object
+	for each(CObject* pObj in m_pPlayerObjects)
 		pObj->Update(_deltaTime);
 
 	// update every persistant object
@@ -46,6 +54,9 @@ void CContentManagement::Update(float _deltaTime)
 		// remove pointer from scene list
 		m_pSceneObjects.remove(pObj);
 
+		// remove pointer from player list
+		m_pPlayerObjects.remove(pObj);
+
 		// remove pointer from persistant list
 		m_pPersistantObjects.remove(pObj);
 
@@ -64,6 +75,10 @@ void CContentManagement::Render(CRenderer * _pRenderer)
 {
 	// render every scene object
 	for each (CObject* pObj in m_pSceneObjects)
+		pObj->Render(_pRenderer);
+
+	// render every player object
+	for (CObject* pObj : m_pPlayerObjects)
 		pObj->Render(_pRenderer);
 
 	// render every persistant object

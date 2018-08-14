@@ -14,6 +14,7 @@
 #include "Sound.h"
 #include "HouseScene.h"
 #include "Npc.h"
+#include "MainScene.h"
 #pragma endregion
 
 
@@ -80,8 +81,18 @@ void GPlayer::Update(float _deltaTime)
 	if (m_houseCollision == true && CInput::GetKeyDown(SDL_SCANCODE_W))
 	{
 		LOG_MESSAGE("Change to GHouseScene", std::to_string(m_houseCollision));
-		// change to house scene
+		// change to houseScene
 		CEngine::Get()->ChangeScene(new GHouseScene());
+	}
+
+	// if player is in house and on the far right of the screen and press W
+	// he can switch back to main scene
+	if (m_isInHouse &&
+		m_position.X > SCREEN_WIDTH - PLAYER_INHOUSE_MARGIN - (PLAYER_WIDTH * 2) &&
+		CInput::GetKeyDown(SDL_SCANCODE_W))
+	{
+		// change to mainScene
+		CEngine::Get()->ChangeScene(new GMainScene());
 	}
 
 	// TODO!
