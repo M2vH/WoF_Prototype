@@ -90,6 +90,7 @@
       <Filter>Game\World\TextBubble</Filter>
     </ClCompile>
     <ClCompile Include="DIalogImage.cpp" />
+    <ClCompile Include="HouseBackground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -241,6 +242,7 @@
       <Filter>Game\World\TextBubble</Filter>
     </ClInclude>
     <ClInclude Include="DIalogImage.h" />
+    <ClInclude Include="HouseBackground.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

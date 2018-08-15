@@ -36,6 +36,9 @@ void GHouseScene::Init()
 	GPlayer* pPlayer = dynamic_cast<GPlayer*>(CEngine::Get()->GetCM()->GetPlayerObjects().front());
 	pPlayer->IsInHouse();
 
+	// ToDo (m2vh) set position of player
+	//	to 1280 - 30 - PLAYER_WIDTH (at the door)
+
 	// we clean the CM lists
 	pTheCM->CleanScene();
 	pTheCM->CleanPersistantObjects();

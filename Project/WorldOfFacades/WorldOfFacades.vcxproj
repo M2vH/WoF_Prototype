@@ -189,6 +189,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="DIalogImage.cpp" />
     <ClCompile Include="Foreground.cpp" />
     <ClCompile Include="ForegroundSlide.cpp" />
+    <ClCompile Include="HouseBackground.cpp" />
     <ClCompile Include="HouseScene.cpp" />
     <ClCompile Include="InventoryItems.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -230,6 +231,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Foreground.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="ForegroundSlide.h" />
+    <ClInclude Include="HouseBackground.h" />
     <ClInclude Include="HouseScene.h" />
     <ClInclude Include="InventoryItems.h" />
     <ClInclude Include="Game.h" />
