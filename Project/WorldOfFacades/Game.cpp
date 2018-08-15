@@ -315,11 +315,42 @@ void GGame::Init()
 	m_pWorldStatus->AddMainPersistObject(pForeground);
 
 
+#pragma endregion
+#pragma region the HOUSE SCENE
+	//	// the Scene objects
+	//	The background
+		// instantiate object
+	GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
+		SVector2(0, 0),
+		SVector2(1280, 720),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Haus/Innen/B_Huette_Start_1280x720.png"
+	);
+
+		// set values of object
+	pBackgroundInHouse->DeactivateGravity();
+	pBackgroundInHouse->SetInWorld(false);
 
 
+	//	The ground to walk on
+	GBackgroundStatic* pHouseGround = new GBackgroundStatic(
+		SVector2(0, GROUND_POSITION),
+		SVector2(1280, 220),
+		CEngine::Get()->GetRenderer(),
+		//"Texture/World/T_backg_G1_1280x720.png"
+		"Texture/Background/T_GroundToWalkOn.png"
+	);
+	pHouseGround->SetColType(ECollisionType::WALL);
+	pHouseGround->DeactivateGravity();
+	pHouseGround->SetInWorld(true);
+
+	// add object to world list
+	m_pWorldStatus->AddHouseSceneObject(pBackgroundInHouse);
+	m_pWorldStatus->AddHouseSceneObject(pHouseGround);
 
 
 #pragma endregion
+
 
 
 	// start game by creating new main scene

@@ -77,12 +77,12 @@ void CContentManagement::Render(CRenderer * _pRenderer)
 	for each (CObject* pObj in m_pSceneObjects)
 		pObj->Render(_pRenderer);
 
-	// render every player object
-	for (CObject* pObj : m_pPlayerObjects)
-		pObj->Render(_pRenderer);
-
 	// render every persistant object
 	for (CObject* pObj : m_pPersistantObjects)
+		pObj->Render(_pRenderer);
+
+	// render every player object
+	for (CObject* pObj : m_pPlayerObjects)
 		pObj->Render(_pRenderer);
 
 

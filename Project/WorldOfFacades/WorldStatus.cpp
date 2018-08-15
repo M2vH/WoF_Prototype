@@ -24,6 +24,26 @@ inline void GWorldStatus::CleanTheMainScene()
 	GWorldStatus::CleanMainPersistObjects();
 }
 
+void GWorldStatus::CleanHouseSceneObjects()
+{
+	for (CObject* pObj : m_pHouseSceneObjects)
+		RemoveObject(pObj);
+}
+
+void GWorldStatus::CleanHousePersistObjects()
+{
+	for (CObject* pObj : m_pHousePersistObjects)
+		RemoveObject(pObj);
+}
+
+void GWorldStatus::CleanTheHouseSceen()
+{
+	// clean scene list
+	GWorldStatus::CleanHouseSceneObjects();
+	// clean persist list
+	GWorldStatus::CleanHousePersistObjects();
+}
+
 /// <summary>
 /// take every object from removeList;
 /// find in every other list and remove;
@@ -53,6 +73,7 @@ void GWorldStatus::Refresh()
 		//delete pObj;
 	}
 }
+
 
 
 /// <summary>

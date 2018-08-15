@@ -119,13 +119,24 @@ public:
 #pragma endregion
 
 #pragma region public house scene object list
+	virtual void AddHouseSceneObject(CObject* _pObj) { AddObject(_pObj, m_pHouseSceneObjects); }
+
+	virtual list<CObject*> GetHouseSceneObjects() { return m_pHouseSceneObjects; }
+
+	virtual void CleanHouseSceneObjects();
 
 #pragma endregion
 #pragma region public house persistant list
 
+	virtual void AddHousePersistObject(CObject* _pObj) { AddObject(_pObj, m_pHousePersistObjects); }
+
+	virtual list<CObject*> GetHousePersistObjects() { return m_pHousePersistObjects; }
+
+	virtual void CleanHousePersistObjects();
+
 #pragma endregion
 
-
+	virtual void CleanTheHouseSceen();
 
 private:
 #pragma region private ctor
@@ -169,6 +180,10 @@ private:
 #pragma endregion
 #pragma region private list for housescene
 	// scene object list
+
+	list<CObject*> m_pHouseSceneObjects;
+
+	list<CObject*> m_pHousePersistObjects;
 
 	// persistant object list
 #pragma endregion

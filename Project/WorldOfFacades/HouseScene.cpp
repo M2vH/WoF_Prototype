@@ -25,29 +25,52 @@
 // initialize scene
 void GHouseScene::Init()
 {
+	GWorldStatus* pTheWorldStatus;
+	pTheWorldStatus = pTheWorldStatus->Get();
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
+	CContentManagement* pTheCM = CEngine::Get()->GetCM();
+	// we clear CM Scene List
 
 
 #pragma region the new INIT
-	CContentManagement* pTheCM = CEngine::Get()->GetCM();
-	// we clear CM Scene List
-	pTheCM->CleanScene();
+	GPlayer* pPlayer = dynamic_cast<GPlayer*>(CEngine::Get()->GetCM()->GetPlayerObjects().front());
+	pPlayer->IsInHouse();
 
+	// we clean the CM lists
+	pTheCM->CleanScene();
+	pTheCM->CleanPersistantObjects();
+
+	// we fill CM with status
+	for (CObject* _pObj : pTheWorldStatus->GetHousePersistObjects()) {
+		pTheCM->AddPersistantObject(_pObj);
+	};
+
+	for (CObject* _pObj : pTheWorldStatus->GetHouseSceneObjects()) {
+		pTheCM->AddSceneObject(_pObj);
+	}
+#pragma endregion
+
+#pragma region Music
+	// create background music
+	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Bedtime_Story.mp3", 4).c_str());
+
+	// play music
+	m_pBackgroundMusic->Play(true);
 #pragma endregion
 
 #pragma region InHouse background
-	GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
-		SVector2(0, 0),
-		SVector2(1280, 720),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Haus/Innen/B_Huette_Start_1280x720.png"
-	);
+	//GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
+	//	SVector2(0, 0),
+	//	SVector2(1280, 720),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Haus/Innen/B_Huette_Start_1280x720.png"
+	//);
 
-	// set values of object
-	pBackgroundInHouse->DeactivateGravity();
-	pBackgroundInHouse->SetInWorld(false);
+	//// set values of object
+	//pBackgroundInHouse->DeactivateGravity();
+	//pBackgroundInHouse->SetInWorld(false);
 
-	CEngine::Get()->GetCM()->AddSceneObject(pBackgroundInHouse);
+	//CEngine::Get()->GetCM()->AddSceneObject(pBackgroundInHouse);
 
 #pragma endregion
 
@@ -96,17 +119,8 @@ void GHouseScene::Init()
 	//pPlayer->SetColType(ECollisionType::MOVE);
 
 	//pPlayer->ActivateGravity();
-	GPlayer* pPlayer = dynamic_cast<GPlayer*>(CEngine::Get()->GetCM()->GetPlayerObjects().front());
-	pPlayer->IsInHouse();
 #pragma endregion
 
-#pragma region Music
-	// create background music
-	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Bedtime_Story.mp3", 4).c_str());
-
-	// play music
-	m_pBackgroundMusic->Play(true);
-#pragma endregion
 
 #pragma region Walkground
 
@@ -124,17 +138,17 @@ void GHouseScene::Init()
 
 #pragma region Ground (to walk on)
 
-	// Add a ground to walk on;
-	GBackgroundStatic* pGround = new GBackgroundStatic(
-		SVector2(0, GROUND_POSITION),
-		SVector2(1280, 220),
-		CEngine::Get()->GetRenderer(),
-		//"Texture/World/T_backg_G1_1280x720.png"
-		""	// add empty string to create collision object
-	);
-	pGround->SetColType(ECollisionType::WALL);
-	pGround->DeactivateGravity();
-	pGround->SetInWorld(true);
+	//// Add a ground to walk on;
+	//GBackgroundStatic* pGround = new GBackgroundStatic(
+	//	SVector2(0, GROUND_POSITION),
+	//	SVector2(1280, 220),
+	//	CEngine::Get()->GetRenderer(),
+	//	//"Texture/World/T_backg_G1_1280x720.png"
+	//	""	// add empty string to create collision object
+	//);
+	//pGround->SetColType(ECollisionType::WALL);
+	//pGround->DeactivateGravity();
+	//pGround->SetInWorld(true);
 
 #pragma endregion
 	
@@ -147,7 +161,7 @@ void GHouseScene::Init()
 	//CEngine::Get()->GetCM()->AddSceneObject(pBackgroundInHouse);
 	
 	// ground to walk on
-	CEngine::Get()->GetCM()->AddPersistantObject(pGround);
+	// CEngine::Get()->GetCM()->AddPersistantObject(pGround);
 	
 
 	//// player
@@ -161,11 +175,26 @@ void GHouseScene::Init()
 
 void GHouseScene::Clean()
 {
+	GWorldStatus* pTheWorldStatus;
+	pTheWorldStatus = pTheWorldStatus->Get();
+	//	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
+	CContentManagement* pTheCM = CEngine::Get()->GetCM();
+
 	// delete music
 	delete m_pBackgroundMusic;
 
-	// set IsInHouse() = false
-	
+	pTheWorldStatus->CleanTheHouseSceen();
+
+	pTheWorldStatus->Refresh();
+
+	// put actual CM into WorldStatus
+	for (CObject* _pObj : pTheCM->GetSceneObjects()) {
+		pTheWorldStatus->AddHouseSceneObject(_pObj);
+	}
+
+	for (CObject* _pObj : pTheCM->GetPersistantObjects()) {
+		pTheWorldStatus->AddHousePersistObject(_pObj);
+	}
 
 	// clean all objects
 	CEngine::Get()->GetCM()->CleanScene();
