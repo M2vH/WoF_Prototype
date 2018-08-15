@@ -306,6 +306,9 @@ void GPlayer::Update(float _deltaTime)
 	// set found npc false
 	m_npcCollision = false;
 
+	// set house collision false
+	m_houseCollision = false;
+
 	// update parent
 	GAnimObject::Update(_deltaTime);
 	//LOG_MESSAGE("Position Y: ", to_string(m_position.Y));

@@ -12,9 +12,16 @@ inline void GWorldStatus::CleanMainSceneObjects()
 
 }
 
+void GWorldStatus::CleanMainPersistObjects()
+{
+	for (CObject* pObj : m_pMainPersistObjects)
+		RemoveObject(pObj);
+}
+
 inline void GWorldStatus::CleanTheMainScene()
 {
 	GWorldStatus::CleanMainSceneObjects();
+	GWorldStatus::CleanMainPersistObjects();
 }
 
 /// <summary>
@@ -34,8 +41,8 @@ void GWorldStatus::Refresh()
 		//// remove pointer from player list
 		//m_pPlayerObjects.remove(pObj);
 
-		//// remove pointer from persistant list
-		//m_pPersistantObjects.remove(pObj);
+		// remove pointer from persistant list
+		m_pMainPersistObjects.remove(pObj);
 
 		//// remove pointer from ui list
 		//m_pUIObjects.remove(pObj);

@@ -85,6 +85,7 @@ void CContentManagement::Render(CRenderer * _pRenderer)
 	for (CObject* pObj : m_pPersistantObjects)
 		pObj->Render(_pRenderer);
 
+
 	// render every ui object
 	for (CObject* pObj : m_pUIObjects)
 		pObj->Render(_pRenderer);

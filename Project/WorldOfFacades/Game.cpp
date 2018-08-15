@@ -13,6 +13,7 @@
 #include "Foreground.h"
 #include "Text.h"
 #include "DIalogImage.h"
+#include "Npc.h"
 #pragma endregion
 
 //CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
@@ -37,7 +38,8 @@ void GGame::Init()
 	// create base gigi font
 	m_pPristinaFont = new CFont("Font/PRISTINA.ttf", 50);
 
-	// create playerfor CM Player list
+	//	// Content from MainScen::Init()
+	//	The Player and UI content;
 #pragma region Player
 
 	// create an array of filePaths
@@ -240,6 +242,84 @@ void GGame::Init()
 
 #pragma endregion
 
+#pragma region create PERSISTANT OBJECTS for MainScene
+	//	// create the persistant objects
+	/// <summary>
+	/// the foreground in front of the player
+	/// </summary>
+	GForeground* pForeground = new GForeground(
+		-2.0f,	// the speed
+		SVector2(0, FOREGROUND_POSITION_Y),
+		SVector2(1280, 302),
+		pTheRenderer,
+		"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
+	);
+
+	// // create first NPC of EmoType FURY
+	GNpc* pFury = new GNpc(
+		EEmotionType::FURY,
+		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+		SVector2(NPC_WIDTH, NPC_HEIGHT),
+		pTheRenderer,
+		"Texture/NPC/Anger/anger_mask_1.png"
+	);
+
+	//	// Add a ground to walk on;
+	GBackgroundStatic* pGround = new GBackgroundStatic(
+		SVector2(0, GROUND_POSITION),
+		SVector2(3840, 220),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Background/T_GroundToWalkOn.png"	
+	);
+	pGround->SetColType(ECollisionType::WALL);
+	pGround->DeactivateGravity();
+	pGround->SetInWorld(true);
+	pGround->SetSrcRect(SRect(0, 0, 4, 4));
+
+#pragma region Items
+	//	ToDo (m2vh) Evolve the items
+	//	// add an item as member to NPC.class
+		// add isVisible param to item.class;
+		// let NPC control visibility of his item
+	
+	// create FuryItem 
+	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Item/teddy.png");
+	pFuryItem->SetItemType(EEmotionType::FURY);
+
+	// create FearItem 
+	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Item/candle.png");
+	pFearItem->SetItemType(EEmotionType::FEAR);
+
+	// create SadnessItem 
+	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		CEngine::Get()->GetRenderer(),
+		"Texture/Item/book_1.png");
+	pSadItem->SetItemType(EEmotionType::SAD);
+#pragma endregion
+
+
+	//	// add objects to WorldStaus list
+	m_pWorldStatus->AddMainPersistObject(pFury);
+	m_pWorldStatus->AddMainPersistObject(pSadItem);
+	m_pWorldStatus->AddMainPersistObject(pFearItem);
+	m_pWorldStatus->AddMainPersistObject(pFuryItem);
+	// m_pWorldStatus->AddMainPersistObject(pGround);
+	m_pWorldStatus->AddMainSceneObject(pGround);
+	m_pWorldStatus->AddMainPersistObject(pForeground);
+
+
+
+
+
+
+#pragma endregion
 
 
 	// start game by creating new main scene
@@ -257,5 +337,6 @@ void GGame::Clean()
 
 	// TODO!
 	// delete world status
+	// clean CM completely
 }
 #pragma endregion

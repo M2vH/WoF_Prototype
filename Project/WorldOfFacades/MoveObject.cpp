@@ -80,7 +80,7 @@ void CMoveObject::Update(float _deltaTime)
 			nextPos.X = (float)((int)nextPos.X % WORLD_WIDTH) - 1;
 		}
 	}
-	
+
 
 
 	nextRect.x = (int)nextPos.X;
@@ -91,10 +91,12 @@ void CMoveObject::Update(float _deltaTime)
 	//		pos.x = PLAYER_LEFT_BORDER
 	// and same for right border.
 
-
 	// only CollisionType MOVE check for collisions
 	if (ECollisionType::MOVE)
 	{
+		GPlayer* player;
+		player = dynamic_cast<GPlayer*>(this);
+
 		// through all scene objects
 		for (CObject* pObj : CEngine::Get()->GetCM()->GetSceneObjects())
 		{
@@ -102,11 +104,10 @@ void CMoveObject::Update(float _deltaTime)
 			if ((CMoveObject*)pObj && pObj == this)
 				continue;
 
-			GPlayer* player = dynamic_cast<GPlayer*>(this);
 
 			if (nullptr != player)
 			{
-				player->SetIsAtHouse(false);
+				//player->SetIsAtHouse(false);
 				// if collision type none
 				// for all objects without any reactions
 				if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
@@ -151,7 +152,7 @@ void CMoveObject::Update(float _deltaTime)
 				if ((CMoveObject*)pObj && pObj == this)
 					continue;
 
-				GPlayer* player = dynamic_cast<GPlayer*>(this);
+				// GPlayer* player = dynamic_cast<GPlayer*>(this);
 				if (nullptr != player)
 				{
 					// it is ITEM and in reach
@@ -164,17 +165,17 @@ void CMoveObject::Update(float _deltaTime)
 					}
 					else
 					{
-						if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::ITEM)
+						if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
 						{
 							continue;
 						}
-						else if (((CTexturedObject*)pObj)->GetColType() == ECollisionType::NONE)
+						else if (((CTexturedObject*)pObj)->GetColType() >= ECollisionType::ITEM)
 						{
 							continue;
 						}
 						else
 						{
-
+							// must be of WALL or MOVE
 							// set moveable by checking collision
 							moveable = !CPhysic::RectRectCollision(nextRect, ((CTexturedObject*)pObj)->GetRect());
 
@@ -224,10 +225,10 @@ void CMoveObject::Update(float _deltaTime)
 		// set position of rect
 		// ToDo (m2vh) "nextRect only" are we shure we want do this on actual rect;
 		// collision detection is always on nextRect;
-		 m_rect.x = (int)m_position.X;
-		 m_rect.y = (int)m_position.Y;
-		 //nextRect.x = (int)m_position.X;
-		 //nextRect.y = (int)m_position.Y;
+		m_rect.x = (int)m_position.X;
+		m_rect.y = (int)m_position.Y;
+		//nextRect.x = (int)m_position.X;
+		//nextRect.y = (int)m_position.Y;
 	}
 
 	// if no gravity return
@@ -290,8 +291,8 @@ void CMoveObject::Update(float _deltaTime)
 	if (moveable)
 	{
 		// ToDo (m2vh) "tne nextRect issue"
-		 m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
-		 m_rect.y = (int)m_position.Y;
+		m_position.Y += GRAVITY_VALUE * m_fallTime * m_fallTime;
+		m_rect.y = (int)m_position.Y;
 		// m_position.Y = nextRect.y;
 		m_grounded = false;
 		m_fallTime += _deltaTime;

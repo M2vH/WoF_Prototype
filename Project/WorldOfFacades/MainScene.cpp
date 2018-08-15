@@ -51,6 +51,7 @@ void GMainScene::Init()
 
 	// we clear CM Scene List
 	pTheCM->CleanScene();
+	pTheCM->CleanPersistantObjects();
 
 	// we fill CM with status
 	list<CObject*> pTheStatus = pTheWorldStatus->GetMainSceneObjects();
@@ -58,7 +59,18 @@ void GMainScene::Init()
 		pTheCM->AddSceneObject(_pObj);
 	};
 
-	// we fill CM Scene List with Status Scene List
+	// we fill CM Persistant List with Status Main Persistant List objects
+	for (CObject* _pObj : pTheWorldStatus->GetMainPersistObjects()) {
+		pTheCM->AddPersistantObject(_pObj);
+	}
+
+#pragma region Music
+	// create background music
+	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Moment-of-Strange.mp3", 4).c_str());
+
+	// play music
+	m_pBackgroundMusic->Play(true);
+#pragma endregion
 
 #pragma endregion
 
@@ -253,16 +265,16 @@ void GMainScene::Init()
 	//// todo: delete no fx
 	//// pForeground->SetSpeed(PLAYER_SPEED * 1.2);
 
-	/// <summary>
-	/// the foreground in front of the player
-	/// </summary>
-	GForeground* pForeground = new GForeground(
-		-2.0f,	// the speed
-		SVector2(0, FOREGROUND_POSITION_Y),
-		SVector2(1280, 302),
-		pTheRenderer,
-		"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
-	);
+	///// <summary>
+	///// the foreground in front of the player
+	///// </summary>
+	//GForeground* pForeground = new GForeground(
+	//	-2.0f,	// the speed
+	//	SVector2(0, FOREGROUND_POSITION_Y),
+	//	SVector2(1280, 302),
+	//	pTheRenderer,
+	//	"Texture/Vordergrund/B_Vordergrund_Weg_1280x302.png"
+	//);
 
 #pragma region Walkground
 
@@ -283,9 +295,9 @@ void GMainScene::Init()
 #pragma region Text
 #pragma region FPS text
 	// create fps text
-	GTextFPS* pFPSText = new GTextFPS("FPS: 0",
-		GGame::Get()->GetPristinaFont(),
-		SRect(SCREEN_WIDTH / 2 + 500, 0, 100, 50));
+	//GTextFPS* pFPSText = new GTextFPS("FPS: 0",
+	//	GGame::Get()->GetPristinaFont(),
+	//	SRect(SCREEN_WIDTH / 2 + 500, 0, 100, 50));
 
 	// add fps text to list
 	// CEngine::Get()->GetCM()->AddUIObject(pFPSText);
@@ -303,13 +315,6 @@ void GMainScene::Init()
 //#pragma endregion
 #pragma endregion
 
-#pragma region Music
-	// create background music
-	m_pBackgroundMusic = new CMusic(GetAssetPath("Audio/Moment-of-Strange.mp3", 4).c_str());
-
-	// play music
-	m_pBackgroundMusic->Play(true);
-#pragma endregion
 
 //#pragma region SoundFX
 //	// create pickup item sound
@@ -390,32 +395,32 @@ void GMainScene::Init()
 	// SDL_Delay(500);
 
 #pragma region NPCs
-	// create first NPC of EmoType FURY
-	GNpc* pFury = new GNpc(
-		EEmotionType::FURY,
-		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
-		SVector2(NPC_WIDTH, NPC_HEIGHT),
-		pTheRenderer,
-		"Texture/NPC/Anger/anger_mask_1.png"
-	);
+	//// create first NPC of EmoType FURY
+	//GNpc* pFury = new GNpc(
+	//	EEmotionType::FURY,
+	//	SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+	//	SVector2(NPC_WIDTH, NPC_HEIGHT),
+	//	pTheRenderer,
+	//	"Texture/NPC/Anger/anger_mask_1.png"
+	//);
 
 #pragma endregion
 
 
 #pragma region Ground (to walk on)
 
-	// Add a ground to walk on;
-	GBackgroundStatic* pGround = new GBackgroundStatic(
-		SVector2(0, GROUND_POSITION), 
-		SVector2(3840, 220),
-		CEngine::Get()->GetRenderer(),
-		//"Texture/World/T_backg_G1_1280x720.png"
-		"Texture/Background/T_GroundToWalkOn.png"	// add empty string to create collision object
-	);
-	pGround->SetColType(ECollisionType::WALL);
-	pGround->DeactivateGravity();
-	pGround->SetInWorld(true);
-	pGround->SetSrcRect(SRect(0, 0, 4, 4));
+	//// Add a ground to walk on;
+	//GBackgroundStatic* pGround = new GBackgroundStatic(
+	//	SVector2(0, GROUND_POSITION), 
+	//	SVector2(3840, 220),
+	//	CEngine::Get()->GetRenderer(),
+	//	//"Texture/World/T_backg_G1_1280x720.png"
+	//	"Texture/Background/T_GroundToWalkOn.png"	// add empty string to create collision object
+	//);
+	//pGround->SetColType(ECollisionType::WALL);
+	//pGround->DeactivateGravity();
+	//pGround->SetInWorld(true);
+	//pGround->SetSrcRect(SRect(0, 0, 4, 4));
 
 #pragma endregion
 
@@ -429,26 +434,26 @@ void GMainScene::Init()
 #pragma endregion
 
 #pragma region Items
-	// create FuryItem 
-	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Item/teddy.png");
-	pFuryItem->SetItemType(EEmotionType::FURY);
+	//// create FuryItem 
+	//GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Item/teddy.png");
+	//pFuryItem->SetItemType(EEmotionType::FURY);
 
-	// create FearItem 
-	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Item/candle.png");
-	pFearItem->SetItemType(EEmotionType::FEAR);
+	//// create FearItem 
+	//GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Item/candle.png");
+	//pFearItem->SetItemType(EEmotionType::FEAR);
 
-	// create SadnessItem 
-	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Item/book_1.png");
-	pSadItem->SetItemType(EEmotionType::SAD);
+	//// create SadnessItem 
+	//GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Item/book_1.png");
+	//pSadItem->SetItemType(EEmotionType::SAD);
 #pragma endregion
 
 //#pragma region THE HOUSE
@@ -477,15 +482,15 @@ void GMainScene::Init()
 	//	//	PERSISTANT
 	//	THE FOREGROUND
 	// ToDo (m2vh) check performance;
-	CEngine::Get()->GetCM()->AddPersistantObject(pForeground);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pForeground);
 
 	// THE GROUND TO WALK ON
-	CEngine::Get()->GetCM()->AddPersistantObject(pGround);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pGround);
 
 	//	The Items
-	CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
-	CEngine::Get()->GetCM()->AddPersistantObject(pFearItem);
-	CEngine::Get()->GetCM()->AddPersistantObject(pSadItem);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pFuryItem);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pFearItem);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pSadItem);
 
 
 	//// add player to persistant list
@@ -495,7 +500,7 @@ void GMainScene::Init()
 	//CEngine::Get()->GetCM()->AddUIObject(m_inventory);
 
 	// add NPCs to persistant list
-	CEngine::Get()->GetCM()->AddPersistantObject(pFury);
+	//CEngine::Get()->GetCM()->AddPersistantObject(pFury);
 
 	// add the anim object
 	// ToDo (m2vh) delete
@@ -571,17 +576,24 @@ void GMainScene::Clean()
 	//	// will be done by init
 	// CEngine::Get()->GetCM()->CleanScene();
 	//	// we need to copy into status
-	pTheWorldStatus->CleanMainSceneObjects();
+	// pTheWorldStatus->CleanMainSceneObjects();
+	pTheWorldStatus->CleanTheMainScene();
 
-	pTheWorldStatus->Refresh();
+	// ToDo (m2vh) Put this into CleanTheMainScene();
+	pTheWorldStatus->Refresh();	
 
 	for (CObject* _pObj : pTheCM->GetSceneObjects()) {
 		pTheWorldStatus->AddMainSceneObject(_pObj);
 	}
 
+	for (CObject* _pObj : pTheCM->GetPersistantObjects()) {
+		pTheWorldStatus->AddMainPersistObject(_pObj);
+	}
+
 	
-	// TODO! Do not delete persistent object list
-	// clean PersistentObjects 
+	// ToDo (m2vh)	Clean CM in Game::Clean() or ~GGame();
+	CEngine::Get()->GetCM()->CleanScene();
+
 	CEngine::Get()->GetCM()->CleanPersistantObjects();
 }
 #pragma endregion
