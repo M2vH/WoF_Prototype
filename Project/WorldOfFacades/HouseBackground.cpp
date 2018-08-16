@@ -57,7 +57,7 @@ void GHouseBackground::Render(CRenderer * _pRenderer)
 			itemsToDisplay += _item->GetItemType();
 
 		}
-		SetTexture();
+		SetTexture(m_allBackgrounds[1]);
 
 	}
 	
