@@ -23,7 +23,10 @@ void GInventoryItems::Update(float _deltaTime)
 void GInventoryItems::Render(CRenderer * _pRenderer)
 {
 	// render texture
-	CMoveObject::Render(_pRenderer);
+	if (m_ItemState == ACTIVE || m_ItemState == USED)
+	{
+		CMoveObject::Render(_pRenderer);
+	}
 }
 #pragma endregion
 

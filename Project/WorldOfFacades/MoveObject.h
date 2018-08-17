@@ -144,6 +144,11 @@ protected:
 	bool m_isMovable = true;
 
 	/// <summary>
+	/// can move during dialogs
+	/// </summary>
+	bool m_canMove = true;
+
+	/// <summary>
 	/// is in house
 	/// </summary>
 	bool m_isInHouse;

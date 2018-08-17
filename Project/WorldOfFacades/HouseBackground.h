@@ -26,17 +26,21 @@ public:
 #pragma endregion
 
 
-#pragma region public functions to get Items
-	GInventoryItems* GetFuryItem() { return m_pItemFury; };
-	GInventoryItems* GetFearItem() { return m_pItemFear; };
-	GInventoryItems* GetSadnessItem() { return m_pItemSadness; };
+#pragma region public functions to get and set Items
+	GInventoryItems* GetFuryItem() { return m_pAllItems[0]; };
+	GInventoryItems* GetFearItem() { return m_pAllItems[1]; };
+	GInventoryItems* GetSadnessItem() { return m_pAllItems[2]; };
+
+	inline void SetFuryItem(GInventoryItems* _item) { m_pAllItems[0] = _item; }
+	inline void SetFearItem(GInventoryItems* _item) { m_pAllItems[1] = _item; }
+	inline void SetSadnessItem(GInventoryItems* _item) { m_pAllItems[2] = _item; }
 
 #pragma endregion
 
 private:
-	GInventoryItems* m_pItemFury;
-	GInventoryItems* m_pItemFear;
-	GInventoryItems* m_pItemSadness;
+	//GInventoryItems* m_pItemFury = nullptr;
+	//GInventoryItems* m_pItemFear = nullptr;
+	//GInventoryItems* m_pItemSadness = nullptr;
 
 	GInventoryItems* m_pAllItems[3];
 

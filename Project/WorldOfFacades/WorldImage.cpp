@@ -12,7 +12,7 @@
 GWorldImage::GWorldImage(char ** _fileNames, SVector2 _pos, SVector2 _size, CRenderer* _pRenderer) : GBackgroundStatic(_pos, _size, _pRenderer, _fileNames[3])
 {
 	// get the pointer to instance of worldstatus
-	m_pWorldStatus = m_pWorldStatus->Get();
+	m_pWorldStatus = GWorldStatus::Get();
 
 	// set the actual worldstate
 	m_lastWorldState = m_pWorldStatus->GetState();
@@ -27,6 +27,7 @@ GWorldImage::GWorldImage(char ** _fileNames, SVector2 _pos, SVector2 _size, CRen
 		// add texture* to array
 		m_pTextures[i] = newTexture;
 	}
+	m_pTexture = m_pTextures[3];
 
 }
 
@@ -46,7 +47,7 @@ inline void GWorldImage::Update(float _deltaTime)
 	{
 		// ToDo (m2vh) delete
 		// different textures are possible;
-		SetTexture(m_pTextures[6]);
+		// SetTexture(m_pTextures[6]);
 		// (m2vh) end delete
 		return;
 	}

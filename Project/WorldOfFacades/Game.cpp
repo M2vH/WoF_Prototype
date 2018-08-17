@@ -30,7 +30,7 @@ void GGame::Init()
 	// initialize the world status
 	m_pWorldStatus = m_pWorldStatus->Get();
 	//	// ToDo (m2vh) Delete before release
-	m_pWorldStatus->SetState((EWorldState)(m_pWorldStatus->GetState()<< 3));
+	//m_pWorldStatus->SetState((EWorldState)(m_pWorldStatus->GetState()<< 3));
 	LOG_MESSAGE("State of the world" , m_pWorldStatus->GetState());
 
 	// create base gigi font
@@ -113,19 +113,47 @@ void GGame::Init()
 #pragma endregion
 #pragma region the text bubble
 	char* m_textImages[3] = {
-		"Texture/Text/T_Text_Fear_1_330x85.png",
-		"Texture/Text/T_Text_Fear_2_330x85.png",
-		"Texture/Text/T_Text_Fear_3_330x85.png"
+		"Texture/Text/T_Text_Fury_1_330x85.png",
+		"Texture/Text/T_Text_Fury_2_330x85.png",
+		"Texture/Text/T_Text_Fury_3_330x85.png"
 	};
 	// instance of DialogImage
-	GDialogImage* m_pDialogImage = new GDialogImage(
+	GDialogImage* m_pDialogFury = new GDialogImage(
 		SVector2(DIALOG_POS_X, DIALOG_POS_Y),		// pos
 		SVector2(330, 85),		// size of text
 		SVector2(32, 32),		// margin
 		m_textImages
 	);
+
+
+	char* m_textImagesFear[3] = {
+		"Texture/Text/T_Text_Fear_1_330x85.png",
+		"Texture/Text/T_Text_Fear_2_330x85.png",
+		"Texture/Text/T_Text_Fear_3_330x85.png"
+	};
+	// instance of DialogImage
+	GDialogImage* m_pDialogFear = new GDialogImage(
+		SVector2(DIALOG_POS_X, DIALOG_POS_Y),		// pos
+		SVector2(330, 85),		// size of text
+		SVector2(32, 32),		// margin
+		m_textImagesFear
+	);
+
+
+	char* m_textImagesSad[3] = {
+		"Texture/Text/T_Text_Sadness_1_330x85.png",
+		"Texture/Text/T_Text_Sadness_2_330x85.png",
+		"Texture/Text/T_Text_Sadness_3_330x85.png"
+	};
+	// instance of DialogImage
+	GDialogImage* m_pDialogSad = new GDialogImage(
+		SVector2(DIALOG_POS_X, DIALOG_POS_Y),		// pos
+		SVector2(330, 85),		// size of text
+		SVector2(32, 32),		// margin
+		m_textImagesSad
+	);
 	// set display value to true
-	m_pDialogImage->SetRenderDisplay(true);
+	// m_pDialogImage->SetRenderDisplay(true);
 	// add to UIList
 	// CEngine::Get()->GetCM()->AddUIObject(m_pDialogImage);
 
@@ -259,11 +287,39 @@ void GGame::Init()
 	// // create first NPC of EmoType FURY
 	GNpc* pFury = new GNpc(
 		EEmotionType::FURY,
-		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+		SVector2(3500, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
 		SVector2(NPC_WIDTH, NPC_HEIGHT),
 		pTheRenderer,
 		"Texture/NPC/Anger/anger_mask_1.png"
 	);
+
+	// set the NPC dialog
+	pFury->SetDialog(m_pDialogFury);
+
+	// create second NPC FEAR
+	GNpc* pFear = new GNpc(
+		EEmotionType::FEAR,
+		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+		SVector2(NPC_WIDTH, NPC_HEIGHT),
+		pTheRenderer,
+		"Texture/NPC/Fear/Fear_mask_1.png"
+	);
+
+	// set the NPC dialog
+	pFear->SetDialog(m_pDialogFear);
+
+	// create third NPC SADNESS
+	GNpc* pSadness = new GNpc(
+		EEmotionType::SAD,
+		SVector2(2500, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+		SVector2(NPC_WIDTH, NPC_HEIGHT),
+		pTheRenderer,
+		"Texture/NPC/Sadness/sadness_mask_1.png"
+	);
+
+	// set the NPC dialog
+	pSadness->SetDialog(m_pDialogSad);
+
 
 	//	// Add a ground to walk on;
 	GBackgroundStatic* pGround = new GBackgroundStatic(
@@ -284,33 +340,49 @@ void GGame::Init()
 		// let NPC control visibility of his item
 	
 	// create FuryItem 
-	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/teddy.png"
 	);
 	pFuryItem->SetItemType(EEmotionType::FURY);
 
+	// set item invisible
+	pFuryItem->SetItemState(EItemState::ITEM_STATE_NONE);
+
+	pFury->SetItem(pFuryItem);
+
 	// create FearItem 
-	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1650, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/candle.png"
 	);
 	pFearItem->SetItemType(EEmotionType::FEAR);
+	// set item invisible
+	pFearItem->SetItemState(EItemState::ITEM_STATE_NONE);
+
+	pFear->SetItem(pFearItem);
 
 	// create SadnessItem 
-	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
+	GInventoryItems* pSadItem = new GInventoryItems(SVector2(2000, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
 		"Texture/Item/book_1.png"
 	);
 	pSadItem->SetItemType(EEmotionType::SAD);
+	// set item invisible
+	pSadItem->SetItemState(EItemState::ITEM_STATE_NONE);
+
+	pSadness->SetItem(pSadItem);
 #pragma endregion
 
 
 	//	// add objects to WorldStaus list
 	m_pWorldStatus->AddMainPersistObject(pFury);
+	m_pWorldStatus->AddMainPersistObject(pFear);
+	m_pWorldStatus->AddMainPersistObject(pSadness);
+	// the items
 	m_pWorldStatus->AddMainPersistObject(pSadItem);
 	m_pWorldStatus->AddMainPersistObject(pFearItem);
 	m_pWorldStatus->AddMainPersistObject(pFuryItem);
@@ -357,6 +429,45 @@ void GGame::Init()
 		theHouseImages
 	);
 
+	GInventoryItems* m_pHouseItemFury = new GInventoryItems(
+		SVector2(HOUSE_ITEM_FURY_X, HOUSE_ITEM_FURY_Y),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		pTheRenderer,
+		"Texture/Item/teddy.png"
+	);
+	// we keep it in screenspace???
+	m_pHouseItemFury->SetInWorld(false);
+	m_pHouseItemFury->SetItemType(EEmotionType::FURY);
+	m_pHouseItemFury->SetItemState(EItemState::ITEM_STATE_NONE);
+	pHouseBackground->SetFuryItem(m_pHouseItemFury);
+
+	// put it into the array
+	// m_pAllItems[0] = m_pItemFury;
+
+	GInventoryItems* m_pHouseItemFear = new GInventoryItems(
+		SVector2(HOUSE_ITEM_FEAR_X, HOUSE_ITEM_FEAR_Y),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		pTheRenderer,
+		"Texture/Item/candle.png"
+	);
+	m_pHouseItemFear->SetItemType(EEmotionType::FEAR);
+	m_pHouseItemFear->SetItemState(EItemState::ITEM_STATE_NONE);
+	pHouseBackground->SetFearItem(m_pHouseItemFear);
+
+	// m_pAllItems[1] = m_pItemFear;
+
+	GInventoryItems* m_pHouseItemSadness = new GInventoryItems(
+		SVector2(HOUSE_ITEM_SADNESS_X, HOUSE_ITEM_SADNESS_Y),
+		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+		pTheRenderer,
+		"Texture/Item/book_1.png"
+	);
+	m_pHouseItemSadness->SetItemType(EEmotionType::SAD);
+	m_pHouseItemSadness->SetItemState(EItemState::ITEM_STATE_NONE);
+	pHouseBackground->SetSadnessItem(m_pHouseItemSadness);
+	// m_pAllItems[2] = m_pItemSadness;
+
+
 
 
 	//	The ground to walk on
@@ -374,6 +485,15 @@ void GGame::Init()
 	// add object to world list
 	m_pWorldStatus->AddHouseSceneObject(pHouseBackground);
 	m_pWorldStatus->AddHouseSceneObject(pHouseGround);
+
+	// add all items to list;
+	// will chekc for state in render() of class
+	m_pWorldStatus->AddHousePersistObject(m_pHouseItemFury);
+	m_pWorldStatus->AddHousePersistObject(m_pHouseItemFear);
+	m_pWorldStatus->AddHousePersistObject(m_pHouseItemSadness);
+
+
+
 
 	// set house background in PLayer
 	pPlayer->SetHouseBackground(pHouseBackground);

@@ -5,7 +5,7 @@
 /// </summary>
 enum EItemState
 {
-	//NONE = 0,	// for completeness
+	ITEM_STATE_NONE = 0,	// for completeness
 	ACTIVE = 1, // << 0,	// item is in world
 	FOUND = 2, // << 1,		// player has put it in inventory
 				// 1 | 2	// player put item elsewhere

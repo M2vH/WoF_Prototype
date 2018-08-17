@@ -4,6 +4,8 @@
 #include "EnumNpcState.h"
 #include "EnumEmotionType.h"
 #include "DIalogImage.h"
+#include "InventoryItems.h"
+#include "WorldStatus.h"
 #pragma endregion
 
 
@@ -52,7 +54,7 @@ public:
 	/// Set the state of the NPC;
 	/// </summary>
 	/// <param name="_state">the new state; you can bitshift</param>
-	inline void SetNPCState(ENPCState _state) { m_NpcState = _state; }
+	void SetNPCState(ENPCState _state);
 
 	/// <summary>
 	/// Get the state, the NPC is in;
@@ -65,6 +67,16 @@ public:
 	/// </summary>
 	/// <returns>the type of this NPC</returns>
 	inline EEmotionType GetNPCType() { return m_EmoType; }
+
+	// Get and set dialog
+	inline void SetDialog(GDialogImage* _pDialog) { m_pDialog = _pDialog; }
+
+	inline GDialogImage* GetDialog() { return m_pDialog; }
+
+	inline void SetItem(GInventoryItems* _pItem) { m_pItemOfNPC = _pItem; }
+
+	inline GInventoryItems* GetItem() { return m_pItemOfNPC; }
+
 #pragma endregion
 
 private:
@@ -80,6 +92,14 @@ private:
 	/// the type of NPC
 	/// </summary>
 	EEmotionType m_EmoType;
+
+	// the dialog
+	GDialogImage* m_pDialog = nullptr;
+
+	GInventoryItems* m_pItemOfNPC = nullptr;
+
+	GWorldStatus* m_pWorldStatus = nullptr;
+
 #pragma endregion
 
 };

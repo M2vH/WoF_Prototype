@@ -25,36 +25,36 @@ GHouseBackground::GHouseBackground(
 	Buch;  Horizontal; 410 px Vertikal; 730 px SADNESS
 	*/
 
-	m_pItemFury = new GInventoryItems(
-		SVector2(_pos.X + HOUSE_ITEM_FURY_X, _pos.Y + HOUSE_ITEM_FURY_Y),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		_pRenderer,
-		"Texture/Item/teddy.png"
-	);
-	// we keep it in screenspace???
-	m_pItemFury->SetInWorld(false);
-	m_pItemFury->SetItemType(EEmotionType::FURY);
+	//m_pItemFury = new GInventoryItems(
+	//	SVector2(_pos.X + HOUSE_ITEM_FURY_X, _pos.Y + HOUSE_ITEM_FURY_Y),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	_pRenderer,
+	//	"Texture/Item/teddy.png"
+	//);
+	//// we keep it in screenspace???
+	//m_pItemFury->SetInWorld(false);
+	//m_pItemFury->SetItemType(EEmotionType::FURY);
 
-	// put it into the array
-	m_pAllItems[0] = m_pItemFury;
+	//// put it into the array
+	m_pAllItems[0] = nullptr;
 
-	m_pItemFear = new GInventoryItems(
-		SVector2(_pos.X + HOUSE_ITEM_FEAR_X, _pos.Y + HOUSE_ITEM_FEAR_Y),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		_pRenderer,
-		"Texture/Item/candle.png"
-	);
-	m_pItemFear->SetItemType(EEmotionType::FEAR);
-	m_pAllItems[1] = m_pItemFear;
+	//m_pItemFear = new GInventoryItems(
+	//	SVector2(_pos.X + HOUSE_ITEM_FEAR_X, _pos.Y + HOUSE_ITEM_FEAR_Y),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	_pRenderer,
+	//	"Texture/Item/candle.png"
+	//);
+	//m_pItemFear->SetItemType(EEmotionType::FEAR);
+	m_pAllItems[1] = nullptr;
 
-	m_pItemSadness = new GInventoryItems(
-		SVector2(_pos.X + HOUSE_ITEM_SADNESS_X, _pos.Y + HOUSE_ITEM_SADNESS_Y),
-		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
-		_pRenderer,
-		"Texture/Item/book_1.png"
-	);
-	m_pItemSadness->SetItemType(EEmotionType::SAD);
-	m_pAllItems[2] = m_pItemSadness;
+	//m_pItemSadness = new GInventoryItems(
+	//	SVector2(_pos.X + HOUSE_ITEM_SADNESS_X, _pos.Y + HOUSE_ITEM_SADNESS_Y),
+	//	SVector2(ITEM_WIDTH, ITEM_HEIGHT),
+	//	_pRenderer,
+	//	"Texture/Item/book_1.png"
+	//);
+	//m_pItemSadness->SetItemType(EEmotionType::SAD);
+	m_pAllItems[2] = nullptr;
 
 	// through all fileNames;
 	for (size_t i = 0; i < 8; i++)
@@ -79,16 +79,16 @@ void GHouseBackground::Render(CRenderer * _pRenderer)
 
 	GBackgroundStatic::Render(_pRenderer);
 	// for all items
-	for (GInventoryItems* _item : m_pAllItems) {
-		// if itemState == 4
-		if (_item->GetItemState() == EItemState::USED)
-		{
-			//		is in house -> render
-			_item->Render(_pRenderer);
+	//for (GInventoryItems* _item : m_pAllItems) {
+	//	// if itemState == 4
+	//	if (_item->GetItemState() == EItemState::USED)
+	//	{
+	//		//		is in house -> render
+	//		_item->Render(_pRenderer);
 
-		}
+	//	}
 
-	}
+	//}
 }
 
 void GHouseBackground::Update(float _deltaTime) {
