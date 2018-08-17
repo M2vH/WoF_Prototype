@@ -14,6 +14,7 @@
 #include "Text.h"
 #include "DIalogImage.h"
 #include "Npc.h"
+#include "HouseBackground.h"
 #pragma endregion
 
 //CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
@@ -286,21 +287,24 @@ void GGame::Init()
 	GInventoryItems* pFuryItem = new GInventoryItems(SVector2(1100, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Item/teddy.png");
+		"Texture/Item/teddy.png"
+	);
 	pFuryItem->SetItemType(EEmotionType::FURY);
 
 	// create FearItem 
 	GInventoryItems* pFearItem = new GInventoryItems(SVector2(1200, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Item/candle.png");
+		"Texture/Item/candle.png"
+	);
 	pFearItem->SetItemType(EEmotionType::FEAR);
 
 	// create SadnessItem 
 	GInventoryItems* pSadItem = new GInventoryItems(SVector2(1300, GROUND_POSITION - ITEM_HEIGHT),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		CEngine::Get()->GetRenderer(),
-		"Texture/Item/book_1.png");
+		"Texture/Item/book_1.png"
+	);
 	pSadItem->SetItemType(EEmotionType::SAD);
 #pragma endregion
 
@@ -316,20 +320,43 @@ void GGame::Init()
 
 
 #pragma endregion
+
 #pragma region the HOUSE SCENE
 	//	// the Scene objects
 	//	The background
 		// instantiate object
-	GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
-		SVector2(0, 0),
-		SVector2(1280, 720),
-		CEngine::Get()->GetRenderer(),
-		"Texture/Haus/Innen/B_Huette_Start_1280x720.png"
+
+	//	// (m2vh) DELETE 
+	//	next is working
+	//GBackgroundStatic* pBackgroundInHouse = new GBackgroundStatic(
+	//	SVector2(0, 0),
+	//	SVector2(1280, 720),
+	//	CEngine::Get()->GetRenderer(),
+	//	"Texture/Haus/Innen/B_Huette_Start_1280x720.png"
+	//);
+
+	//	// set values of object
+	//pBackgroundInHouse->DeactivateGravity();
+	//pBackgroundInHouse->SetInWorld(false);
+	//	// (m2vh) DELETE
+
+	char* theHouseImages[8] = {
+		"Texture/Haus/Innen/B_Huette_0_normal_1280x720.png",
+		"Texture/Haus/Innen/B_Huette_1_Kerze_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_2_Buch_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_3_KerzeBuch_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_4_Teddy_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_5_TeddyKerze_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_6_TeddyBuch_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_7_AlleItems_1280x720.png"
+	};
+	GHouseBackground* pHouseBackground = new GHouseBackground(
+		SVector2(0,0),
+		SVector2(1280,720),
+		pTheRenderer,
+		theHouseImages
 	);
 
-		// set values of object
-	pBackgroundInHouse->DeactivateGravity();
-	pBackgroundInHouse->SetInWorld(false);
 
 
 	//	The ground to walk on
@@ -345,7 +372,7 @@ void GGame::Init()
 	pHouseGround->SetInWorld(true);
 
 	// add object to world list
-	m_pWorldStatus->AddHouseSceneObject(pBackgroundInHouse);
+	m_pWorldStatus->AddHouseSceneObject(pHouseBackground);
 	m_pWorldStatus->AddHouseSceneObject(pHouseGround);
 
 

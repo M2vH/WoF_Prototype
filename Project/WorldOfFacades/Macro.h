@@ -59,6 +59,18 @@
 #define BLACK SColor(0,0,0)
 #pragma endregion
 
+#pragma region House Sceen Item positions
+#define HOUSE_ITEM_FURY_X 330
+#define HOUSE_ITEM_FURY_Y 250
+#define HOUSE_ITEM_FEAR_X 290
+#define HOUSE_ITEM_FEAR_Y 530
+#define HOUSE_ITEM_SADNESS_X 410
+#define HOUSE_ITEM_SADNESS_Y 730
+
+
+#pragma endregion
+
+
 
 
 #pragma region function macro

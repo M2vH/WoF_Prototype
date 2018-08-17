@@ -1,6 +1,8 @@
 #pragma once
 #include "BackgroundStatic.h"
 #include "InventoryItems.h"
+#include "Macro.h"
+
 class GHouseBackground :
 	public GBackgroundStatic
 {
