@@ -5,12 +5,15 @@
 #include "EnumPlayerState.h"
 #include "Inventory.h"
 #include "Macro.h"
+#include "EnumEmotionType.h"
+
 #pragma endregion
 
 #pragma region forward declaration
 class GInventoryItems;
 class GNpc;
 class CSound;
+class GHouseBackground;
 #pragma endregion
 
 
@@ -128,6 +131,11 @@ public:
 	void SetIsAtHouse(bool _isAtHouse) { m_houseCollision = _isAtHouse; }
 
 	GNpc* GetNPC() { return m_pNPC; };
+
+	void SetHouseBackground(GHouseBackground* _pTheBackground) { m_ptheHouseBackground = _pTheBackground; }
+
+	bool CheckForItem(EEmotionType _state);
+
 #pragma endregion
 
 
@@ -179,6 +187,7 @@ private:
 	/// </summary>
 	CSound* m_pPickupItemSound = nullptr;
 
+	GHouseBackground* m_ptheHouseBackground = nullptr;
 	///// <summary>
 	///// The state the player is in; A bitwise enum;
 	///// </summary>

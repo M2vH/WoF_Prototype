@@ -127,7 +127,7 @@ void GGame::Init()
 	// set display value to true
 	m_pDialogImage->SetRenderDisplay(true);
 	// add to UIList
-	CEngine::Get()->GetCM()->AddUIObject(m_pDialogImage);
+	// CEngine::Get()->GetCM()->AddUIObject(m_pDialogImage);
 
 #pragma endregion
 
@@ -342,12 +342,12 @@ void GGame::Init()
 
 	char* theHouseImages[8] = {
 		"Texture/Haus/Innen/B_Huette_0_normal_1280x720.png",
-		"Texture/Haus/Innen/B_Huette_1_Kerze_1280x720.png", 
-		"Texture/Haus/Innen/B_Huette_2_Buch_1280x720.png", 
-		"Texture/Haus/Innen/B_Huette_3_KerzeBuch_1280x720.png", 
 		"Texture/Haus/Innen/B_Huette_4_Teddy_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_1_Kerze_1280x720.png", 
 		"Texture/Haus/Innen/B_Huette_5_TeddyKerze_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_2_Buch_1280x720.png", 
 		"Texture/Haus/Innen/B_Huette_6_TeddyBuch_1280x720.png", 
+		"Texture/Haus/Innen/B_Huette_3_KerzeBuch_1280x720.png", 
 		"Texture/Haus/Innen/B_Huette_7_AlleItems_1280x720.png"
 	};
 	GHouseBackground* pHouseBackground = new GHouseBackground(
@@ -375,7 +375,8 @@ void GGame::Init()
 	m_pWorldStatus->AddHouseSceneObject(pHouseBackground);
 	m_pWorldStatus->AddHouseSceneObject(pHouseGround);
 
-
+	// set house background in PLayer
+	pPlayer->SetHouseBackground(pHouseBackground);
 #pragma endregion
 
 

@@ -15,6 +15,9 @@
 #include "HouseScene.h"
 #include "Npc.h"
 #include "MainScene.h"
+#include "HouseBackground.h"
+#include "EnumItemState.h"
+
 #pragma endregion
 
 
@@ -26,6 +29,57 @@ void GPlayer::Update(float _deltaTime)
 {
 	// ToDo!
 	//// pick up item
+	
+	if (m_isInHouse)
+	{
+		// INPUT "1"
+		if (CInput::GetKeyDown(SDL_SCANCODE_1))
+		{
+			// is item in inventory?
+			if (CheckForItem(EEmotionType::FURY))
+			{
+				// yes -> 
+				//	set item state in background;
+				m_ptheHouseBackground->GetFuryItem()->SetItemState(EItemState::USED);
+				//	remove from inventory;
+				m_inventory->RemoveObjectItem(EEmotionType::FURY);
+
+				m_pPickupItemSound->Play();
+			}
+		}
+		// INPUT "2"
+		if (CInput::GetKeyDown(SDL_SCANCODE_2))
+		{
+			// is item in inventory?
+			if (CheckForItem(EEmotionType::FEAR))
+			{
+				// yes -> 
+				//	set item state in background;
+				m_ptheHouseBackground->GetFearItem()->SetItemState(EItemState::USED);
+				//	remove from inventory;
+				m_inventory->RemoveObjectItem(EEmotionType::FEAR);
+
+				m_pPickupItemSound->Play();
+			}
+		}
+		// INPUT "3"
+		if (CInput::GetKeyDown(SDL_SCANCODE_3))
+		{
+			// is item in inventory?
+			if (CheckForItem(EEmotionType::SAD))
+			{
+				// yes -> 
+				//	set item state in background;
+				m_ptheHouseBackground->GetSadnessItem()->SetItemState(EItemState::USED);
+				//	remove from inventory;
+				m_inventory->RemoveObjectItem(EEmotionType::SAD);
+
+				m_pPickupItemSound->Play();
+			}
+		}
+
+	}
+
 	if (CInput::GetKeyDown(SDL_SCANCODE_S) && m_foundItem == true)
 	{
 		LOG_MESSAGE("Grab Item ", std::to_string(m_foundItem));
@@ -349,4 +403,18 @@ void GPlayer::SetNPC(GNpc * _npc)
 		m_pNPC = _npc;
 	}
 }
+
+bool GPlayer::CheckForItem(EEmotionType _type) {
+	bool isInInventory = false;
+	list<GInventoryItems*> liste = m_inventory->GetItemObjects();
+	for (GInventoryItems* _item : liste) {
+		if (_item->GetItemType() == _type)
+		{
+			isInInventory = true;
+		}
+	};
+
+	return isInInventory;
+}
+
 #pragma endregion

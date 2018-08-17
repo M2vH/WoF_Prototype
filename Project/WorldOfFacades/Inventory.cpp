@@ -18,6 +18,7 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 		_pRenderer,
 		"Texture/Item/teddy.png");
 	m_pFuryItem->SetInWorld(false);
+	m_pFuryItem->SetItemType(EEmotionType::FURY);
 
 	// fear item
 	m_pFearItem = new GInventoryItems(SVector2(0, 0),
@@ -25,13 +26,15 @@ GInventory::GInventory(SVector2 _pos, SVector2 _size,
 		_pRenderer,
 		"Texture/Item/candle.png");
 	m_pFearItem->SetInWorld(false);
-
+	m_pFearItem->SetItemType(EEmotionType::FEAR);
 	// sadness item
 	m_pSadnessItem = new GInventoryItems(SVector2(0, 0),
 		SVector2(ITEM_WIDTH, ITEM_HEIGHT),
 		_pRenderer,
 		"Texture/Item/book_1.png");
 	m_pSadnessItem->SetInWorld(false);
+	m_pSadnessItem->SetItemType(EEmotionType::SAD);
+
 }
 #pragma endregion
 

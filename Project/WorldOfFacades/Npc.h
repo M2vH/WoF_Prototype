@@ -3,6 +3,7 @@
 #include "MoveObject.h"
 #include "EnumNpcState.h"
 #include "EnumEmotionType.h"
+#include "DIalogImage.h"
 #pragma endregion
 
 

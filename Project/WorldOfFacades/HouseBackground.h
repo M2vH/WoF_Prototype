@@ -20,6 +20,9 @@ public:
 	void Update(float _deltaTime) override;
 
 	void Render(CRenderer* _pRenderer) override;
+
+	// GInventoryItems* GetTheItems() { return m_pAllItems[3]; }
+
 #pragma endregion
 
 
