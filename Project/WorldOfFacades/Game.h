@@ -10,7 +10,7 @@ class CFont;
 
 
 /// <summary>
-/// core game class for game logic
+/// core game class for game objects
 /// </summary>
 class GGame
 {
@@ -68,7 +68,7 @@ public:
 
 #pragma region public function
 	/// <summary>
-	/// initialize game
+	/// initialize game; create all objects and fill the world status;
 	/// </summary>
 	void Init();
 

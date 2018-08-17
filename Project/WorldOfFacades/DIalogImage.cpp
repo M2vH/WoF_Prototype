@@ -31,6 +31,9 @@ GDialogImage::GDialogImage(SVector2 _pos, SVector2 _size, SVector2 _margin, char
 	SetInWorld(false);
 }
 
+/// <summary>
+/// destructor; we clean the object;
+/// </summary>
 GDialogImage::~GDialogImage()
 {
 	// delete all Textures in array
@@ -43,6 +46,10 @@ GDialogImage::~GDialogImage()
 	delete m_pTheBubble;
 }
 
+/// <summary>
+/// Update every frame; call the dialog updates;
+/// </summary>
+/// <param name="_deltaTime"></param>
 void GDialogImage::Update(float _deltaTime)
 {
 	// ToDo (m2vh) Set the texture to mNPC of player;
@@ -50,6 +57,10 @@ void GDialogImage::Update(float _deltaTime)
 	CTexturedObject::Update(_deltaTime);
 }
 
+/// <summary>
+/// Render every frame; call the dialog render(); Render only if 'm_renderDisplay' is set to true;
+/// </summary>
+/// <param name="_pRenderer"></param>
 void GDialogImage::Render(CRenderer * _pRenderer)
 {
 	// check for renderDisplay
@@ -66,6 +77,10 @@ void GDialogImage::Render(CRenderer * _pRenderer)
 	}
 }
 
+/// <summary>
+/// Set the text of dialog corresponding to NPC state;
+/// </summary>
+/// <param name="_state"></param>
 void GDialogImage::SetText(ENPCState _state)
 {
 	switch (_state)

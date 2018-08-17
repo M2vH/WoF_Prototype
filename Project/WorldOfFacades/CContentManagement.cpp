@@ -1,3 +1,13 @@
+#pragma region Copyright
+/*
+This code was originally written by Marc Friedrich
+
+Changes to this code are made by
+Marco von Hagen (m2vh) & Jugurtha Lafi (JL)
+August 2018
+*/
+#pragma endregion
+
 #pragma region project include
 #include "ContentManagement.h"
 #include "Object.h"
@@ -12,8 +22,11 @@ CContentManagement::~CContentManagement()
 		m_pSceneObjects.pop_front();
 
 	// as long as there is a object in list delete first element
+#pragma region added by m2vh & JL
 	while (m_pPlayerObjects.size() > 0)
 		m_pPlayerObjects.pop_front();
+
+#pragma endregion
 
 	// as long as there is a object in list delete first element
 	while (m_pPersistantObjects.size() > 0)
@@ -33,9 +46,11 @@ void CContentManagement::Update(float _deltaTime)
 	for each (CObject* pObj in m_pSceneObjects)
 		pObj->Update(_deltaTime);
 
+#pragma region added by m2vh & JL
 	// update every player object
 	for each(CObject* pObj in m_pPlayerObjects)
 		pObj->Update(_deltaTime);
+#pragma endregion
 
 	// update every persistant object
 	for (CObject* pObj : m_pPersistantObjects)
@@ -54,8 +69,10 @@ void CContentManagement::Update(float _deltaTime)
 		// remove pointer from scene list
 		m_pSceneObjects.remove(pObj);
 
+#pragma region added by m2vh & JL
 		// remove pointer from player list
 		m_pPlayerObjects.remove(pObj);
+#pragma endregion
 
 		// remove pointer from persistant list
 		m_pPersistantObjects.remove(pObj);

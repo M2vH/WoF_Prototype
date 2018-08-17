@@ -17,11 +17,12 @@
 #include "HouseBackground.h"
 #pragma endregion
 
-//CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
-
 
 #pragma region public function
 // initialize game
+/// <summary>
+/// initialize game; create all objects and fill the world status;
+/// </summary>
 void GGame::Init()
 {
 	CRenderer* pTheRenderer = CEngine::Get()->GetRenderer();
@@ -517,5 +518,6 @@ void GGame::Clean()
 	// TODO!
 	// delete world status
 	// clean CM completely
+	
 }
 #pragma endregion

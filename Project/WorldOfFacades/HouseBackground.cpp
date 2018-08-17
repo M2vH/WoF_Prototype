@@ -5,7 +5,13 @@
 #include "Texture.h"
 
 
-
+/// <summary>
+/// ctor;
+/// </summary>
+/// <param name="_pos">position on screen</param>
+/// <param name="_size">size of image</param>
+/// <param name="_pRenderer">the renderer </param>
+/// <param name="_pFileNames">path to the files</param>
 GHouseBackground::GHouseBackground(
 	SVector2 _pos,
 	SVector2 _size,
@@ -91,6 +97,10 @@ void GHouseBackground::Render(CRenderer * _pRenderer)
 	//}
 }
 
+/// <summary>
+/// Update every frame; check ItemState and display corresponding texture;
+/// </summary>
+/// <param name="_deltaTime"></param>
 void GHouseBackground::Update(float _deltaTime) {
 	int itemsToDisplay = 0;
 	for (GInventoryItems* _item : m_pAllItems) {
