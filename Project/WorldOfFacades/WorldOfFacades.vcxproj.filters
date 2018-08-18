@@ -95,6 +95,7 @@
     <ClCompile Include="DIalogImage.cpp">
       <Filter>Game\World\TextBubble</Filter>
     </ClCompile>
+    <ClCompile Include="StartSceen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -251,6 +252,7 @@
     <ClInclude Include="DIalogImage.h">
       <Filter>Game\World\TextBubble</Filter>
     </ClInclude>
+    <ClInclude Include="StartSceen.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

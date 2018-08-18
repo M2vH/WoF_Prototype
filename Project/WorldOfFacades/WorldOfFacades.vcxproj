@@ -204,6 +204,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClCompile Include="Physic.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="StartSceen.cpp" />
     <ClCompile Include="TextBubble.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturedObject.cpp" />
@@ -253,6 +254,7 @@ xcopy "$(SolutionDir)Library\SDL2_ttf\lib\$(PlatformShortName)\*.dll" "$(Solutio
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sound.h" />
+    <ClInclude Include="StartSceen.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TextBubble.h" />
     <ClInclude Include="TextFPS.h" />

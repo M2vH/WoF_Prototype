@@ -15,6 +15,7 @@
 #include "DIalogImage.h"
 #include "Npc.h"
 #include "HouseBackground.h"
+#include "StartSceen.h"
 #pragma endregion
 
 
@@ -503,7 +504,7 @@ void GGame::Init()
 
 
 	// start game by creating new main scene
-	CEngine::Get()->ChangeScene(new GMainScene()); // TODO! change back to GMainScene() 
+	CEngine::Get()->ChangeScene(new GStartSceen()); // TODO! change back to GMainScene() 
 }
 
 // clean game
