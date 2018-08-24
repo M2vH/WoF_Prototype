@@ -1,6 +1,8 @@
 # the New Game.Init()
 
-Changes in the `game.cpp`
+Changes in the `game.cpp`  
+Find the file quickly [here](https://github.com/M2vH/WoF_Prototype/blob/3a8835680c307ec0be500228d7593f5e1e9e993d/Project/WorldOfFacades/Game.cpp).  
+To jump directly to the changed section of the file, use [this link](https://github.com/M2vH/WoF_Prototype/blob/3a8835680c307ec0be500228d7593f5e1e9e993d/Project/WorldOfFacades/Game.cpp#L26-L27).
 
 ```cpp
 game.init()
@@ -10,18 +12,22 @@ game.init()
  *   Scene und persistant objekte in WorldStatus
  *   MainSceneObjectList und
  *   MainPersistantList
-
+ *
  *   hier steht alles aus HouseScene init;
  *   Scene und persistant objekte in WorldStatus
  *   HouseSceneObjectList und
  *   HousePersistantList
+ *
  *   UI in ContentmanagerList;
- *   Player in Contrenmanager Player List;
+ *   Player in Contentmanager Player List;
+ *
  *   GMainScene* aMainScene = new GMainScene();
  *   init houseScene
- 
+ *  
  *   create player;
- *   put into PlayerList in contenmanager
+ *   put into PlayerList in contentmanager
+ *
+ *   finally
  *    -> call Engine->changeScene(new MainScene())
 */
 
