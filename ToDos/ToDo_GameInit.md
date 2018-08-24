@@ -38,20 +38,20 @@ changes in `mainscene.cpp`
 
 ```cpp
 init(){
-    /*
-        clear contentmanager
-            scene List
-            persistant List
+/*
+    clear contentmanager
+        scene List
+        persistant List
 
-        copy mainscene worldstatus
-            into contentmanager scene
+    copy mainscene worldstatus
+        into contentmanager scene
 
-        copy worldstatus persistant
-            into contentmanager persistant
+    copy worldstatus persistant
+        into contentmanager persistant
 
-        get pointer to player with dynamic cast on front of player list;
-            set value isNotInHouse;
-    */
+    get pointer to player with dynamic cast on front layer list;
+        set value isNotInHouse;
+*/
 }
 
 clean(){
