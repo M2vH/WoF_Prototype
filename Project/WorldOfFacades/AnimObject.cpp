@@ -1,6 +1,7 @@
 #include "AnimObject.h"
 #include "Texture.h"
 #include <SDL_timer.h>
+#include "Macro.h"
 
 
 
@@ -19,9 +20,11 @@ GAnimObject::GAnimObject(int _count, float _speed, SVector2 _blockSize, SVector2
 		m_animState = EAnimState::STATE_ANIM_IDLE;
 		m_pFileNames = _pFileNames;
 
+		// set the index of animation texture
 		m_pIdleTextures[0] = 0;
 		m_pIdleTextures[1] = 1;
 		m_pIdleTextures[2] = 2;
+
 
 		m_pMoveTextures[0] = 3;
 		m_pMoveTextures[1] = 4;
@@ -72,7 +75,7 @@ void GAnimObject::Update(float _deltaTime)
 	// 
 	// check state
 	// if IDLE
-	if ((m_animState & EAnimState::STATE_ANIM_IDLE) == STATE_ANIM_IDLE)
+	if (((m_animState & EAnimState::STATE_ANIM_IDLE) == STATE_ANIM_IDLE))
 	{
 		// reset the other animations;
 		m_pstartMove = 0;
@@ -84,10 +87,10 @@ void GAnimObject::Update(float _deltaTime)
 		// set next index
 		m_pstartIdle++;
 		m_pstartIdle %= 3;
-	}else
+	}// else
 	
 	// check if we are in moving state;
-	if ((m_animState & EAnimState::STATE_ANIM_MOVE) == STATE_ANIM_MOVE)
+	if (((m_animState & EAnimState::STATE_ANIM_MOVE) == STATE_ANIM_MOVE))
 	{
 		// reset the other anim
 		m_pstartIdle = 0;
@@ -98,7 +101,7 @@ void GAnimObject::Update(float _deltaTime)
 		// set next index
 		m_pstartMove++;
 		m_pstartMove %= 3;
-	}else
+	}// else
 
 	// check if we are in jumping state;
 		// we are jumping

@@ -68,11 +68,13 @@ public:
 #pragma endregion
 
 #pragma region public inline functions
+
+
 	/// <summary>
 	/// set the samplerate of animation
 	/// </summary>
 	/// <param name="_fps"></param>
-	inline void SetAnimSpeed(int _fps) { m_animSpeed = _fps; }
+	inline void SetAnimSpeed(float _fps) { m_animSpeed = _fps; } // <- ToDo (m2vh) PlayerAnimSpeed
 
 	inline float GetAnimSpeed() { return m_animSpeed; };
 
@@ -138,5 +140,21 @@ private:
 
 #pragma endregion
 
+protected:
+	// The Speed of the IDLE animation
+	/// <summary>
+	/// The speed of IDLE animation
+	/// </summary>
+	float m_pAnimIdleSpeed;
+
+	/// <summary>
+	/// The speed of the MOVE animation;
+	/// </summary>
+	float m_pAnimMoveSpeed;
+
+	/// <summary>
+	/// The speed of the JUMP animation;
+	/// </summary>
+	float m_pAnimJumpSpeed;
 };
 

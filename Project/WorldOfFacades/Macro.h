@@ -66,10 +66,13 @@
 #define HOUSE_ITEM_FEAR_Y 250
 #define HOUSE_ITEM_SADNESS_X 640
 #define HOUSE_ITEM_SADNESS_Y 310
-
-
 #pragma endregion
 
+#pragma region Player Animation Settings
+#define PLAYER_ANIM_IDLE_SPEED 0.30f
+#define PLAYER_ANIM_JUMP_SPEED 0.25f
+#define PLAYER_ANIM_MOVE_SPEED 0.15f
+#pragma endregion
 
 
 

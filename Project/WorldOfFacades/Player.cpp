@@ -240,10 +240,10 @@ void GPlayer::Update(float _deltaTime)
 #pragma endregion
 
 
+#pragma region movement
 
 	if (m_isMovable && m_canMove)
 	{
-#pragma region movement
 		// moveable default true
 		bool moveable = true;
 
@@ -251,6 +251,7 @@ void GPlayer::Update(float _deltaTime)
 		if ((GetAnimState() & EAnimState::STATE_ANIM_JUMP) != STATE_ANIM_JUMP)
 		{
 			SetAnimState(EAnimState::STATE_ANIM_IDLE);
+			SetAnimSpeed(m_pAnimIdleSpeed);
 		}
 
 
@@ -262,6 +263,7 @@ void GPlayer::Update(float _deltaTime)
 			m_mirror.X = 1.0f;
 
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
+			SetAnimSpeed(m_pAnimMoveSpeed);
 		}
 
 		// movement right
@@ -272,6 +274,7 @@ void GPlayer::Update(float _deltaTime)
 			m_mirror.X = 0.0f;
 
 			SetAnimState(EAnimState::STATE_ANIM_MOVE);
+			SetAnimSpeed(m_pAnimMoveSpeed);
 
 			// TODO! do we need this?
 			GPlayer* test = this;
@@ -289,14 +292,18 @@ void GPlayer::Update(float _deltaTime)
 			m_jump = true;
 			m_jumpTime = PLAYER_JUMP_TIME;
 			m_gravity = false;
+
+			SetAnimState(EAnimState::STATE_ANIM_JUMP);
+			SetAnimSpeed(m_pAnimJumpSpeed);
 		}
 #pragma endregion
 
 #pragma region JUMP CHECK
+		// Doing physics during jump
+
 		// if jump enabled
 		if (m_jump)
 		{
-			SetAnimState(EAnimState::STATE_ANIM_JUMP);
 
 			// decrease jump time
 			m_jumpTime -= _deltaTime;
@@ -340,7 +347,8 @@ void GPlayer::Update(float _deltaTime)
 
 				// if not moveable cancel collision check
 				if (!moveable)
-					SetAnimState(EAnimState::STATE_ANIM_JUMP);
+					// ToDo (m2vh) JumpAnimation
+					// SetAnimState(EAnimState::STATE_ANIM_JUMP);
 				break;
 			}
 
@@ -348,7 +356,8 @@ void GPlayer::Update(float _deltaTime)
 			if (moveable)
 			{
 				// we still fly
-				SetAnimState(EAnimState::STATE_ANIM_JUMP);
+				// ToDo (m2vh) JumpAnimation
+				// SetAnimState(EAnimState::STATE_ANIM_JUMP);
 
 				// through all persistant objects
 				for (CObject* pObj : CEngine::Get()->GetCM()->GetPersistantObjects())
@@ -384,7 +393,8 @@ void GPlayer::Update(float _deltaTime)
 
 
 				// set PLAYER_STATE::JUMP
-				SetAnimState(EAnimState::STATE_ANIM_JUMP);
+				// ToDo (m2vh) JumpAnimation
+				// SetAnimState(EAnimState::STATE_ANIM_JUMP);
 
 			}
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma region forward decleration
-class SRect;
+struct SRect;
 #pragma endregion
 
 /// <summary>
