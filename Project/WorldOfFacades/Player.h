@@ -68,6 +68,12 @@ public:
 		m_foundItem = false;
 		s_instance = this;
 		m_speed = PLAYER_SPEED;
+
+		// set the speed of the animation
+		m_pAnimIdleSpeed = PLAYER_ANIM_IDLE_SPEED;
+		m_pAnimMoveSpeed = PLAYER_ANIM_MOVE_SPEED;
+		m_pAnimJumpSpeed = PLAYER_ANIM_JUMP_SPEED;
+
 	}
 
 	/// <summary>

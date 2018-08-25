@@ -50,23 +50,23 @@ void GGame::Init()
 	//	index 6..8	-> JUMP
 
 	char* playerAnimFileNames[] = {
-		"Texture/Protagonist/protag_idle_1.png",
-		"Texture/Protagonist/protag_idle_2.png",
-		"Texture/Protagonist/protag_idle_3.png",
+		"Texture/Protagonist/protag_idle_1.png",	// 0
+		"Texture/Protagonist/protag_idle_2.png",	// 1
+		"Texture/Protagonist/protag_idle_3.png",	// 2
 
-		"Texture/Protagonist/protag_walk_1.png",
-		"Texture/Protagonist/protag_walk_2.png",
-		"Texture/Protagonist/protag_walk_3.png",
+		"Texture/Protagonist/protag_walk_1.png",	// 3
+		"Texture/Protagonist/protag_walk_2.png",	// 4
+		"Texture/Protagonist/protag_walk_3.png",	// 5
 
-		"Texture/Protagonist/protag_jump_1.png",
-		"Texture/Protagonist/protag_jump_2.png",
-		"Texture/Protagonist/protag_jump_3.png"
+		"Texture/Protagonist/protag_jump_1.png",	// 6
+		"Texture/Protagonist/protag_jump_2.png",	// 7
+		"Texture/Protagonist/protag_jump_3.png"		// 8
 
 	};
 
 	//	// add a NOW animated player
 	GPlayer* pPlayer = new GPlayer(
-		8,
+		9,
 		0.15f,
 		SVector2(0, 0),
 		SVector2(WORLD_WIDTH / 2, 478 - PLAYER_HEIGHT),	// X: in the middle of the world Y: will fall till ground

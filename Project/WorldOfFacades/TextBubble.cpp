@@ -113,7 +113,7 @@ GTextBubble::~GTextBubble()
 	}
 	delete m_pTexture;
 	m_pTexture = nullptr;
-	delete m_pCompleteTexture;
+	//m_pCompleteTexture = nullptr;
 }
 #pragma region public overrides
 
