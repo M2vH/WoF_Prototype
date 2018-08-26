@@ -24,7 +24,7 @@ Completed Issue test; Close #45
 
 ## Your changes
 
-Change this line. Check the Flow.
+Change this line. Fixed the Flow.
 
 ## Further reading
 
