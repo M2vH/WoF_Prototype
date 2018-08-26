@@ -79,7 +79,7 @@ void GAnimObject::Update(float _deltaTime)
 	{
 		// reset the other animations;
 		m_pstartMove = 0;
-		m_pstartJump = 0;
+		m_pstartJump = 2;
 
 		// set the texture
 		SetTexture(m_pTextureArray[m_pIdleTextures[m_pstartIdle]]);
@@ -94,7 +94,7 @@ void GAnimObject::Update(float _deltaTime)
 	{
 		// reset the other anim
 		m_pstartIdle = 0;
-		m_pstartJump = 0;
+		m_pstartJump = 1;
 		// set the texture
 		SetTexture(m_pTextureArray[m_pMoveTextures[m_pstartMove]]);
 
@@ -109,7 +109,7 @@ void GAnimObject::Update(float _deltaTime)
 	{
 		// reset the other anim
 		m_pstartIdle = 0;
-		m_pstartMove = 0;
+		m_pstartMove = 1;
 		// set the texture
 		SetTexture(m_pTextureArray[m_pJumpTextures[m_pstartJump]]);
 

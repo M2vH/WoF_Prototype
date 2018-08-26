@@ -314,6 +314,9 @@ void GPlayer::Update(float _deltaTime)
 				// deactivate jump and activate gravity
 				m_jump = false;
 				m_gravity = true;
+				// switch to idle animation for landing;
+				SetAnimState(EAnimState::STATE_ANIM_IDLE);
+				SetAnimSpeed(m_pAnimIdleSpeed);
 			}
 
 

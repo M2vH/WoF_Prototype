@@ -85,7 +85,7 @@ void CRenderer::RenderTexture(CTexture * _pTexture, SRect _destRect, SRect _srcR
 	// ToDo (m2vh) 
 	// we render everything
 	if (!_inWorld &&
-		(destRect.x >= SCREEN_WIDTH || destRect.x <= 0 - SCREEN_WIDTH / 2 /*||
+		(destRect.x >= SCREEN_WIDTH || destRect.x + destRect.w <= 0 /* - SCREEN_WIDTH  / 2 */ /*||
 			destRect.y >= SCREEN_HEIGHT || destRect.y <= 0*/)
 		)
 	{

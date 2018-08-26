@@ -288,7 +288,7 @@ void GGame::Init()
 	// // create first NPC of EmoType FURY
 	GNpc* pFury = new GNpc(
 		EEmotionType::FURY,
-		SVector2(3500, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
+		SVector2(3840 - 1280 / 2, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
 		SVector2(NPC_WIDTH, NPC_HEIGHT),
 		pTheRenderer,
 		"Texture/NPC/Anger/anger_mask_1.png"
@@ -303,7 +303,7 @@ void GGame::Init()
 		SVector2(3000, GROUND_POSITION - NPC_HEIGHT),	// Position min: 640 max: 3840 - 640 - NPC_WIDTH
 		SVector2(NPC_WIDTH, NPC_HEIGHT),
 		pTheRenderer,
-		"Texture/NPC/Fear/Fear_mask_1.png"
+		"Texture/NPC/Fear/fear_mask_1.png"
 	);
 
 	// set the NPC dialog
