@@ -1,7 +1,8 @@
 # Test the closing of issues
 
 According to GitHub Help, we can close Issues using the steps discribed.
-There is a test [issue](https://github.com/M2vH/WoF_Prototype/projects/6#card-12447861) in the workflow [project](https://github.com/M2vH/WoF_Prototype/projects/6).
+
+There is a test [issue](https://github.com/M2vH/WoF_Prototype/issues/45) in the workflow [project](https://github.com/M2vH/WoF_Prototype/projects/6).  
 
 ## What is it good for?
 
