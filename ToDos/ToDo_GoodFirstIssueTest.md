@@ -3,9 +3,13 @@
 According to GitHub Help, we can close Issues using the steps discribed.
 There is a test [issue](https://github.com/M2vH/WoF_Prototype/projects/6#card-12447861) in the workflow [project](https://github.com/M2vH/WoF_Prototype/projects/6).
 
+## What is it good for?
+
+We could move the issues which are managed by the project automation directly into the `Work is Done` column and close the issue at the same time.
+
 ## A step by step
 
-- [ ] Make some changes to this file [here](https://github.com/M2vH/WoF_Prototype/blob/1936bd179f10dc5c86061fe9c6f06e61eb3e3e2f/ToDos/ToDo_GoodFirstIssueTest.md#L18-L19)
+- [ ] Make some changes to this file.
 - [ ] Commit the changes using `Close #45`  
 This could look like the following  
 ```txt
