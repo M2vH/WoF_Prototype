@@ -4,6 +4,10 @@ According to GitHub Help, we can close Issues using the steps discribed.
 
 There is a test [issue](https://github.com/M2vH/WoF_Prototype/issues/45) in the workflow [project](https://github.com/M2vH/WoF_Prototype/projects/6).  
 
+Go through the step by step to see it working.
+
+It's not necessary to clone the repository, the changes can be made and commited in the online edit section.
+
 ## What is it good for?
 
 We could move the issues which are managed by the project automation directly into the `Work is Done` column and close the issue at the same time.
